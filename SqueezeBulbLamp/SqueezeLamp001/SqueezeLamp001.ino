@@ -7,9 +7,9 @@
   controls two LED channels on pins 4 and 5
 
   Circuit:
-      MPX2102 attached to an LM358 op amp attached to pin A0.
-      potentiometer on pin A1
-      12V LEDs on pins 4 and 5
+      * MPX2102 attached to an LM358 op amp attached to pin A0.
+      * potentiometer on pin A1
+      * 12V LEDs on pins 4 and 5
     See circuit drawing for details
 
   created 19 Jan 2019
