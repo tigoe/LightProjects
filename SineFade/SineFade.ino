@@ -3,8 +3,8 @@
   Takes a linear input from an analog sensor
   and produces a sinusoidal fade curve
 
-  created 25 Jan 2019
-  by Tom Igoe
+  created 30 Jan 2019
+  by Tom Igoe and lighting & interactivity 2019 class
 */
 int intensity = 255;
 int change = 1;
