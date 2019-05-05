@@ -6,7 +6,7 @@
   created 30 Jan 2019
   by Tom Igoe and lighting & interactivity 2019 class
 */
-int intensity = 255;
+int currentLevel = 255;
 int change = 1;
 void setup() {
   Serial.begin(9600);
@@ -15,16 +15,16 @@ void setup() {
 void loop() {
   // decrease or increase by 1 point each time
   // if at the bottom or top, change the direction:
-  if (intensity <= 0 || intensity >= 255) {
+  if (currentLevel <= 0 || currentLevel >= 255) {
     change = -change;
   }
-  intensity += change;
+  currentLevel += change;
   
-  // get the sine of the intensity so you're not doing a linear fade:
-  float result = sineFade(intensity, 0, 255);
+  // get the sine of the currentLevel so you're not doing a linear fade:
+  float result = sineFade(currentLevel, 0, 255);
   analogWrite(5, result);
   delay(5);
-  Serial.println(result));
+  Serial.println(result);
 }
 
 float sineFade(int inValue, int minValue, int maxValue) {
