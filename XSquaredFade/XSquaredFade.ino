@@ -6,7 +6,7 @@
   created 5 May 2019
   by Tom Igoe
 */
-int currentLevel = 0;
+int currentLevel = 1;
 int change = 1;
 void setup() {
   Serial.begin(9600);
@@ -21,7 +21,7 @@ void loop() {
   currentLevel += change;
 
   // square the current value:
-  float result = pow(intensity, 2);
+  float result = pow(currentLevel, 2);
   // map the result back to a 0-255 range:
   result = map(result, 0, 65535, 0, 255);
 

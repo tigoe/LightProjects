@@ -53,7 +53,7 @@ void fillCIETable() {
   // scaling factor to convert from 0-100 to 0-maxValue:
   float scalingFactor = 100 / maxValue;
   // luminance value:
-  float Y;
+  float Y = 0.0;
 
   // iterate over the array and calculate the right value for it:
   for (int l = 0; l <= maxValue; l++) {
