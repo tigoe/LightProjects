@@ -3,10 +3,7 @@
 A collection of lighting projects controlled by microcontrollers.
 
 ## Fading
-Light doesn't change in a linear fashion, and the human eye doesn't respond to light in a linear fashion. Light, like all forms of radiant energy, is decreases with the square of the distance from the source
-
-
-Depending on the effect you're looking for, you might want a light source to start fading slowly and then speed up, or slow down at the end of its fade. It helps to have methods for a few different fade curves available. 
+Light doesn't change in a linear fashion, and the human eye doesn't respond to light in a linear fashion. It's helpful to have a few non-linear formulas for fading light when you're controlling light from a computer. The [fading examples here](fading.md) show you a few different fade curves and how to create them in software.
 
 ## Non-Addressable Strip Control
 Single-channel and multi-channel LED strips are very popular these days, and pretty easy to control with a microcontroller and a few transistors. 
