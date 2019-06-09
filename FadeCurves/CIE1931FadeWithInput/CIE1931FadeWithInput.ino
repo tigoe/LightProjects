@@ -1,6 +1,7 @@
 /*
    CIE1931 fade
-   Produces an LED fade that appears visually linear, using the CIE1931 
+   Takes input from an analog sensor and produces an LED fade 
+   that appears visually linear, using the CIE1931 
    perceived lightness formula. 
    
    references:
@@ -9,8 +10,9 @@
    - https://github.com/lawtalker/rotary_dimmer/wiki
   circuit:
   - LED attached to pin 5
-  
-  created 5 May 2019
+  - 10Kilohm potentiometer attached to A0
+ 
+  created 9 June 2019
   by Tom Igoe
 */
 
@@ -25,17 +27,14 @@ void setup() {
 }
 
 void loop() {
-  // decrease or increase by 1 point each time
-  // if at the bottom or top, change the direction:
-  if (currentLevel <= 0 || currentLevel >= 255) {
-    change = -change;
-  }
-  currentLevel += change;
+  // read potentiometer:
+  int sensorReading = analogRead(A0);
+  // map to 0-255 range:
+  int currentLevel = map(sensorReading, 0, 1023, 0, 255);
 
   // PWM output the result. Get levels from
   // the pre-calculated CIE1931 table:
   analogWrite(5, cie1931[currentLevel]);
-  delay(5);
   Serial.println(cie1931[currentLevel]);
 }
 

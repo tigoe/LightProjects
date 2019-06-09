@@ -1,21 +1,19 @@
 /*
-  Exponential fade
-  Produces a fade on an exponential curve for dimming LEDs.
-  Formula and explanation from
-  https://diarmuid.ie/blog/pwm-exponential-led-fading-on-arduino-or-other-platforms
+  X-squared fade
+  Takes a linear input and produces a fade curve
+  based on the square of the input
 
-  created by Diarmuid Mac Namara
-  adapted 5 May 2019
+  created 5 May 2019 
+  modified 9 June 2019
   by Tom Igoe
 */
-
-int currentLevel = 1; // current light level
-int change = 1;       // change each time you fade
+int currentLevel = 1;
+int change = 1;
 byte levelTable[256]; // pre-calculated PWM levels
 
 void setup() {
   Serial.begin(9600);
-  // pre-calculate the PWM levels from exponent formula:
+  // pre-calculate the PWM levels from the formula:
   fillLevelTable();
 }
 
@@ -29,20 +27,21 @@ void loop() {
 
   //PWM output the result:
   analogWrite(5, levelTable[currentLevel]);
-  delay(5);
+  delay(10);
   Serial.println(levelTable[currentLevel]);
 }
+
 
 void fillLevelTable() {
   // set the range of values:
   float maxValue = 255;
-  // Calculate the scaling factor based on the
-  // number of PWM steps you want:
-  float scalingFactor = (maxValue * log10(2)) / (log10(255));
 
   // iterate over the array and calculate the right value for it:
   for (int l = 0; l <= maxValue; l++) {
-    int lightLevel = pow(2, (l / scalingFactor)) - 1;
+    // square the current value:
+    float lightLevel = pow(l, 2);
+    // map the result back to a 0-255 range:
+    lightLevel = map(lightLevel, 0, 65535, 0, 255);
     levelTable[l] = lightLevel;
   }
 }
