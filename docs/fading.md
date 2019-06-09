@@ -53,7 +53,7 @@ That's pretty close to the x squared curve above, but when you compare Figures 2
 
 _Figure 5. Graph of the CIE1931 fade curve._ 
 
-Figure 5 shows a graph of the [CIE1931 fade curve](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/CIE1931Fade) derived from the [CIE1931 lightness formula](http://www.photonstophotos.net/GeneralTopics/Exposure/Psychometric_Lightness_and_Gamma.htm). 
+Figure 5 shows a graph of the [CIE1931 fade curve](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/CIE1931Fade) derived from the [CIE1931 lightness formula](http://www.photonstophotos.net/GeneralTopics/Exposure/Psychometric_Lightness_and_Gamma.htm). It looks pretty close to the x squared curve, but it's a little different in the last 8 percent, where it's linear. This is probably not visible in this graph, but it's noticeable when you run the fade.
 
 ## Pre-calculating the Fade Curve 
 In the examples above, you'll see that the values for the fade curves are calculated in the `setup()` function and placed in an array. In the `loop()`, the sketch gets an input from 0 to 255 and then looks up the corresponding value in the array. Calculating complex math formulas like sine, or raising a value to an exponent, takes longer than looking up an array element, so if the formula's not going to change, it makes sense to pre-calculate your fade curve. If you want to use formulas other than the ones shown here, a generic sketch might look something like this:
