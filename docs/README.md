@@ -5,7 +5,7 @@ A collection of lighting projects controlled by microcontrollers.
 ## Fading
 The relationship between perceived brightness and the power controlling a light source is non-linear. In otherwise, if you fade an LED source in a straight line, it won't appear to you to be fading evenly in time. 
 
-Depending on the effect you're looking for, you might want a light source to start fading slowly and then speed up, or slow down at the end of its fade. It helps to have methods for a few different fade curves available. 
+Depending on the effect you're looking for, you might want a light source to start fading slowly and then speed up, or slow down at the end of its fade. It helps to [have methods for a few different fade curves](fading.md) available. 
 
 ## Non-Addressable Strip Control
 Single-channel and multi-channel LED strips are very popular these days, and pretty easy to control with a microcontroller and a few transistors. 
