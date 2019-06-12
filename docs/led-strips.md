@@ -59,5 +59,8 @@ In Figure 2, the MKR Zero microcontroller is mounted as usual, straddling the ce
 
 The [IRLB8721](https://octopart.com/search?q=IRLB8721) MOSFET [(datasheet)](https://www.infineon.com/dgdl/irlb8721pbf.pdf?fileId=5546d462533600a40153566056732591) is similar in specs to the FQP30N06L. It too can control up to a 60V, 30A load and can be switched from 3.3V or 5V. The pin configuration for this MOSFET is identical to the FQP30N06L, so Figure 2 above will work with this part in place of the previous MOSFET with no other change. 
 
+## Controlling Multi-Channel LED Strips
+
+Other than single-color LED strips or warm/cool strips, you may want to control RGB or RGBW or RGBAW (red, green, blue, amber, white), or some other variation. As long as the strip is not made of addressable LEDs, you can use variations on these same circuits. For example, if you've got a strip that's RGBW, you'd need four transistors, one for each channel. 
 
 
