@@ -4,7 +4,7 @@ A collection of lighting projects controlled by microcontrollers.
 
 ## Low-voltage DC Lamps 
 
-Low-voltage [LED Lamps](led-lamps.md) are easy to control from a microcontroller when you know what properties you need to be aware of. In fact, there are so many low-voltage sources on the market now that you can manage most indoor lighting needs without needing to control high-voltage AC sources.
+Low-voltage [LED Lamps](led-lamps.md) are easy to control from a microcontroller when you know what properties you need to be aware of. In fact, there are so many low-voltage sources on the market now that you can manage most indoor lighting needs without needing to control high-voltage AC sources. 
 
 ## LED Strip Control
 Single-channel and multi-channel [LED strips](led-strips.md) are very popular these days, and pretty easy to control with a microcontroller and a few transistors. 
@@ -59,4 +59,10 @@ Depending on the effect you're looking for, you might want a light source to sta
 * [ColorTempFade](https://github.com/tigoe/LightProjects/tree/master/ColorTempFade/)
 * [APA102xRGBFade](https://github.com/tigoe/LightProjects/tree/master/APA102x/APA102xRGBFade)
 * [APA102xRGBFade002](https://github.com/tigoe/LightProjects/tree/master/APA102x/APA102xRGBFade002)
+
+## Recommended Parts
+
+This [list pf parts](inventory.md) is not comprehensive, it's just a list of some of the parts I've used in building this repository.
+
+
 
