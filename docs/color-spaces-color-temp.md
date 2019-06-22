@@ -10,7 +10,7 @@ Our mental model of how we light changes generally aren't phrased in terms of pr
 
 <blockquote>“Soon it got dusk, a grapy dusk, a purple dusk over tangerine groves and long melon fields; the sun the color of pressed grapes, slashed with burgundy red, the fields the color of love and Spanish mysteries.”
 
--Jack Kerouac, _On the Road_</blockquote>
+-Jack Kerouac, *On the Road*</blockquote>
 
 These are terms that use a different color model than the primary-color models. Now we're talking about hue, saturation, and lightness, and color temperature.
 
