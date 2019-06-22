@@ -8,9 +8,9 @@ There are a number of different components to color and light. You can talk abou
 
 Our mental model of how we light changes generally aren't phrased in terms of primary colors, however. We might talk about how it dims, or how the colors become paler as it gets brighter, or we might talk about how a light gets warmer as it fades out. We might talk about how the sky shifts from a pale blue to brilliant oranges and reds as the sun sets, as in this quote:
 
-<blockquote>“Soon it got dusk, a grapy dusk, a purple dusk over tangerine groves and long melon fields; the sun the color of pressed grapes, slashed with burgundy red, the fields the color of love and Spanish mysteries.”
+<blockquote>"Soon it got dusk, a grapy dusk, a purple dusk over tangerine groves and long melon fields; the sun the color of pressed grapes, slashed with burgundy red, the fields the color of love and Spanish mysteries."
 
--Jack Kerouac, *On the Road*</blockquote>
+-Jack Kerouac, "On the Road"</blockquote>
 
 These are terms that use a different color model than the primary-color models. Now we're talking about hue, saturation, and lightness, and color temperature.
 
