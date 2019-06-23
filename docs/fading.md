@@ -47,7 +47,7 @@ x = x^(2/r) - 1
 ````
 x = x^2 - 1
 ````
-That's pretty close to the x squared curve above, but when you compare Figures 2 and 3, you see that Mac Namara's curve is a bit steeper, and the tail at the fading end is longer. IT feels like it takes longer to get bright, and it drops off a bit faster. 
+That's pretty close to the x squared curve above, but when you compare Figures 2 and 3, you see that Mac Namara's curve is a bit steeper, and the tail at the fading end is longer. It feels like it takes longer to get bright, and it drops off a bit faster. 
 
 ![Figure 5. Graph of the CIE1931 fade curve](img/cie1931Graph.png)
 
