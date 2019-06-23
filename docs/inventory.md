@@ -27,9 +27,15 @@ This is a list of parts used in building this repository, and a few more that mi
 * [Bi-Pin Socket for GU5.3/G4/GX5.3/GY6.35/GZ4 Base Bulbs ](https://www.superbrightleds.com/moreinfo/household-bulb-sockets-adapters/mr16-socket-mr11-bi-pin-socket-for-gu53g4gx53gy635gz4-base-bulbs/499/2027/) - This is the socket that the two lamps above fit into
 
 ## Components
-* [IRLB8721](https://www.digikey.com/products/en?keywords=IRLB8721PBF) - Need 3.3V high-current transistors. TIP120 will also work
-* [rotary encoders](https://www.digikey.com/product-detail/en/bourns-inc/PEC12R-4225F-S0024/PEC12R-4225F-S0024-ND/4499648) 
-* [potentiometers](https://www.digikey.com/product-detail/en/tt-electronics-bi/P160KN2-4QC20B10K/987-1310-ND/2408887)
+For most 12-24V sources, you'll need transistors to control them from a microcontroller. The following ones have been tested with the examples here:
+* [IRLB8721](https://www.digikey.com/products/en?keywords=IRLB8721PBF) - A MOSFET that operates well on 3.3V. Here's its [data sheet](https://www.infineon.com/dgdl/irlb8721pbf.pdf?fileId=5546d462533600a40153566056732591). It can switch a load up to 30V and theoretically 60A with proper head dissipation. 
+* [FQP30N06L](https://www.digikey.com/products/en?keywords=FQP30N06L) - Another 3.3V-tolerant MOSFET. Here's its [datasheet](https://cdn.sparkfun.com/datasheets/Components/General/FQP30N06L.pdf). This one can switch 60V and 30A.  
+* [TIP120](https://www.digikey.com/product-detail/en/stmicroelectronics/TIP120/497-2539-5-ND/603564) This Darlington transistor, well-known in Arduino circles for switching motors, will also work for switching LED sources. Here's its [data sheet](https://www.st.com/content/ccc/resource/technical/document/datasheet/f9/ed/f5/44/26/b9/43/a4/CD00000911.pdf/files/CD00000911.pdf/jcr:content/translations/en.CD00000911.pdf). It requires a base resistor of about 1 kilohm for the examples used here.
+
+Tangible controls. These are included for example purposes only. You can use whatever input you want for your LED projects.
+* [pushbuttons](https://www.digikey.com/products/en?keywords=PRT-14460) - I like these ones because they fit on a breadboard well but are big enough to push in a satisfying way. 
+* [rotary encoders](https://www.digikey.com/product-detail/en/bourns-inc/PEC12R-4225F-S0024/PEC12R-4225F-S0024-ND/4499648) - These are breadboard-friendly as well, if you bend the side tabs up.
+* [potentiometers](https://www.digikey.com/product-detail/en/tt-electronics-bi/P160KN2-4QC20B10K/987-1310-ND/2408887) - These are breadboard-friendly as well.
 
 ## Microcontrollers 
 I tend to use the MKR series Arduinos a lot:
