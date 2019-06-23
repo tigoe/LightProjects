@@ -7,17 +7,13 @@ A collection of lighting projects controlled by microcontrollers.
 Low-voltage [LED Lamps](led-lamps.md) are easy to control from a microcontroller when you know what properties you need to be aware of. In fact, there are so many low-voltage sources on the market now that you can manage most indoor lighting needs without needing to control high-voltage AC sources. 
 
 ## LED Strip Control
-Single-channel and multi-channel [LED strips](led-strips.md) are very popular these days, and pretty easy to control with a microcontroller and a few transistors. 
-
-You can find LED strips in a variety of combinations:
+Single-channel and multi-channel [LED strips](led-strips.md) are very popular these days, and pretty easy to control with a microcontroller and a few transistors.  You can find LED strips in a variety of combinations:
 * Red/Green/Blue (RGB)
 * Red/Green/Blue/White (RGBW). These come in cool white, warm white, and natural white variations.
-* Tunable White. These come in a variety of styles: Warm/cool white, Warm/cool/natural white, and White/white/amber
+* Tunable White. These come in a variety of styles: Warm/cool white, Warm/cool/natural white, and White/white/amber.
 
 ## Addressable LED Control
-There are a number of [addressable LED components](addressable-leds.md) on the market now, and they come in a variety of form factors. Covered here are a couple of the most popular, the WS28xx/SK68xx LEDs, and the APA102C LEDs. Adafruit calls their products with these NeoPixels and DotStars, respectively. SparkFun calls their APA102C line Lumenati. Whatever you call them, they're useful to know about. 
-
-Addressable strips can be found in the many of the same variations as non-addressable strips, including RGB, RGBW, RGBAW, and WWA.
+There are a number of [addressable LED components](addressable-leds.md) on the market now, and they come in a variety of form factors. Covered here are a couple of the most popular, the WS28xx/SK68xx LEDs, and the APA102C LEDs. Adafruit calls their products that use these LEDs NeoPixels and DotStars, respectively. SparkFun calls their APA102C line Lumenati. Whatever you call them, they're relatively easy to use, and there are many good tools for controlling them.  Addressable strips can be found in the many of the same variations as non-addressable strips, including RGB, RGBW, RGBAW, and WWA.
 
 ### Examples:
 * [APA102xTester](https://github.com/tigoe/LightProjects/tree/master/APA102x/APA102xTester)
@@ -35,9 +31,7 @@ Addressable strips can be found in the many of the same variations as non-addres
 * [WS281x_AdvancedMixer](https://github.com/tigoe/LightProjects/tree/master/WS281x/WS281x_AdvancedMixer)
 
 ## Fading
-The relationship between perceived brightness and the power controlling a light source is non-linear. In otherwise, if you fade an LED source in a straight line, it won't appear to you to be fading evenly in time. 
-
-Depending on the effect you're looking for, you might want a light source to start fading slowly and then speed up, or slow down at the end of its fade. It helps to [have methods for a few different fade curves](fading.md) available. 
+The relationship between perceived brightness and the power controlling a light source is non-linear. In otherwise, if you fade an LED source in a straight line, it won't appear to you to be fading evenly in time. Depending on the effect you're looking for, you might want a light source to start fading slowly and then speed up, or slow down at the end of its fade. It helps to [have methods for a few different fade curves](fading.md) available. 
 
 ### Examples
 * [SimpleFade](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/SimpleFade)
