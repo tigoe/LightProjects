@@ -4,7 +4,7 @@ In order to understand how light changes, it's helpful to know a few different w
 
 ## Color Models
 
-There are a number of different components to color and light. You can talk about component colors, either additive or subtractive; you can talk about hue, saturation, and lightness, or value. It's important to talk about how you're creating color and light, however, if you want to control it well.  Lighting designers tend to talk in terms of additive primary colors -- red, green, and blue -- because color of light is additive. In contrast, color reflected by a surface pigment is subrtactive, so in that context, we tend to talk in terms of subtractive primaries: red, yellow, and blue.
+There are a number of different components to color and light. You can talk about component colors, either additive or subtractive; you can talk about hue, saturation, and lightness, or value. If you want to control light well, however, it's important to consider how you're creating color and light.  Lighting designers tend to talk in terms of additive primary colors -- red, green, and blue -- because when you layer light sources together, the effect is addititive. Red, green, and blue sources on the same subject look like white light to the viewer. In contrast, color reflected by a surface pigment is subrtactive. If you layer two colors of pigment on top of each other, you'll only see colors that are reflected by both pibments. so in that context, we tend to talk in terms of subtractive primaries: red, yellow, and blue.
 
 Our mental model of how we light changes generally aren't phrased in terms of primary colors, however. We might talk about how it dims, or how the colors become paler as it gets brighter, or we might talk about how a light gets warmer as it fades out. We might talk about how the sky shifts from a pale blue to brilliant oranges and reds as the sun sets, as in this quote:
 
@@ -12,9 +12,24 @@ Our mental model of how we light changes generally aren't phrased in terms of pr
 
 -Jack Kerouac, "On the Road"</blockquote>
 
-These are terms that use a different color model than the primary-color models. Now we're talking about hue, saturation, and lightness, and color temperature.
+These are terms that describe combinations of colors into different hues. Although a given hue may be made of different primary colors, we don't think in terms of the primary colors composing a particular color like tangerine or burgundy. Instead we think of color as one continuous spectrum, with each hue blending into the next. When describing hues, we also speak of the relative saturation of the hue, how intense it is. Higher saturation makes a hue deeper and more vibrant, while lower saturation makes a hue more pale.  In addition to hue and saturation, we can describe the relative value or brightness of the color. Collectively these three describe the *Hue, Saturation, Value (HSV)* or *Hue, Saturation, Brightness (HSB)* color model. Another variation on this describes the hue and saturation and relative lightness or luminosity of the color. This model is called Hue, Saturation, and Lightness (HSL).In this model, the color gradually fades to white as the lightness increases.
 
-White light is composed of multiple wavelengths of light, and when describing it, lighting designers and engineers speak about the color temperature of the light, referring to its relative warmth or coolness. Warmer light contains more longer wavelengths, toward the red end of the spectrum, while cooler light contains more shorter wavelengths, toward the blue end of the spectrum.
+To see the differences in control of color afforded by HSV vs. RGB vs. HSL, check out these two interactive models by Rune Madsen, which allow you to change the properties of each model with sliders and to see the result of the change on a sphere or cube:
+* [RGB Color Model](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html#rgb-cube)
+* [HSV color model](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html#hsv-cylinder)
+* [HSL color model](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html#hsl-cylinder)
+
+Although HSV and HSL are useful ways to describe color, they are not native properties to a lighting system that relies on RGB or RGBW control. To control these systems using HSV descriptions, you need a color conversion algorithm. Most LED control libraries now incorporate HSV coneversions. For an overview of the engineering behind this, see Saiko LED's slide deck on [Color Spaces in LED Lighting](http://saikoled.com/assets/img/Color%20Spaces%20in%20LED%20Lighting.pdf).
+
+White light is composed of multiple wavelengths of light, and when describing it, lighting designers and engineers speak about the *color temperature* of the light, referring to its relative warmth or coolness. Warmer light contains more longer wavelengths, toward the red end of the spectrum, while cooler light contains more shorter wavelengths, toward the blue end of the spectrum.
+
+[Tanner-Helland on color temperature](http://www.tannerhelland.com/4435/convert-temperature-rgb-algorithm-code/)
+
+[Waveform lighting on CCT](https://www.waveformlighting.com/tech/calculate-color-temperature-cct-from-cie-1931-xy-coordinates)
+ 
+ [A beginner's guide to CIE Colorimetry](https://medium.com/hipster-color-science/a-beginners-guide-to-colorimetry-401f1830b65a)
+
+[Hue Colors gist](https://gist.github.com/popcorn245/30afa0f98eea1c2fd34d)
 
 When you're fading light, then, you need to consider which color model will make for the best fade. Do you want the hue to stay consistent as the light dims? Do you want the light to get cooler or warmer as it changes? Or do you have another fade pattern in mind?
 
@@ -68,3 +83,5 @@ There are many different color models, and which one you use depends on the cont
 For a partial glossary ofthe physical properties of light, see the [lighting terminology page](https://itp.nyu.edu/classes/light/lighting-terminology/) from my class on light and interactivity.
 
 For a great set of principles of light to consider in lighting design -— illuminance, luminance, color and temperature, height, density, and direction and distribution —- see _[Architectural Lighting: Designing With Light And Space (Architecture Briefs))](https://books.google.com/books/about/Architectural_Lighting.html?id=3QJlJPIX8-sC)_ by Herve Descottes with Ceclia E. Ramos.
+
+For more details on the conversion from RGB and RGBW to HSI, see Saiko LED's [Why Every LED Light Should Be Using HSI](https://blog.saikoled.com/post/43693602826/why-every-led-light-should-be-using-hsi) blog post, along with [How to Convert From HSI to RGB-White](https://blog.saikoled.com/post/44677718712/how-to-convert-from-hsi-to-rgb-white). These are engineering-heavy, but informative. Their explanation is the basis of my [ColorConverter library](https://github.com/tigoe/ColorConverter).
