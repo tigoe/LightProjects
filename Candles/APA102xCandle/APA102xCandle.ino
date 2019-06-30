@@ -54,7 +54,7 @@ void loop() {
     unsigned long color = candle.ColorHSV(hue, sat, intensity);
     // do a gamma correction:
     unsigned long correctedColor = candle.gamma32(color);
-    candle.setPixelColor(p, correctedColor);;
+    candle.setPixelColor(p, correctedColor);
   }
 
   candle.show();
