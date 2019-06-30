@@ -10,6 +10,8 @@ Low-voltage [LED Lamps](led-lamps.md) are easy to control from a microcontroller
 
 This [list pf parts](inventory.md) is not comprehensive, it's just a list of some of the parts I've used in building this repository.
 
+You may find it useful to combine the examples in this repository with some of my [Arduino general examples](https://github.com/tigoe/ArduinoGeneralExamples) or [Sensor examples](https://github.com/tigoe/SensorExamples) to add interactive conntrol over your light projects.
+
 ## LED Strip Control
 Single-channel and multi-channel [LED strips](led-strips.md) are very popular these days, and pretty easy to control with a microcontroller and a few transistors.  You can find LED strips in a variety of combinations:
 * Red/Green/Blue (RGB)
@@ -67,10 +69,3 @@ The examples below use the ColorConverter library to control a WWA strip by calc
 Examples:
 * [WS281x_Mixer](https://github.com/tigoe/LightProjects/tree/master/WS281x/WS281x_Mixer)
 * [WS281x_AdvancedMixer](https://github.com/tigoe/LightProjects/tree/master/WS281x/WS281x_AdvancedMixer)
-
-
-
-
-
-
-
