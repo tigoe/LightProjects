@@ -16,8 +16,10 @@ void setup() {
   pinMode(5, OUTPUT);
 }
 void loop() {
-  // add change to brightness, and constrain to 0-255:
-  currentLevel = constrain(currentLevel + change, 0, 255);
+  // add change to brightness:
+  currentLevel = currentLevel + change;
+  // and constrain to 0-255:
+  currentLevel = constrain(currentLevel, 0, 255);
   // if brightness is at either extreme, change the
   // direction of fading:
   if (currentLevel == 0 || currentLevel == 255) {
