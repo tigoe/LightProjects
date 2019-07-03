@@ -85,9 +85,9 @@ The [FQP30N06L](https://octopart.com/search?q=FQP30N06L) MOSFET [(datasheet)](ht
 
 ![Figure 2. FQP30N06L MOSFET controlling an LED lamp](img/12VDC_LED_MOSFET_lamp_circuit_bb.png)
 
-_Figure 2. MKR Zero connected to a FQP30N06L MOSFET for controlling an LED source, in this case a strip of 12V warm white/cool white LEDs._ 
+_Figure 2. MKR Zero connected to a FQP30N06L MOSFET for controlling an LED lamp._ 
 
- Figure 2 shows the circuit for a MOSFET transistor controlling a 12V DC LED source. The same circuit can be used for a 24V source, with a different power supply. The wiring is similar to the TIP120 wiring, but the 1 kilohm resistors are omitted.
+ Figure 2 shows the circuit for a MOSFET transistor controlling a 12V DC LED lamp. The same circuit can be used for a 24V source, with a different power supply. The wiring is similar to the TIP120 wiring, but the 1 kilohm resistors are omitted.
 
 #### Circuit Description (Figure 2)
 In Figure 2, the MKR Zero microcontroller is straddling the center of a breadboard with its top pins plugged into row 1 of the board. The Vcc pin (physical pin 26) is connected to the breadboard's voltage bus, and the ground pin (physical pin 25) is connected to the ground bus. The voltage and ground buses on either side of the board are connected to each other. A FQP30N06L MOSFET is mounted in the right center section of the board below the microcontroller. The MKR Zero's pin D5 (physical pin 14) is connected to the gate of the MOSFET. The MOSFET's source pin is connected to ground. The MOSFET's drain pin is connected to cathode of the LED source. The anode of the source is connected to the positive terminal of a +12V DC power jack. The power jack's negative terminal is connected to the breadboard's ground bus. The jack should be connected to a +12V DC power supply. 
