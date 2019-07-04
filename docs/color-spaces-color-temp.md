@@ -23,13 +23,10 @@ Although HSV and HSL are useful ways to describe color, they are not native prop
 
 White light is composed of multiple wavelengths of light, and when describing it, lighting designers and engineers speak about the *color temperature* of the light, referring to its relative warmth or coolness. Warmer light contains more longer wavelengths, toward the red end of the spectrum, while cooler light contains more shorter wavelengths, toward the blue end of the spectrum.
 
-[Tanner-Helland on color temperature](http://www.tannerhelland.com/4435/convert-temperature-rgb-algorithm-code/)
-
-[Waveform lighting on CCT](https://www.waveformlighting.com/tech/calculate-color-temperature-cct-from-cie-1931-xy-coordinates)
- 
- [A beginner's guide to CIE Colorimetry](https://medium.com/hipster-color-science/a-beginners-guide-to-colorimetry-401f1830b65a)
-
-[Hue Colors gist](https://gist.github.com/popcorn245/30afa0f98eea1c2fd34d)
+* [Tanner-Helland on color temperature](http://www.tannerhelland.com/4435/convert-temperature-rgb-algorithm-code/)
+* [Waveform lighting on CCT](https://www.waveformlighting.com/tech/calculate-color-temperature-cct-from-cie-1931-xy-coordinates)
+ * [A beginner's guide to CIE Colorimetry](https://medium.com/hipster-color-science/a-beginners-guide-to-colorimetry-401f1830b65a)
+* [Hue Colors gist](https://gist.github.com/popcorn245/30afa0f98eea1c2fd34d)
 
 When you're fading light, then, you need to consider which color model will make for the best fade. Do you want the hue to stay consistent as the light dims? Do you want the light to get cooler or warmer as it changes? Or do you have another fade pattern in mind?
 
@@ -55,7 +52,8 @@ Now imagine you're writing a program to fade your LEDs. What would the  fade fro
 
  You could rearrange things to that you're fading all three colors at the same time:
 
- ````// loop over all the pixels:
+ ````
+ // loop over all the pixels:
   for (int pixel = 0; pixel < pixelCount; pixel++) {
     // set the color for each pixel:
     strip.setPixelColor(pixel, color, color, color);
