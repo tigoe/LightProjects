@@ -74,7 +74,12 @@ This works pretty well for white, but when you try it for an arbitrary set of th
 
 This is where a [Hue, Saturation, Brightness (or Lightness)](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html#color-models-and-color-spaces-JDQ1fRD) model becomes useful. In the HSL model, hue is positioned on a color cylinder, with red at the top (0 degrees), green at 120 degrees, and blue at 240 degrees. Saturation is the radius of the cylinder, and lightness is the depth of the cylinder. Here's an [interactive visualization](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html#hsl-cylinder) from Rune Madsen's book _Programming Design Systems_. The advantage of this model is that it allows you to change lightness or saturation without changing the hue. It becomes much simpler to create a[ flickering candle](https://github.com/tigoe/LightProjects/tree/master/APA102x/APA102xCandle) that changes from red to yellow through orange, for example. 
 
+![CIE 1931 reference diagram, from Wikimedia](https://upload.wikimedia.org/wikipedia/commons/5/5f/CIE-1931_diagram_in_LAB_space.svg)
+
+_Figure 1. the CIE 1931 Chromaticity reference diagram. Image on Wikipedia._
 ## References
+
+Many of the references here are indebted to the International [Commission on Illumination](http://www.cie.co.at), CIE. Their [glossary](http://eilv.cie.co.at/) is a highly valuable resource for lighting enthusiasts and professionals. The rest of their website is a useful resource as well.
 
 There are many different color models, and which one you use depends on the context in which you're talking about color. For a great discussion of [color theory](https://programmingdesignsystems.com/color/a-short-history-of-color-theory/index.html) and [color models and spaces](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html), see Rune Madsen's online book _[Programming Design Systems](https://programmingdesignsystems.com)_. 
 
