@@ -13,6 +13,8 @@
 const int neoPixelPin = 4;  // control pin
 const int pixelCount = 8;    // number of pixels
 
+
+
 // set up strip:
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(pixelCount, neoPixelPin, NEO_GRBW + NEO_KHZ800);
 unsigned int hue;
