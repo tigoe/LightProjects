@@ -1,5 +1,5 @@
 /*
-  APA102x strip using Adafruit_NeoPixel library
+  WS281x strip using Adafruit_NeoPixel library
 
   This sketch shows the colors of the HSV wheel
   You can stop it by sending ' ' from the serial monitor
@@ -13,7 +13,7 @@
 #include <Adafruit_NeoPixel.h>
 
 const int neoPixelPin = 4;  // control pin
-const int pixelCount = 28;    // number of pixels
+const int pixelCount = 8;    // number of pixels
 
 
 
