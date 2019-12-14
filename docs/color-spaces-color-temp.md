@@ -23,13 +23,10 @@ Although HSV and HSL are useful ways to describe color, they are not native prop
 
 White light is composed of multiple wavelengths of light, and when describing it, lighting designers and engineers speak about the *color temperature* of the light, referring to its relative warmth or coolness. Warmer light contains more longer wavelengths, toward the red end of the spectrum, while cooler light contains more shorter wavelengths, toward the blue end of the spectrum.
 
-[Tanner-Helland on color temperature](http://www.tannerhelland.com/4435/convert-temperature-rgb-algorithm-code/)
-
-[Waveform lighting on CCT](https://www.waveformlighting.com/tech/calculate-color-temperature-cct-from-cie-1931-xy-coordinates)
- 
- [A beginner's guide to CIE Colorimetry](https://medium.com/hipster-color-science/a-beginners-guide-to-colorimetry-401f1830b65a)
-
-[Hue Colors gist](https://gist.github.com/popcorn245/30afa0f98eea1c2fd34d)
+* [Tanner-Helland on color temperature](http://www.tannerhelland.com/4435/convert-temperature-rgb-algorithm-code/)
+* [Waveform lighting on CCT](https://www.waveformlighting.com/tech/calculate-color-temperature-cct-from-cie-1931-xy-coordinates)
+ * [A beginner's guide to CIE Colorimetry](https://medium.com/hipster-color-science/a-beginners-guide-to-colorimetry-401f1830b65a)
+* [Hue Colors gist](https://gist.github.com/popcorn245/30afa0f98eea1c2fd34d)
 
 When you're fading light, then, you need to consider which color model will make for the best fade. Do you want the hue to stay consistent as the light dims? Do you want the light to get cooler or warmer as it changes? Or do you have another fade pattern in mind?
 
@@ -55,7 +52,8 @@ Now imagine you're writing a program to fade your LEDs. What would the  fade fro
 
  You could rearrange things to that you're fading all three colors at the same time:
 
- ````// loop over all the pixels:
+ ````
+ // loop over all the pixels:
   for (int pixel = 0; pixel < pixelCount; pixel++) {
     // set the color for each pixel:
     strip.setPixelColor(pixel, color, color, color);
@@ -76,7 +74,12 @@ This works pretty well for white, but when you try it for an arbitrary set of th
 
 This is where a [Hue, Saturation, Brightness (or Lightness)](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html#color-models-and-color-spaces-JDQ1fRD) model becomes useful. In the HSL model, hue is positioned on a color cylinder, with red at the top (0 degrees), green at 120 degrees, and blue at 240 degrees. Saturation is the radius of the cylinder, and lightness is the depth of the cylinder. Here's an [interactive visualization](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html#hsl-cylinder) from Rune Madsen's book _Programming Design Systems_. The advantage of this model is that it allows you to change lightness or saturation without changing the hue. It becomes much simpler to create a[ flickering candle](https://github.com/tigoe/LightProjects/tree/master/APA102x/APA102xCandle) that changes from red to yellow through orange, for example. 
 
+![CIE 1931 reference diagram, from Wikimedia](https://upload.wikimedia.org/wikipedia/commons/5/5f/CIE-1931_diagram_in_LAB_space.svg)
+
+_Figure 1. the CIE 1931 Chromaticity reference diagram. Image on Wikipedia._
 ## References
+
+Many of the references here are indebted to the International [Commission on Illumination](http://www.cie.co.at), CIE. Their [glossary](http://eilv.cie.co.at/) is a highly valuable resource for lighting enthusiasts and professionals. The rest of their website is a useful resource as well.
 
 There are many different color models, and which one you use depends on the context in which you're talking about color. For a great discussion of [color theory](https://programmingdesignsystems.com/color/a-short-history-of-color-theory/index.html) and [color models and spaces](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html), see Rune Madsen's online book _[Programming Design Systems](https://programmingdesignsystems.com)_. 
 
@@ -85,3 +88,7 @@ For a partial glossary ofthe physical properties of light, see the [lighting ter
 For a great set of principles of light to consider in lighting design -— illuminance, luminance, color and temperature, height, density, and direction and distribution —- see _[Architectural Lighting: Designing With Light And Space (Architecture Briefs))](https://books.google.com/books/about/Architectural_Lighting.html?id=3QJlJPIX8-sC)_ by Herve Descottes with Ceclia E. Ramos.
 
 For more details on the conversion from RGB and RGBW to HSI, see Saiko LED's [Why Every LED Light Should Be Using HSI](https://blog.saikoled.com/post/43693602826/why-every-led-light-should-be-using-hsi) blog post, along with [How to Convert From HSI to RGB-White](https://blog.saikoled.com/post/44677718712/how-to-convert-from-hsi-to-rgb-white). These are engineering-heavy, but informative. Their explanation is the basis of my [ColorConverter library](https://github.com/tigoe/ColorConverter).
+
+[ETC Lighting](http://etcconnect.com/) works hard at increasing the quality of color rendering in their stage lighting fixtures. Here's a nice [description of how they do it in their ColorSource fixtures](https://www.etcconnect.com/Products/Lighting-Fixtures/ColorSource-Spot/Deep-Blue.aspx), and here's a [white paper on color mixing with LEDs](file:///C:/Users/tomig/Downloads/Selador_white_paper_US.pdf) that forms the basis of their work. 
+
+[Lumenetix](http://lumenetix.com/) and [Ketra](https://www.ketra.com/) are architectural lighting manufacturers who work toward similarly high standards in architecture as ETC in the stage lighting area. Here's a nice explanation of Ketra's approach to [warm dimming](https://www.ketra.com/why-ketra/warm-dimming-led-lighting). 

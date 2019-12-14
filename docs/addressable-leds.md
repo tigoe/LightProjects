@@ -9,9 +9,7 @@ Although the notes here refer mainly to addressable RGB LEDs,  You can also find
 
 ## Addressable LED Libraries
 
-There are a few Arduino-compatible libraries for both types of LEDs. Adafruit's [NeoPixel library](https://github.com/adafruit/Adafruit_NeoPixel) works for the WS281x LEDs and their [DotStar library](https://github.com/adafruit/Adafruit_DotStar) works for the APA102C LEDs. The [FastLED library](http://fastled.io/) works for both. The examples in this repository rely mainly on the NeoPixel and DotStar libraries. While the FastLED library offers some additional features, the Adafruit libraries tend to be simpler to understand and use. Their APIs are clearer. Contrary to others' reports, I haven't found a significant speed difference between the Adafruit libraries and the FastLED library.
-
-**TODO: mention Tim's C libraries**
+There are a few Arduino-compatible libraries for both types of LEDs. Adafruit's [NeoPixel library](https://github.com/adafruit/Adafruit_NeoPixel) works for the WS281x LEDs and their [DotStar library](https://github.com/adafruit/Adafruit_DotStar) works for the APA102C LEDs. The [FastLED library](http://fastled.io/) works for both. The examples in this repository rely mainly on the NeoPixel and DotStar libraries. While the FastLED library offers some additional features, the Adafruit libraries tend to be simpler to understand and use. Their APIs are clearer. Contrary to others' reports, I haven't found a significant speed difference between the Adafruit libraries and the FastLED library. There is  a [C library for 8-bit AVR microcontrollers](https://github.com/cpldcpu/light_ws2812) on Tim's Blog as well.
 
 ## WorldSemi Addressable LEDs
 
