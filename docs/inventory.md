@@ -2,7 +2,7 @@
 
 This is a list of parts used in building this repository, and a few more that might be useful.
 
-## Programmable LEDs (WS2812b, SK6812, APA102C or equivalent):
+## Programmable LEDs (WS2182b, SK6812, APA102C or equivalent):
 * [WS281x modules](http://www.ledlightinghut.com/8-sk6812-rgbw-5050-digital-led-ring.html) - There are many variations on this
 * [ SK6812 RGBW Digital Addressable LED Strip, 60LEDs/m, 5VDC](http://www.ledlightinghut.com/sk6812-4-in-1-rgbw-led-strip.html) - These typically come in 60 LEDs/m or 144 LEDs/m
 * [Programmable LED strips, WWA, 60 LEDs (or greater) per meter, 5V or 12V](http://www.ledlightinghut.com/144led-sk6812-wwa-led-strip.html)
