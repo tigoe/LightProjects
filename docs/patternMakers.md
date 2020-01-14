@@ -1,0 +1,11 @@
+# Pattern Making With Code
+
+For many lighting projects, you need to generate patterns. Two common uses for this would be to make lampshade or diffuser patterns. These can often be cut on  aser cutters or vinyl cutters, mills or other CNC machines. To cut a pattern on one of these, you'll likely need your pattern in a vector file. Most laser cutters will take an SVG file (scalable vector graphics), for example, and many vinyl cutters will take a DXF file (AutoCAD Drawing Interchange Format). 
+
+ One way to do this is to generate your pattern in software using a graphics-friendly programming environment like [Processing](https://processing.org/) or [p5.js](https://p5js.org/), then output the pattern to an SVG or DXF file. The challenge is finding a graphics-friendly environment that can generate vector graphics.
+
+ Processing has two good libraries, one for [generating SVGs](https://processing.org/reference/libraries/svg/index.html) and one for [generating DXF](https://processing.org/reference/libraries/dxf/index.html) files. Here's [an example](https://tigoe.github.io/LightProjects/PatternMakers/ProcessingVectorExport) of how to generate either file format from a very simple pattern. This Processing sketch will generate a new random pattern every two seconds, because the frameRate is set to 0.5. Here's a [slightly more complex example](https://tigoe.github.io/LightProjects/PatternMakers/ProcessingCirclesVectorExport) that uses a circle packing algorithm to generate 500 circles every time you press the S or D key, and saves the pattern as SVG or DXF. 
+
+ p5.js doesn't have a DXF library, and the most current [SVG library for it](https://github.com/zenozeng/p5.js-svg) is not optimal; it supposedly only works with p5.js 0.4.13 and earlier, and it tends to generate SVG files that some vector programs struggle to open. Here's a version of the [circle packing sketch done in p5.js](https://tigoe.github.io/LightProjects/PatternMakers/p5CircleMaker). Note that this seems to work with Processing 0.10.2. However, because p5.js is based on Processing, their APIs are similar enough that it's relatively easy to convert a pattern-making program from p5.js to Processing. 
+ 
+ Rune Madsen's [rune.js](https://runemadsen.github.io/rune.js/) is a pretty good tool for generating SVGs, and can be combined with p5.js as well. 

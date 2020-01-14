@@ -69,3 +69,7 @@ The examples below use the ColorConverter library to control a WWA strip by calc
 Examples:
 * [WS281x_Mixer](https://github.com/tigoe/LightProjects/tree/master/WS281x/WS281x_Mixer)
 * [WS281x_AdvancedMixer](https://github.com/tigoe/LightProjects/tree/master/WS281x/WS281x_AdvancedMixer)
+
+### Pattern Making in Code
+
+Sometimes you need to make patterns for lighting fixtures. Here are [some examples](patternMakers.md). 
