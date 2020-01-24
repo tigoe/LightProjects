@@ -67,8 +67,8 @@ Examples:
 
 The examples below use the ColorConverter library to control a WWA strip by calculating relative mix of warm, cool, and amber as hue. Intensity can then be controlled independently of color temperature. 
 Examples:
-* [WS281x_Mixer](https://github.com/tigoe/LightProjects/tree/master/WS281x/WS281x_Mixer)
-* [WS281x_AdvancedMixer](https://github.com/tigoe/LightProjects/tree/master/WS281x/WS281x_AdvancedMixer)
+* [WS281x_Mixer](https://github.com/tigoe/LightProjects/tree/master/WS281x/WWA_WS281x_Mixer)
+* [WS281x_AdvancedMixer](https://github.com/tigoe/LightProjects/tree/master/WS281x/WWA_WS281x_AdvancedMixer)
 
 ### Pattern Making in Code
 
