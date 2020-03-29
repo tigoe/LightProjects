@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="794px" height="795px" viewBox="0 0 794 795" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>rotary-dialer</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="61.3411667%" y1="37.0275315%" x2="61.3411667%" y2="137.020865%" id="linearGradient-1">
+            <stop stop-color="#E7E7E7" offset="0%"></stop>
+            <stop stop-color="#4C564D" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sergeybe-Rotary-Dialer" transform="translate(1.000000, 1.000000)" fill-rule="nonzero">
+            <path d="M792.003,396.02 C792.003,614.730345 614.690586,792.02 396.003,792.02 C177.292655,792.02 0.003,614.730345 0.003,396.02 C0.003,177.309655 177.292655,0.02 396.003,0.02 C614.690586,0.02 792.003,177.309655 792.003,396.02 Z" id="path7666-copy" stroke-opacity="0.5" stroke="#000000" stroke-width="2" fill="#343434"></path>
+            <path d="M696.003,396.02 C696.013,561.71 561.693,696.04 396.003,696.04 C230.313,696.04 95.993,561.71 96.003,396.02 C95.991,230.33 230.313,96 396.003,96 C561.693,96 696.013,230.33 696.003,396.02 Z" id="path7662" stroke="#000000" stroke-width="8" fill="#000000"></path>
+            <path d="M696.003,396.02 C696.013,561.71 561.693,696.04 396.003,696.04 C230.313,696.04 95.993,561.71 96.003,396.02 C95.991,230.33 230.313,96 396.003,96 C561.693,96 696.013,230.33 696.003,396.02 Z" id="path7664" stroke="url(#linearGradient-1)" stroke-width="8" fill-opacity="0.5" fill="#7F7F7F"></path>
+            <path d="M570.003,396.02 C570.003,492.12 492.093,570.02 396.003,570.02 C299.903,570.02 222.003,492.12 222.003,396.02 C222.003,299.92 299.903,222.02 396.003,222.02 C492.093,222.02 570.003,299.92 570.003,396.02 Z" id="path7666" stroke-opacity="0.5" stroke="#000000" stroke-width="2" fill-opacity="0.5" fill="#7F7F7F"></path>
+            <path d="M449,633 C449,662.27 425.27,686 396,686 C366.73,686 343,662.27 343,633 C343,603.73 366.73,580 396,580 C425.27,580 449,603.73 449,633 Z" id="path7668" stroke-opacity="0.5" stroke="#000000" stroke-width="2" fill-opacity="0.5" fill="#000000"></path>
+            <path d="M338,605 C338,634.27 314.27,658 285,658 C255.73,658 232,634.27 232,605 C232,575.73 255.73,552 285,552 C314.27,552 338,575.73 338,605 Z" id="path7672" stroke-opacity="0.5" stroke="#000000" stroke-width="2" fill-opacity="0.5" fill="#000000"></path>
+            <path d="M253,529 C253,558.27 229.27,582 200,582 C170.72,582 147,558.27 147,529 C147,499.73 170.72,476 200,476 C229.27,476 253,499.73 253,529 Z" id="path7676" stroke-opacity="0.5" stroke="#000000" stroke-width="2" fill-opacity="0.5" fill="#000000"></path>
+            <path d="M213.004,421 C213.004,450.28 189.274,474.01 160.004,474.01 C130.724,474.01 106.996,450.28 107,421 C106.996,391.73 130.724,368 160.004,368 C189.274,368 213.004,391.73 213.004,421 Z" id="path7680" stroke-opacity="0.5" stroke="#000000" stroke-width="2" fill-opacity="0.5" fill="#000000"></path>
+            <path d="M228.995004,307.01 C229.005001,336.28 205.275001,360.02 175.995001,360.02 C146.725001,360.02 122.994001,336.28 123,307.01 C122.994001,277.73 146.725001,254 175.995001,254 C205.275001,254 229.005001,277.73 228.995004,307.01 Z" id="path7684" stroke-opacity="0.5" stroke="#000000" stroke-width="2" fill-opacity="0.5" fill="#000000"></path>
+            <path d="M297,214 C297,243.27 273.27,267 244,267 C214.73,267 191,243.27 191,214 C191,184.73 214.73,161 244,161 C273.27,161 297,184.73 297,214 Z" id="path7688" stroke-opacity="0.5" stroke="#000000" stroke-width="2" fill-opacity="0.5" fill="#000000"></path>
+            <path d="M400,164 C400,193.27 376.27,217 347,217 C317.73,217 294,193.27 294,164 C294,134.73 317.73,111 347,111 C376.27,111 400,134.73 400,164 Z" id="path7692" stroke-opacity="0.5" stroke="#000000" stroke-width="2" fill-opacity="0.5" fill="#000000"></path>
+            <path d="M514,168 C514,197.27 490.27,221 461,221 C431.73,221 408,197.27 408,168 C408,138.73 431.73,115 461,115 C490.27,115 514,138.73 514,168 Z" id="path7696" stroke-opacity="0.5" stroke="#000000" stroke-width="2" fill-opacity="0.5" fill="#000000"></path>
+            <path d="M614,226 C614,255.27 590.27,279 561,279 C531.73,279 508,255.27 508,226 C508,196.73 531.73,173 561,173 C590.27,173 614,196.73 614,226 Z" id="path7700" stroke-opacity="0.5" stroke="#000000" stroke-width="2" fill-opacity="0.5" fill="#000000"></path>
+            <path d="M674,323 C674,352.28 650.27,376 621,376 C591.73,376 568,352.28 568,323 C568,293.73 591.73,270 621,270 C650.27,270 674,293.73 674,323 Z" id="path7704" stroke-opacity="0.5" stroke="#000000" stroke-width="2" fill-opacity="0.5" fill="#000000"></path>
+        </g>
+        <text id="1" font-family="Helvetica" font-size="72" font-weight="normal" fill="#FFFFFF">
+            <tspan x="694.478516" y="292">1</tspan>
+        </text>
+        <text id="2" font-family="Helvetica" font-size="72" font-weight="normal" fill="#FFFFFF">
+            <tspan x="614.478516" y="174">2</tspan>
+        </text>
+        <text id="3" font-family="Helvetica" font-size="72" font-weight="normal" fill="#FFFFFF">
+            <tspan x="478.478516" y="98">3</tspan>
+        </text>
+        <text id="4" font-family="Helvetica" font-size="72" font-weight="normal" fill="#FFFFFF">
+            <tspan x="307.478516" y="88">4</tspan>
+        </text>
+        <text id="5" font-family="Helvetica" font-size="72" font-weight="normal" fill="#FFFFFF">
+            <tspan x="160.478516" y="157">5</tspan>
+        </text>
+        <text id="6" font-family="Helvetica" font-size="72" font-weight="normal" fill="#FFFFFF">
+            <tspan x="62.4785156" y="292">6</tspan>
+        </text>
+        <text id="7" font-family="Helvetica" font-size="72" font-weight="normal" fill="#FFFFFF">
+            <tspan x="41.4785156" y="461">7</tspan>
+        </text>
+        <text id="8" font-family="Helvetica" font-size="72" font-weight="normal" fill="#FFFFFF">
+            <tspan x="98.4785156" y="615">8</tspan>
+        </text>
+        <text id="9" font-family="Helvetica" font-size="72" font-weight="normal" fill="#FFFFFF">
+            <tspan x="213.478516" y="723">9</tspan>
+        </text>
+        <text id="0" font-family="Helvetica" font-size="72" font-weight="normal" fill="#FFFFFF">
+            <tspan x="370.478516" y="766">0</tspan>
+        </text>
+        <polygon id="Triangle" stroke="#979797" fill="#D8D8D8" transform="translate(397.500000, 634.000000) rotate(-180.000000) translate(-397.500000, -634.000000) " points="397.5 610 405.439574 633.096943 414 658 381 658"></polygon>
+        <polygon id="Triangle-Copy" stroke="#979797" fill="#D8D8D8" transform="translate(285.500000, 606.000000) rotate(-149.000000) translate(-285.500000, -606.000000) " points="285.5 582 293.439574 605.096943 302 630 269 630"></polygon>
+        <polygon id="Triangle-Copy-2" stroke="#979797" fill="#D8D8D8" transform="translate(200.500000, 530.000000) rotate(-124.000000) translate(-200.500000, -530.000000) " points="200.5 506 208.439574 529.096943 217 554 184 554"></polygon>
+        <polygon id="Triangle-Copy-3" stroke="#979797" fill="#D8D8D8" transform="translate(161.500000, 422.000000) rotate(-93.000000) translate(-161.500000, -422.000000) " points="161.5 398 169.439574 421.096943 178 446 145 446"></polygon>
+        <polygon id="Triangle-Copy-4" stroke="#979797" fill="#D8D8D8" transform="translate(177.500000, 308.000000) rotate(-63.000000) translate(-177.500000, -308.000000) " points="177.5 284 185.439574 307.096943 194 332 161 332"></polygon>
+        <polygon id="Triangle-Copy-5" stroke="#979797" fill="#D8D8D8" transform="translate(244.500000, 215.000000) rotate(-45.000000) translate(-244.500000, -215.000000) " points="244.5 191 252.439574 214.096943 261 239 228 239"></polygon>
+        <polygon id="Triangle-Copy-6" stroke="#979797" fill="#D8D8D8" transform="translate(347.500000, 165.000000) rotate(-15.000000) translate(-347.500000, -165.000000) " points="347.5 141 355.439574 164.096943 364 189 331 189"></polygon>
+        <polygon id="Triangle-Copy-7" stroke="#979797" fill="#D8D8D8" transform="translate(462.500000, 169.000000) rotate(-345.000000) translate(-462.500000, -169.000000) " points="462.5 145 470.439574 168.096943 479 193 446 193"></polygon>
+        <polygon id="Triangle-Copy-8" stroke="#979797" fill="#D8D8D8" transform="translate(561.500000, 227.000000) rotate(-315.000000) translate(-561.500000, -227.000000) " points="561.5 203 569.439574 226.096943 578 251 545 251"></polygon>
+        <polygon id="Triangle-Copy-9" stroke="#979797" fill="#D8D8D8" transform="translate(622.500000, 324.000000) rotate(-300.000000) translate(-622.500000, -324.000000) " points="622.5 300 630.439574 323.096943 639 348 606 348"></polygon>
+    </g>
+</svg>
