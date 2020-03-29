@@ -22,13 +22,13 @@ After looking for other dimmers, I decided the next best thing to do was to see 
 
 ## Reading the Rotary Phone
 
-With the dimmer in place, it was time to visit [Nate's tutorial](https://www.sparkfun.com/tutorials/51). Sure enough, it was pretty easy to convert to modern Arduino code. The harder part was deciphering the wires of my phone. Mine is not a standard AT&T phone, so the wiring isn't the same. But again, Nate's tutorial was helpful there too. The dial worked just like his. Figure 3 shows the switches at the back of the dial. A little time with a multimeter, and I had the wiring worked out. Figures 4 and 5 show the two terminal blocks inside the phone where all the wires go to. One is on the side of the phone and the other is in the front, under the dial. 
+With the dimmer in place, it was time to visit [Nate's tutorial](https://www.sparkfun.com/tutorials/51). Sure enough, it was pretty easy to convert to modern Arduino code. The harder part was deciphering the wires of my phone. Mine is not a standard AT&T phone, so the wiring isn't the same. But again, Nate's tutorial was helpful there too. The dial worked just like his. Figure 3 shows the switches at the back of the dial. A little time with a multimeter, and I had the wiring worked out. 
 
 ![Figure 3. Rotary telephone dial from behind](img/rotary-dial-back.jpg)
 
 _Figure 3. Rotary telephone dial from behind. There are basically two switches, one that switches at the beginning and end of dialing, and another that switches once for each number._ 
 
-The relevant terminals were as follows:
+Figures 4 and 5 show the two terminal blocks inside the phone where all the wires go to. One is on the side of the phone and the other is in the front, under the dial. The relevant terminals were as follows:
 
 * Front terminal block, terminal 5: cradle hook terminal
 * Front 6: end rotary terminal
