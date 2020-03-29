@@ -6,7 +6,7 @@ We have a Sputnik chandelier above our dining table that's my wife's favorite (F
 
 _Figure 1. The Sputnik chandelier_ 
 
-![Figure 2. Rotary telephone](img/rotary-phone.jpg)
+![Figure 2. Rotary telephone](img/rotary_phone.jpg)
 
 _Figure 2. The rotary phone_ 
 
