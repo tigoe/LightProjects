@@ -2,11 +2,11 @@
 
 We have a Sputnik chandelier above our dining table that's my wife's favorite (Figure 1). A year or so ago, she came home with a rotary  wall phone and said, "Can you make this into a dimmer for the Sputnik?" Seemed like a good challenge, so we took it on.
 
-![Figure 1. Sputnik chandelier](https://github.com/tigoe/LightProjects/blob/master/docs/img/rotary-dimmer/sputnik.jpg?raw=true)
+![Figure 1. Sputnik chandelier](img/rotary-dimmer/sputnik.jpg)
 
 _Figure 1. The Sputnik chandelier_ 
 
-![Figure 2. Rotary telephone](https://github.com/tigoe/LightProjects/blob/master/docs/img/rotary-dimmer/rotary-phone.jpg?raw=true)
+![Figure 2. Rotary telephone](https://raw.githubusercontent.com/tigoe/LightProjects/blob/master/docs/img/rotary-dimmer/rotary-phone.jpg)
 
 _Figure 2. The rotary phone_ 
 
