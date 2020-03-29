@@ -6,7 +6,7 @@ We have a Sputnik chandelier above our dining table that's my wife's favorite (F
 
 _Figure 1. The Sputnik chandelier_ 
 
-![Figure 2. Rotary telephone](img/rotary-dimmer/rotary-phone.jpg)
+![Figure 2. Rotary telephone](img/rotarydimmer/rotary-phone.jpg)
 
 _Figure 2. The rotary phone_ 
 
@@ -24,7 +24,7 @@ After looking for other dimmers, I decided the next best thing to do was to see 
 
 With the dimmer in place, it was time to visit [Nate's tutorial](https://www.sparkfun.com/tutorials/51). Sure enough, it was pretty easy to convert to modern Arduino code. The harder part was deciphering the wires of my phone. Mine is not a standard AT&T phone, so the wiring isn't the same. But again, Nate's tutorial was helpful there too. The dial worked just like his. Figure 3 shows a video of it in action. A little time with a multimeter, and I had the wiring worked out. Figures 4 and 5 show the two terminal blocks inside the phone where all the wires go to. One is on the side of the phone and the other is in the front, under the dial. 
 
-![Figure 3. Rotary telephone dial from behind, in motion](img/rotary-dimmer/dial-movement-sm.mp4)
+![Figure 3. Rotary telephone dial from behind, in motion](img/rotarydimmer/dial-movement-sm.mp4)
 
 _Figure 3. Video of rotary telephone dial from behind, in motion. There are basically two switches, one that switches at the beginning and end of dialing, and another that switches once for each number._ 
 
@@ -35,11 +35,11 @@ The relevant terminals were as follows:
 * Side terminal block, terminal 5: ground terminal
 * Side 8: rotary terminal
 
-![Figure 4. Side terminal block in the rotary phone](img/rotary-dimmer/side-terminal-block.jpg)
+![Figure 4. Side terminal block in the rotary phone](img/rotarydimmer/side-terminal-block.jpg)
 
 _Figure 4. Side terminal block in the rotary phone._ 
 
-![Figure 5. Front terminal block in the rotary phone](img/rotary-dimmer/front-terminal-block.jpg)
+![Figure 5. Front terminal block in the rotary phone](img/rotarydimmer/front-terminal-block.jpg)
 
 _Figure 5. Front terminal block in the rotary phone._ 
 
@@ -47,7 +47,7 @@ _Figure 5. Front terminal block in the rotary phone._
 
 The circuit for this project is quite simple. The rotary phone's dial, end rotary dial, and on/off hook terminals go to three of the Arduino's interrupt pins (pins 2, 3, and 9, since I am using a Nano 33 IoT). The phone's  speaker terminal goes to pin A0 through a 10-kilohm resistor for generating tones, and the phone's ground terminal goes to the Nano's ground. 
 
-![Figure 6. Breadboard view of the Arduino Nano 33 IoT wired to the rotary phone dialer](img/rotary-dimmer/nano-rotary-phone_bb.png)
+![Figure 6. Breadboard view of the Arduino Nano 33 IoT wired to the rotary phone dialer](img/rotarydimmer/nano-rotary-phone_bb.png)
 
 _Figure 6. Breadboard view of the Arduino Nano 33 IoT wired to the rotary phone dialer._ 
 
