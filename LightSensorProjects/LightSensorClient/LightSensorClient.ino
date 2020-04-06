@@ -2,7 +2,8 @@
   Networked datalogging light sensor client
 
   Connects to a server using HTTPS and uploads data.
-  Follows the API of Don Coleman's mySQL server for Connected Devices course:
+  Follows the API of Mathura Govindarajan and Don Coleman's 
+  mySQL server for Connected Devices course:
   https://github.com/don/itp-connected-devices
   Works with MKR1010, MKR1000, ESP8266.
 
