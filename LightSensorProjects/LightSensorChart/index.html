@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Light Level Plot</title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src='chart.js'></script>
+  </head>
+
+  <body>
+      <div>
+         <div>Server url: <input id="url"></input></div>
+          <div>MAC addr: <input id="macAddr" ></input></div>
+          <div>Session Key: <input type="password" id="sessKey" ></input></div>
+          <input type="submit" onClick="getChartData()">
+          <div id='chart_div' style='width: 100%; height: 800px'></div>
+      </div>
+<!-- remove this line if you don't want to auto-load the credentials -->
+      <script src='credentials.js'></script>
+  </body>
+</html>
