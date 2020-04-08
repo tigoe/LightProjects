@@ -4,5 +4,6 @@ This project shows how to log data from a light sensor on a newtorked server. Th
 
 The sensor is a [TCS34725 color sensor](https://ams.com/tcs34725) from AMS using [Adafruit's library](https://github.com/adafruit/Adafruit_TCS34725) for it. AMS has some pretty good [application notes](https://ams.com/tcs34725#tab/documents) on this sensor too.
 
+The [LightSensorChart](LightSensorChart) is based on Don's [visualizer for the connected devices class](https://github.com/don/itp-conndev) as well.
 
 The sensor sends data to a server every five minutes. 

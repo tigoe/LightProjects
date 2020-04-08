@@ -70,6 +70,20 @@ Examples:
 * [WS281x_Mixer](https://github.com/tigoe/LightProjects/tree/master/WS281x/WWA_WS281x_Mixer)
 * [WS281x_AdvancedMixer](https://github.com/tigoe/LightProjects/tree/master/WS281x/WWA_WS281x_AdvancedMixer)
 
+### Lighting Control Systems
+
+* [Philips Hue repository](https://github.com/tigoe/hue-control)
+* [DMX-512 and streaming ACN respository](https://tigoe.github.io/DMX-Examples/)
+
+### Light Sensing
+
+* [Sensor Datalogging](https://github.com/tigoe/LightProjects/tree/master/LightSensorProjects/)
+* [Arduino Light Sensor Examples](https://github.com/tigoe/SensorExamples/tree/master/LightSensors)
+
 ### Pattern Making in Code
 
 Sometimes you need to make patterns for lighting fixtures. Here are [some examples](patternMakers.md). 
+
+### Projects
+
+[Rotary telephone dimmer for Philips Hue systems](telephone-dimmer.md)
