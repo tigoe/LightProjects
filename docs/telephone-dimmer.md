@@ -31,9 +31,9 @@ _Figure 3. Rotary telephone dial from behind. There are basically two switches, 
 Figures 4 and 5 show the two terminal blocks inside the phone where all the wires go to. One is on the side of the phone and the other is in the front, under the dial. The relevant terminals were as follows:
 
 * Front terminal block, terminal 5: cradle hook terminal
-* Front 6: end rotary terminal
+* Front block terminal 6: end rotary terminal
 * Side terminal block, terminal 5: ground terminal
-* Side 8: rotary terminal
+* Side block terminal 8: rotary terminal
 
 ![Figure 4. Side terminal block in the rotary phone](img/side-terminal-block.jpg)
 
@@ -45,11 +45,19 @@ _Figure 5. Front terminal block in the rotary phone._
 
 ## Circuit
 
-The circuit for this project is quite simple. The rotary phone's dial, end rotary dial, and on/off hook terminals go to three of the Arduino's interrupt pins (pins 2, 3, and 9, since I am using a Nano 33 IoT). The phone's  speaker terminal goes to pin A0 through a 10-kilohm resistor for generating tones, and the phone's ground terminal goes to the Nano's ground. 
+The circuit for this project is quite simple. The rotary phone's dial, end rotary dial, and on/off hook terminals go to three of the Arduino's interrupt pins (pins 0, 1, and 4, since I am using a MKR1000). The phone's  speaker terminal goes to pin 5 for generating tones, and the phone's ground terminal goes to the MKR1000's ground. 
 
-![Figure 6. Breadboard view of the Arduino Nano 33 IoT wired to the rotary phone dialer](img/nano-rotary-phone_bb.png)
+![Figure 6. Breadboard view of the MKR1000 wired to the rotary phone dialer](img/mkr1000-rotary-phone_bb.png)
 
-_Figure 6. Breadboard view of the Arduino Nano 33 IoT wired to the rotary phone dialer._ 
+_Figure 6. Breadboard view of the MKR1000 wired to the rotary phone dialer._ 
+
+To connect the wires, I soldered screw terminals to the appropriate pins. This made it easier to test, remove, and re-mount the board. 
+
+![Figure 7. MKR1000 mounted inside the phone](img/mkr1000-inside-phone.jpg)
+
+_Figure 7. The MKR1000 mounted inside the phone on standoffs. It's powered by the 8000ma Li-Poly battery beneath it._ 
+
+Figure 7 shows the board  mounted in the phone using standoffs, and powered using an 8000mA Li-Poly battery. I mounted a USB charging cable to the MKR1000 permanently so that I can charge the phone when needed. I used the WiFi101 library's  `maxLowPowerMode()` to ensure the radio goes to sleep when not in use, and the ArduinoLowPower library to put the main processor to sleep, waking it whenever the phone is picked up. With those two features, I tested and got about three to four days of battery life with hourly use of the phone. 
 
 ## User Interaction
 
@@ -62,6 +70,12 @@ With the wiring worked out, I started outlining a sketch for the WiFi boards. Si
 I decided to put the processor to sleep when not in action because I didn't want to run in-wall power. With a decent phone charger, I could run the processor in sleep mode for a long time. But when the participant picks up, the processor will need time to re-connect to the network. How should I indicate that? The obvious answer was: dialtone means you have a network. No dialtone means you don't. 
 
 After looking into generating DTMF tones from an Arduino, I decided I didn't want to add the extra circuitry to generate the tones. All the examples I looked at were too hardware-specific to the Uno, and required 8 pins to work, so I faked it by generating the tones with the `tone()` command.  It doesn't sound quite right, but it's good enough.
+
+We mounted the phone next to the dining table for easy access to the chandelier and the table, as shown in Figure 8. You can see it in action in [this video](https://vimeo.com/422012468). 
+
+![Figure 8. Rotary phone mounted near the dining table.](img/rotary-phone-mounted.jpg)
+
+_Figure 8. Rotary phone mounted near the dining table._ 
 
 ## The Code
 
