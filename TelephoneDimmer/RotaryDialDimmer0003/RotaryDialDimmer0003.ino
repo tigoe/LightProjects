@@ -14,8 +14,8 @@
 */
 
 #include <SPI.h>
-//#include <WiFi101.h>      // use this for the MKR1000 and WINC150x boards
-#include <WiFiNINA.h>       // use this for MKR1010 and Nano 33 IoT
+#include <WiFi101.h>      // use this for the MKR1000 and WINC150x boards
+//#include <WiFiNINA.h>       // use this for MKR1010 and Nano 33 IoT
 #include <ArduinoHttpClient.h>
 #include <Arduino_JSON.h>
 #include <ArduinoLowPower.h>    // note: works only on SAMD boards
@@ -28,16 +28,16 @@ HttpClient httpClient = HttpClient(wifi, SECRET_HUE_IP);
 
 // inputs for the rotary phone. All are interrupts, change
 // depending on the interrupt pins on your board:
-const int rotaryPin = 2;
-const int endRotaryPin = 3;
-const int hookPin = 9;
+const int rotaryPin = 0;
+const int endRotaryPin = 1;
+const int hookPin = 4;
+const int tonePin = 5;
 
 // status variables for the rotary phone:
 volatile bool dialing = false;  // if dial is out of resting position
 volatile int dialCount = 0;     // number dialed
 bool hungUp = true;             // whether handset is on hook
 const int debounceDelay = 12;   // 12 ms debounce for digital inputs
-bool lastHookState = false;
 
 // variables for RTC, for processor sleep functionality:
 RTCZero rtc;
@@ -54,6 +54,9 @@ void setup() {
 
   // built in LED indicates network status:
   pinMode(LED_BUILTIN, OUTPUT);
+
+  // set WiFi radio into max low power mode:
+  WiFi.maxLowPowerMode();
 
   // attach interrupts for phone inputs:
   attachInterrupt(digitalPinToInterrupt(rotaryPin), count, FALLING);
@@ -73,7 +76,7 @@ void loop() {
   delay(debounceDelay);
   if (hungUp) {
     // turn off dialtone:
-    noTone(A0);
+    noTone(tonePin);
     // set a timer until sleep (now + 1 minute)
     // if it's not already set:
     if (timeToSleep < 0) {
@@ -150,30 +153,60 @@ void sendRequest(int light, JSONVar thisState) {
   if (Serial) Serial.println(hueCmd);
 
   // make the PUT request to the hub:
+  httpClient.beginRequest();
   httpClient.put(request, contentType, hueCmd);
+  httpClient.sendHeader("Connection", "close");
+  httpClient.endRequest();
 
-  // you don't need to read the responses, these are here
-  // for debugging purposes only. Once things are working
-  // you can comment this section out to speed things up:
+  long req = millis();
 
-  // read the status code and body of the response
-  int statusCode = httpClient.responseStatusCode();
-  String response = httpClient.responseBody();
-
-  if (Serial) Serial.print("Status code from server: ");
+  // see if the server returned a 200 OK
+  // the method below is faster than using the httpClient
+  // methods:
+  int statusCode = -1;
+  bool success = false;
+  // while client is connected,
+  while (httpClient.connected()) {
+    // if there's any incoming data:
+    if (httpClient.available()) {
+      // look for HTTP/1.1 :
+      if (httpClient.findUntil("HTTP/1.1", " ")) {
+        // the status code follows that:
+        statusCode = httpClient.parseInt();
+        // if it's 200, look for the "success" in the body:
+        if (statusCode == 200) {
+          if (httpClient.find("success")) {
+            success = true;
+          }
+        }
+      }
+    }
+  }
   if (Serial) Serial.println(statusCode);
-  if (Serial) Serial.print("Server response: ");
-  if (Serial) Serial.println(response);
-  if (Serial) Serial.println();
+
+  if (statusCode == 200 && success) {
+    // beep to indicate success
+    tone(tonePin, 440, 100);
+    delay(100);
+    noTone(tonePin);
+  }
+  if (statusCode < 0) {
+    // beep twice to indicate failure:
+    tone(tonePin, 300, 100);
+    delay(120);
+    tone(tonePin, 300, 100);
+    delay(120);
+    noTone(tonePin);
+  }
 }
 
 void connectToWiFi() {
   // attempt to connect to Wifi network:
   while ( WiFi.status() != WL_CONNECTED) {
     // beep the line to indicate you're trying:
-    tone(A0, 440, 100);
+    tone(tonePin, 440, 100);
     delay(30);
-    tone(A0, 350, 100);
+    tone(tonePin, 350, 100);
     delay(30);
     if (Serial) Serial.print("Attempting to connect to WPA SSID: ");
     if (Serial) Serial.println(SECRET_SSID);
@@ -186,9 +219,9 @@ void connectToWiFi() {
   unsigned long epoch;
   do {
     // beep the line to indicate you're trying:
-    tone(A0, 440, 100);
+    tone(tonePin, 440, 100);
     delay(30);
-    tone(A0, 350, 100);
+    tone(tonePin, 350, 100);
     delay(30);
     if (Serial) Serial.println("Attempting to get network time");
     epoch = WiFi.getTime();
@@ -197,9 +230,9 @@ void connectToWiFi() {
   // set the time with the epoch value you got from the network:
   rtc.setEpoch(epoch);
   // make a dialtone:
-  tone(A0, 440);
+  tone(tonePin, 440);
   delay(30);
-  tone(A0, 350);
+  tone(tonePin, 350);
   delay(30);
 }
 
@@ -222,7 +255,7 @@ void dial() {
   // so reset it here too:
   if (dialing) {
     // turn off dialtone when dialing begins:
-    noTone(A0);
+    noTone(tonePin);
     dialCount = 0;
   }
 }
