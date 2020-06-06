@@ -53,7 +53,7 @@ function makeCircles() {
 	let thisCircle = {
 		x: random(w),
 		y: random(h),
-		d: random(10, 50);
+		d: random(10, 50)
 	};
 
 	// check to see if new circle overlaps any of the existing ones:
