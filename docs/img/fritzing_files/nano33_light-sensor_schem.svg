@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 244 237" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;">
+    <g id="line">
+    </g>
+    <g id="connector44terminal">
+    </g>
+    <g id="connector45terminal">
+    </g>
+    <g id="connector42terminal">
+    </g>
+    <g id="Artboard1" transform="matrix(1,0,0,1,-84.0929,-125.39)">
+        <rect x="84.093" y="125.39" width="243.208" height="236.124" style="fill:none;"/>
+        <g transform="matrix(1,0,0,1,-163.095,28.3179)">
+            <rect x="298.8" y="195.6" width="57.2" height="50.4" style="fill:none;stroke:black;stroke-width:1px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,153.806,243.808)">
+            <g id="label_6_">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:3.5px;">TCS34725</text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,158.381,247.308)">
+            <g id="label_7_">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:3.5px;">RGB</text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,157.991,250.808)">
+            <g id="label_8_">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:3.5px;">Color</text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,156.628,254.308)">
+            <g id="label_9_">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:3.5px;">Sensor</text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,-163.095,28.3179)">
+            <path d="M370,210L355.9,210" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,137.771,239.007)">
+            <g id="label14">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:3.5px;">LED_EN</text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,-163.095,28.3179)">
+            <path d="M370,217.2L355.9,217.2" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,137.701,246.207)">
+            <g id="label13">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:3.5px;">INT</text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,-163.095,28.3179)">
+            <path d="M298.7,210L284.3,210" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-163.095,28.3179)">
+            <path d="M298.7,217.2L284.3,217.2" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-163.095,28.3179)">
+            <path d="M327.1,181.5L327.1,195.6" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-163.095,28.3179)">
+            <path d="M319.9,181.5L319.9,195.6" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-163.095,28.3179)">
+            <path d="M327.1,246L327.1,260" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,183.162,239.405)">
+            <g id="label10_1_">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:3.5px;">SDA</text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,183.55,246.605)">
+            <g id="label9_1_">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:3.5px;">SCL</text>
+            </g>
+        </g>
+        <g transform="matrix(7.04481e-16,-1,1,7.04481e-16,165.221,231.741)">
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <g>
+                                <g>
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <g>
+                                                    <text id="label5_9_" x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:3.5px;">VIN</text>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(7.04481e-16,-1,1,7.04481e-16,158.019,233.106)">
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <g>
+                                <g>
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <g>
+                                                    <text id="label6_9_" x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:3.5px;">3.3V</text>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(7.04481e-16,-1,1,7.04481e-16,165.221,273.106)">
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <g>
+                                <g>
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <g>
+                                                    <text id="label7_9_" x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:3.5px;">GND</text>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,222.323,207.415)">
+            <g>
+                <g id="schematic_3_">
+                    <path id="connector0pin" d="M-58.3,95.6L-58.3,88.4" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+                    <path id="path4098" d="M-65,95.7L-51.6,95.7" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+                    <path id="path4100" d="M-62.8,98.5L-53.9,98.5" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+                    <path id="path4102" d="M-56.1,101.2L-60.6,101.2" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,281.154,580.045)">
+            <g>
+                <g id="schematic_4_">
+                    <path id="connector0pin_1_" d="M-11.6,-239.5L-11.6,-246.7" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+                    <path id="path4098_1_" d="M-18.3,-239.4L-4.9,-239.4" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+                    <path id="path4100_1_" d="M-16.1,-236.6L-7.2,-236.6" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+                    <path id="path4102_1_" d="M-9.4,-233.9L-13.9,-233.9" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,0.0929101,0.390148)">
+            <g transform="matrix(1,0,0,1,-270.805,27.9278)">
+                <path d="M391.9,210L370.3,210" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-163.082,27.9278)">
+                <path d="M391.9,210L370.3,210" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-163.082,35.152)">
+                <path d="M391.9,210L370.3,210" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,-292.313,28.3179)">
+            <path d="M391.9,260.4L391.9,210" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-227.513,28.3179)">
+            <path d="M327.1,260.4L391.9,260.4" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-163.095,28.3179)">
+            <circle cx="327.1" cy="260.4" r="1.4"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-163.095,28.3179)">
+            <path d="M327.1,260.4L327.1,267.6" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-163.095,28.3179)">
+            <circle cx="327.1" cy="260.4" r="1.4"/>
+        </g>
+        <g transform="matrix(1,0,0,1,0.0929101,0.390148)">
+            <g transform="matrix(1,0,0,0.455354,-163.188,126.781)">
+                <path d="M327.1,181.5L327.1,42" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(1,0,0,0.0839254,-43.7774,142.381)">
+                <path d="M327.1,181.5L327.1,42" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,0.455354,-128.094,107.746)">
+            <path d="M411.387,84.66L292.099,84.66" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,0.0929101,0.390148)">
+            <g transform="matrix(0.956213,0,0,1.01857,228.152,157.257)">
+                <g id="schematic">
+                    <rect x="14.85" y="14.85" width="56.7" height="128.7" style="fill:white;stroke:black;stroke-width:0.9px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <path id="connector45pin" d="M71.65,28.8L86.05,28.8" style="fill:none;fill-rule:nonzero;"/>
+                    <path id="connector57pin" d="M71.65,28.8L86.05,28.8" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,54.7749,29.4999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">D13/SCK</text>
+                    </g>
+                    <rect id="connector57terminal" x="86.05" y="28.45" width="0.7" height="0.7" style="fill:none;"/>
+                    <path id="connector30pin" d="M71.65,36L86.05,36" style="fill:none;fill-rule:nonzero;"/>
+                    <path id="connector55pin" d="M71.65,36L86.05,36" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,55.8519,36.6999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">D12/SDI</text>
+                    </g>
+                    <rect id="connector55terminal" x="86.05" y="35.65" width="0.7" height="0.7" style="fill:none;"/>
+                    <path id="connector29pin" d="M71.65,43.2L86.05,43.2" style="fill:none;fill-rule:nonzero;"/>
+                    <path id="connector58pin" d="M71.65,43.2L86.05,43.2" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,54.1409,43.8999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">D11/SDO</text>
+                    </g>
+                    <rect id="connector58terminal" x="86.05" y="42.85" width="0.7" height="0.7" style="fill:none;"/>
+                    <path id="connector28pin" d="M71.65,50.4L86.05,50.4" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,63.2019,51.0999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">D10</text>
+                    </g>
+                    <path id="connector27pin" d="M71.65,57.6L86.05,57.6" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,65.4149,58.2999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">D9</text>
+                    </g>
+                    <path id="connector26pin" d="M71.65,64.8L86.05,64.8" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,65.4149,65.4999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">D8</text>
+                    </g>
+                    <path id="connector25pin" d="M71.65,72L86.05,72" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,65.4149,72.6999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">D7</text>
+                    </g>
+                    <path id="connector24pin" d="M71.65,79.2L86.05,79.2" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,65.4149,79.8999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">D6</text>
+                    </g>
+                    <path id="connector23pin" d="M71.65,86.4L86.05,86.4" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,65.4149,87.0999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">D5</text>
+                    </g>
+                    <path id="connector22pin" d="M71.65,93.6L86.05,93.6" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,65.4149,94.2999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">D4</text>
+                    </g>
+                    <path id="connector21pin" d="M71.65,100.8L86.05,100.8" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,65.4149,101.5)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">D3</text>
+                    </g>
+                    <path id="connector20pin" d="M71.65,108L86.05,108" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,65.4149,108.7)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">D2</text>
+                    </g>
+                    <path id="connector16pin" d="M71.65,122.4L86.05,122.4" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,59.1759,123.1)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">D1/TX</text>
+                    </g>
+                    <path id="connector17pin" d="M71.65,129.6L86.05,129.6" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,59.1759,130.3)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">D0/RX</text>
+                    </g>
+                    <path id="connector33pin" d="M0.35,28.8L14.75,28.8" style="fill:none;fill-rule:nonzero;"/>
+                    <path id="connector18pin" d="M0.35,28.8L14.75,28.8" style="fill:none;fill-rule:nonzero;"/>
+                    <path id="connector59pin" d="M0.35,28.8L14.75,28.8" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,16.15,29.4999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">RESET</text>
+                    </g>
+                    <rect id="connector59terminal" x="-0.35" y="28.45" width="0.7" height="0.7" style="fill:none;"/>
+                    <path id="connector43pin" d="M0.35,36L14.75,36" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,16.15,36.6999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">AREF</text>
+                    </g>
+                    <path id="connector42pin" d="M0.35,50.4L14.75,50.4" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,16.15,51.0999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">A0</text>
+                    </g>
+                    <path id="connector41pin" d="M0.35,57.6L14.75,57.6" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,16.15,58.2999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">A1</text>
+                    </g>
+                    <path id="connector40pin" d="M0.35,64.8L14.75,64.8" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,16.15,65.4999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">A2</text>
+                    </g>
+                    <path id="connector39pin" d="M0.35,72L14.75,72" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,16.15,72.6999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">A3</text>
+                    </g>
+                    <path id="connector38pin" d="M0.35,79.2L14.75,79.2" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,16.15,79.8999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">A4/SDA</text>
+                    </g>
+                    <path id="connector37pin" d="M0.35,86.4L14.75,86.4" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,16.15,87.0999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">A5/SCL</text>
+                    </g>
+                    <path id="connector36pin" d="M0.35,93.6L14.75,93.6" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,16.15,94.2999)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">A6</text>
+                    </g>
+                    <path id="connector35pin" d="M0.35,100.8L14.75,100.8" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(1,0,0,1,16.15,101.5)">
+                        <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">A7</text>
+                    </g>
+                    <path id="connector19pin" d="M43.2,143.65L43.2,158.05" style="fill:none;fill-rule:nonzero;"/>
+                    <path id="connector32pin" d="M43.2,143.65L43.2,158.05" style="fill:none;fill-rule:nonzero;"/>
+                    <path id="connector60pin" d="M43.2,143.65L43.2,158.05" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(7.04481e-16,-1,1,7.04481e-16,43.8999,142.25)">
+                        <g>
+                            <g>
+                                <g>
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <g>
+                                                    <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">GND</text>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <rect id="connector60terminal" x="42.85" y="158.05" width="0.7" height="0.7" style="fill:none;"/>
+                    <path id="connector31pin" d="M28.8,0.35L28.8,14.75" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(7.04481e-16,-1,1,7.04481e-16,29.4999,22.032)">
+                        <g>
+                            <g>
+                                <g>
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <g>
+                                                    <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">VIN</text>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <path id="connector34pin" d="M43.2,0.35L43.2,14.75" style="fill:none;fill-rule:nonzero;"/>
+                    <path id="connector56pin" d="M43.2,0.35L43.2,14.75" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(7.04481e-16,-1,1,7.04481e-16,43.8999,24.597)">
+                        <g>
+                            <g>
+                                <g>
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <g>
+                                                    <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">Vusb</text>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <rect id="connector56terminal" x="42.85" y="-0.35" width="0.7" height="0.7" style="fill:none;"/>
+                    <path id="connector44pin" d="M57.6,0.35L57.6,14.75" style="fill:none;fill-rule:nonzero;stroke:rgb(120,120,120);stroke-width:0.7px;stroke-linecap:butt;stroke-linejoin:miter;"/>
+                    <g transform="matrix(7.04481e-16,-1,1,7.04481e-16,58.2999,22.865)">
+                        <g>
+                            <g>
+                                <g>
+                                    <g>
+                                        <g>
+                                            <g>
+                                                <g>
+                                                    <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:3.5px;fill:rgb(140,140,140);">3V3</text>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,35.4199,72.8498)">
+                        <g id="label">
+                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:4.25px;">Arduino</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,38.2819,77.3833)">
+                        <g id="label1" serif:id="label">
+                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:4.25px;">Nano</text>
+                        </g>
+                    </g>
+                    <g transform="matrix(1,0,0,1,37.0289,81.9167)">
+                        <g id="label2" serif:id="label">
+                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:4.25px;">33 IoT</text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g id="line1" serif:id="line" transform="matrix(1,0,0,-1,269.461,325.955)">
+                <path d="M0,7L0,-7" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1px;stroke-linejoin:miter;stroke-miterlimit:10;"/>
+            </g>
+            <g id="partLabel">
+            </g>
+        </g>
+    </g>
+</svg>
