@@ -87,3 +87,5 @@ Sometimes you need to make patterns for lighting fixtures. Here are [some exampl
 ### Projects
 
 [Rotary telephone dimmer for Philips Hue systems](telephone-dimmer.md)
+
+[Color temperature control of Philips Hue systems with light sensors](sky-lights.md)
