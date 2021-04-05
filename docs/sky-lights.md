@@ -54,5 +54,55 @@ Sensor reading:
 * Convert illuminance to a 0-254 range for the Hue
 * Convert color temperature to the [Mired scale](https://en.wikipedia.org/wiki/Mired) for the Hue
 
+## The HTTP Request
+
+The HTTP Request to the Hue hub to change a light looks like this:
+````
+http://hue.hub.address/api/hueUserName/lights/lightNumber/state
+````
+
+You need to [establish a hub user name for your device]ªhttps://github.com/tigoe/hue-control#connecting-to-your-hub first, and you need to know which light you are controlling and what properties it has. For more on that, see the [Hue developers site](https://developers.meethue.com/) or [these notes](https://github.com/tigoe/hue-control).
+
+The body of the PUT request looks like this:
+````
+  {"on": true, 
+  "bri": brightness,
+  "ct": value,
+  "transitiontime": fadeTime
+  }
+```` 
+
+* `on` is true or false
+* `bri` ranges from 0 - 254  
+* `ct` is in the mired scale, which is 1000000/degrees Kelvin. It ranges from 153 - 500
+* `transitiontime` is in increments of 100ms
+
+There are other properties, depending on the type of Hue light you are using, but these are the important ones for this project. 
+
+There are two important details to the HTTP request to the Hue hub: it has to be a PUT request, and the `Content-Type` has to be `application/json`. To make this easy, my sketch takes the sensor readings and puts them in a JSON object like so:
+
+````
+ body["bri"] = bri;
+  body["on"] = true;
+  body["ct"] = mired;
+  body["transitiontime"] = sendInterval / 100;
+````
+
+When it makes the request, it does it like so:
+````
+    // print latest reading, for reference:
+      Serial.println(JSON.stringify(body));
+      // make a String for the HTTP route:
+      String route = "/api/" + hueUserName;
+      route += "/lights/";
+      route += lightNumber;
+      route += "/state/";
+
+      // make a PUT request:
+      httpClient.put(route, contentType, JSON.stringify(body));
+
+````
+
+Those are the important parts of the communication.
 
 That's basically it. The full sketch can be found [here](https://github.com/tigoe/LightProjects/tree/master/HueSkyLight). The biggest challenge was the compression of the light levels (brightness or illuminance), because the illuminance levels can go from below 20 in a dim space to over 35000 lux in full sunlight. The Hue has a 0-254 range for brightness. I derived my range by experimetation. I found that it went to about 2000 lux in indirect sunlight, so I constrained my result to 2000 points, mapped it to a 0-254 range to get a reading the Hue could accept. It's crude, but we'll see how it does over time. 
