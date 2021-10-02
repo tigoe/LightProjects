@@ -1,6 +1,7 @@
 /*
-
-  Modified for AS7341 spectrometer.
+  MQTT Client
+  Sends a CSV string of spectrometer readings to public.cloud.shiftr.io
+  Uses AS7341 spectrometer.
   NOTE: this version is not doing any corrections on the readings,
   it's just using basic counts. 
   TODO: correct for physical setup, see 
