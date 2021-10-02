@@ -10,6 +10,7 @@
   For more on chart.js, see https://www.chartjs.org/
 
   created 9 July 2021
+  modified 1 Oct 2021
   by Tom Igoe
 */
 
@@ -17,15 +18,10 @@
 let serial;
 // HTML Select option object:
 let portSelector;
-
+let timestampDiv;
 // fill in wavelengths of your spectrometer here:
-let wavelengths = [415, 445, 480, 515, 555, 590, 630, 680, 910];
-
-// from https://ams.com/documents/20143/36005/AS7341_AN000633_1-00.pdf/fc552673-9800-8d60-372d-fc67cf075740 
-// fig 10
-// TODO: get this part correct.
-let corrections = [3.20, 3.00, 2.07, 1.30, 1.07, 0.93, 0.78, 0.71];
-let numBands = 9;
+let wavelengths = [415, 445, 480, 515, 555, 590, 630, 680, 910, 'clear'];
+let numBands = 10;
 
 // array to put the readings from the sensors into:
 let readings = new Array();
@@ -38,11 +34,8 @@ const data = {
   labels: wavelengths,
   datasets: [{
     label: 'AS7341 Spectrometer',
-    legend: false,
     data: new Array(),
-    backgroundColor: new Array(),
-    borderColor: new Array(),
-    borderWidth: 1
+    backgroundColor: new Array()
   }]
 };
 
@@ -54,27 +47,20 @@ const config = {
       // this gets rid of the box by the data label:
       legend: {
         labels: {
-          boxWidth: 0,
-          boxHeight: 0
+          boxWidth: 0
         }
       }
     },
     // change the animation from one reading to the next:
     animation: {
-      easing: 'easeInOutSine',
-      duration: 50
-    },
-    scales: {
-      y: {
-        beginAtZero: true
-      }
+      duration: 200 // in ms
     }
   }
 };
 
 function setup() {
   // set up the canvas:
-  createCanvas(1024, 768);
+  createCanvas(800, 600);
 
   // new instance of the serialport library:
   serial = new p5.SerialPort();
@@ -92,9 +78,21 @@ function setup() {
   // push each wavelength onto the chart's
   // background color and borderColor:
   for (w of wavelengths) {
+    // if the band name  in the visible spectrum, calculate its color:
+    if (w > 400 && w < 700) {
     chart.data.datasets[0].backgroundColor.push(wavelengthToColor(w));
-    chart.data.datasets[0].borderColor.push(wavelengthToColor(w));
+    } 
+    else {
+      if (w > 900) { // for near IR, use deep red:
+        chart.data.datasets[0].backgroundColor.push('#770000');
+      } else { // for 'clear', use black as its color:
+        chart.data.datasets[0].backgroundColor.push('#000000');
+      }
+    }
   }
+  // make a text div for the timestamp of each reading:
+  timestampDiv = createDiv('last reading at: ');
+  timestampDiv.position(windowWidth-300, 10);
 }
 
 function draw() {
@@ -148,6 +146,8 @@ function serialEvent() {
   // if you have all the readings, put them in the chart:
   if (readings.length >= numBands) {
     chart.data.datasets[0].data = readings;
+    // update the timestamp:
+    timestampDiv.html('last reading at: ' + new Date().toLocaleString());
   }
 }
 
