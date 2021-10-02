@@ -41,9 +41,15 @@ void setup() {
 
 
 void loop() {
-
   //  checkReadingProgress() is non-blocking so you can do
   //  other things in the loop if you wish
+
+
+// from https://ams.com/documents/20143/36005/AS7341_AN000633_1-00.pdf/fc552673-9800-8d60-372d-fc67cf075740 
+// fig 10
+// TODO: get this part correct.
+float corrections[] = {3.20, 3.00, 2.07, 1.30, 1.07, 0.93, 0.78, 0.71};
+
 
   // check to see if readings are done:
   if (as7341.checkReadingProgress()) {
