@@ -53,8 +53,8 @@ Calibration Methods](https://ams.com/documents/20143/36005/AS7341_AN000633_1-00.
 
 __TO DO:__ The correction math in these examples is crude, and simply applies the numbers in Fig. 10 of the application note with no further math. I haven't yet verified its accuracy. 
 
-* [raw code](https://github.com/tigoe/LightProjects/tree/main/Spectrometers/AS7341)
-* [p5.js application in gitHub pages](https://tigoe.github.io/LightProjects/Spectrometers/AS7341/spectrograph_chartjs_serial/index.html)
+* [raw code](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341)
+* [p5.js application in gitHub pages](https://tigoe.github.io/LightProjects/spectrometers/AS7341/spectrograph_chartjs_serial/index.html)
 
 ## WiFi and MQTT Clients
 
