@@ -48,7 +48,7 @@ Now imagine you're writing a program to fade your LEDs. What would the  fade fro
   // if it reaches 0, set it back to 0xFFFFFF:
   if (color == 0) color = 0xFFFFFF;
 ````
- [Try it](https://github.com/tigoe/LightProjects/tree/master/APA102x/APA102xRGBFade). It's probably not what you expect.
+ [Try it](https://github.com/tigoe/LightProjects/tree/main/APA102x/APA102xRGBFade). It's probably not what you expect.
 
  You could rearrange things to that you're fading all three colors at the same time:
 
@@ -72,7 +72,7 @@ This works pretty well for white, but when you try it for an arbitrary set of th
 
 ### Hue, Saturation, and Brightness
 
-This is where a [Hue, Saturation, Brightness (or Lightness)](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html#color-models-and-color-spaces-JDQ1fRD) model becomes useful. In the HSL model, hue is positioned on a color cylinder, with red at the top (0 degrees), green at 120 degrees, and blue at 240 degrees. Saturation is the radius of the cylinder, and lightness is the depth of the cylinder. Here's an [interactive visualization](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html#hsl-cylinder) from Rune Madsen's book _Programming Design Systems_. The advantage of this model is that it allows you to change lightness or saturation without changing the hue. It becomes much simpler to create a[ flickering candle](https://github.com/tigoe/LightProjects/tree/master/APA102x/APA102xCandle) that changes from red to yellow through orange, for example. 
+This is where a [Hue, Saturation, Brightness (or Lightness)](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html#color-models-and-color-spaces-JDQ1fRD) model becomes useful. In the HSL model, hue is positioned on a color cylinder, with red at the top (0 degrees), green at 120 degrees, and blue at 240 degrees. Saturation is the radius of the cylinder, and lightness is the depth of the cylinder. Here's an [interactive visualization](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html#hsl-cylinder) from Rune Madsen's book _Programming Design Systems_. The advantage of this model is that it allows you to change lightness or saturation without changing the hue. It becomes much simpler to create a[ flickering candle](https://github.com/tigoe/LightProjects/tree/main/APA102x/APA102xCandle) that changes from red to yellow through orange, for example. 
 
 ![CIE 1931 reference diagram, from Wikimedia](https://upload.wikimedia.org/wikipedia/commons/5/5f/CIE-1931_diagram_in_LAB_space.svg)
 

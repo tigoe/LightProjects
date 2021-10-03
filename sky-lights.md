@@ -33,7 +33,7 @@ _Figure 4. Nano 33 IoT and light sensor, breadboard view._
 
 ## The Code
 
-I started my code using the [HueBlink example](https://github.com/arduino-libraries/ArduinoHttpClient/blob/master/examples/HueBlink/HueBlink.ino) from the [ArduinoHTTPClient](https://github.com/arduino-libraries/ArduinoHttpClient) library. I also referred to the Philips' documentation of the [Hue API](https://developers.meethue.com/). Knowing from the Hue documentation that the API uses JSON, I incorporated the [Arduino_JSON](https://github.com/arduino-libraries/Arduino_JSON) library to simplify the data formatting. I also used [Adafruit's TCS34725 library](https://github.com/adafruit/Adafruit_TCS34725) for the sensor.
+I started my code using the [HueBlink example](https://github.com/arduino-libraries/ArduinoHttpClient/blob/main/examples/HueBlink/HueBlink.ino) from the [ArduinoHTTPClient](https://github.com/arduino-libraries/ArduinoHttpClient) library. I also referred to the Philips' documentation of the [Hue API](https://developers.meethue.com/). Knowing from the Hue documentation that the API uses JSON, I incorporated the [Arduino_JSON](https://github.com/arduino-libraries/Arduino_JSON) library to simplify the data formatting. I also used [Adafruit's TCS34725 library](https://github.com/adafruit/Adafruit_TCS34725) for the sensor.
 
 The pseudocode for my program is as follows:
 
@@ -105,4 +105,4 @@ When it makes the request, it does it like so:
 
 Those are the important parts of the communication.
 
-That's basically it. The full sketch can be found [here](https://github.com/tigoe/LightProjects/tree/master/HueSkyLight). The biggest challenge was the compression of the light levels (brightness or illuminance), because the illuminance levels can go from below 20 in a dim space to over 35000 lux in full sunlight. The Hue has a 0-254 range for brightness. I derived my range by experimetation. I found that it went to about 2000 lux in indirect sunlight, so I constrained my result to 2000 points, mapped it to a 0-254 range to get a reading the Hue could accept. It's crude, but we'll see how it does over time. 
+That's basically it. The full sketch can be found [here](https://github.com/tigoe/LightProjects/tree/main/HueSkyLight). The biggest challenge was the compression of the light levels (brightness or illuminance), because the illuminance levels can go from below 20 in a dim space to over 35000 lux in full sunlight. The Hue has a 0-254 range for brightness. I derived my range by experimetation. I found that it went to about 2000 lux in indirect sunlight, so I constrained my result to 2000 points, mapped it to a 0-254 range to get a reading the Hue could accept. It's crude, but we'll see how it does over time. 

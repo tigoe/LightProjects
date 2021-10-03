@@ -8,7 +8,7 @@ Low-voltage [LED Lamps](led-lamps) are easy to control from a microcontroller wh
 
 ## Recommended Parts
 
-This [list pf parts](inventory) is not comprehensive, it's just a list of some of the parts I've used in building this repository.
+This [list of parts](inventory) is not comprehensive, it's just a list of some of the parts I've used in building this repository.
 
 You may find it useful to combine the examples in this repository with some of my [Arduino general examples](https://github.com/tigoe/ArduinoGeneralExamples) or [Sensor examples](https://github.com/tigoe/SensorExamples) to add interactive conntrol over your light projects.
 
@@ -24,23 +24,23 @@ There are a number of [addressable LED components](addressable-leds) on the mark
 The examples below are written mostly using Adafruit's NeoPixel and DotStar libraries. Since they have mostly the same API, you can convert any of the sketches from one protocol to the other with minimal changes.
 
 ### Examples:
-* LED Test - turns on each channel of each LED individually, to make sure they all work.  [APA102xTester](https://github.com/tigoe/LightProjects/tree/master/APA102x/APA102xTester) and  [WS281xTester](https://github.com/tigoe/LightProjects/tree/master/WS281x/WS281xTester)
-* Load test - turns on all the LEDs in a strip cumulatively so you can test if your power supply will power them all. [APA102xLoadTester](https://github.com/tigoe/LightProjects/tree/master/APA102x/APA102xLoadTester) and  [WS281xLoadTester](https://github.com/tigoe/LightProjects/tree/master/WS281x/WS281xLoadTester)
-* Turns on a single color. [WS281xOneColor](https://github.com/tigoe/LightProjects/tree/master/WS281x/WS281xOneColor)
+* LED Test - turns on each channel of each LED individually, to make sure they all work.  [APA102xTester](https://github.com/tigoe/LightProjects/tree/main/APA102x/APA102xTester) and  [WS281xTester](https://github.com/tigoe/LightProjects/tree/main/WS281x/WS281xTester)
+* Load test - turns on all the LEDs in a strip cumulatively so you can test if your power supply will power them all. [APA102xLoadTester](https://github.com/tigoe/LightProjects/tree/main/APA102x/APA102xLoadTester) and  [WS281xLoadTester](https://github.com/tigoe/LightProjects/tree/main/WS281x/WS281xLoadTester)
+* Turns on a single color. [WS281xOneColor](https://github.com/tigoe/LightProjects/tree/main/WS281x/WS281xOneColor)
 
 ## Fading
 The relationship between perceived brightness and the power controlling a light source is non-linear. In otherwise, if you fade an LED source in a straight line, it won't appear to you to be fading evenly in time. Depending on the effect you're looking for, you might want a light source to start fading slowly and then speed up, or slow down at the end of its fade. It helps to [have methods for a few different fade curves](fading) available. 
 
 ### Examples
-* [SimpleFade](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/SimpleFade)
-* [SineFade](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/SineFade)
-* [XSquaredFade](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/XSquaredFade)
-* [ExponentialFade](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/ExponentialFade)
-* [CIE1931Fade](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/CIE1931Fade)
-* [CIE1931FadeWithKalmanInput](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/CIE1931FadeWithKalmanInput)
-* [CIE1931FadeWithInput](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/CIE1931FadeWithInput)
-* [SimpleFadeWithInput](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/SimpleFadeWithInput)
-* [SineFadeWithInput](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/SineFadeWithInput)
+* [SimpleFade](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/SimpleFade)
+* [SineFade](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/SineFade)
+* [XSquaredFade](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/XSquaredFade)
+* [ExponentialFade](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/ExponentialFade)
+* [CIE1931Fade](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/CIE1931Fade)
+* [CIE1931FadeWithKalmanInput](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/CIE1931FadeWithKalmanInput)
+* [CIE1931FadeWithInput](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/CIE1931FadeWithInput)
+* [SimpleFadeWithInput](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/SimpleFadeWithInput)
+* [SineFadeWithInput](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/SineFadeWithInput)
 
 ## Color and Color Temperature Fading
  
@@ -50,25 +50,25 @@ The relationship between perceived brightness and the power controlling a light 
 ### Color Space Examples
 
 Examples:
-* RGB fade. Treats the whole RGB space as a single value and fades all LEDs one point at a time. [APA102xRGBFade](https://github.com/tigoe/LightProjects/tree/master/APA102x/APA102xRGBFade)
-* RGB Fade 002. Fades red, green, and blue of all LEDs one point at a time. [APA102xRGBFade002](https://github.com/tigoe/LightProjects/tree/master/APA102x/APA102xRGBFade002)
-* HSV Tester. Fades hue through the whole hue color wheel on all LEDs, while keeping saturation and intensity constant. [APA102x_HSV_Tester](https://github.com/tigoe/LightProjects/tree/master/APA102x/APA102x_HSV_Tester) and [WS281x_HSV_Tester](https://github.com/tigoe/LightProjects/tree/master/WS281x/WS281x_HSV_Tester)
-* A digital candle effect made by varying the hue of LEDs from red to orange. [APA102xCandle](https://github.com/tigoe/LightProjects/tree/master/Candles/APA102xCandle)
+* RGB fade. Treats the whole RGB space as a single value and fades all LEDs one point at a time. [APA102xRGBFade](https://github.com/tigoe/LightProjects/tree/main/APA102x/APA102xRGBFade)
+* RGB Fade 002. Fades red, green, and blue of all LEDs one point at a time. [APA102xRGBFade002](https://github.com/tigoe/LightProjects/tree/main/APA102x/APA102xRGBFade002)
+* HSV Tester. Fades hue through the whole hue color wheel on all LEDs, while keeping saturation and intensity constant. [APA102x_HSV_Tester](https://github.com/tigoe/LightProjects/tree/main/APA102x/APA102x_HSV_Tester) and [WS281x_HSV_Tester](https://github.com/tigoe/LightProjects/tree/main/WS281x/WS281x_HSV_Tester)
+* A digital candle effect made by varying the hue of LEDs from red to orange. [APA102xCandle](https://github.com/tigoe/LightProjects/tree/main/Candles/APA102xCandle)
 
 I've also written a [ColorConverter library](https://www.github.com/tigoe/ColorConverter) that converts RGB and RGBW values to hue, saturation, and intensity (HSI values); and converts HSI values to RGB. 
 
 Examples:
-* [APA102 Serial to Color Converter](https://github.com/tigoe/LightProjects/tree/master/APA102x/APA102x_SerialToColorConverter) - reads serial input values and interprets them as RGB or HSV values to control a set of addressable LEDs. 
+* [APA102 Serial to Color Converter](https://github.com/tigoe/LightProjects/tree/main/APA102x/APA102x_SerialToColorConverter) - reads serial input values and interprets them as RGB or HSV values to control a set of addressable LEDs. 
 
 
 ### Tunable White (Color Temperature) Examples
 
-* Color temperature fade. Fades a strip of tunable white LEDs (non-addressable) from warm to cool. [ColorTempFade](https://github.com/tigoe/LightProjects/tree/master/ColorTempFade/)
+* Color temperature fade. Fades a strip of tunable white LEDs (non-addressable) from warm to cool. [ColorTempFade](https://github.com/tigoe/LightProjects/tree/main/ColorTempFade/)
 
 The examples below use the ColorConverter library to control a WWA strip by calculating relative mix of warm, cool, and amber as hue. Intensity can then be controlled independently of color temperature. 
 Examples:
-* [WS281x_Mixer](https://github.com/tigoe/LightProjects/tree/master/WS281x/WWA_WS281x_Mixer)
-* [WS281x_AdvancedMixer](https://github.com/tigoe/LightProjects/tree/master/WS281x/WWA_WS281x_AdvancedMixer)
+* [WS281x_Mixer](https://github.com/tigoe/LightProjects/tree/main/WS281x/WWA_WS281x_Mixer)
+* [WS281x_AdvancedMixer](https://github.com/tigoe/LightProjects/tree/main/WS281x/WWA_WS281x_AdvancedMixer)
 
 ### Lighting Control Systems
 
@@ -77,8 +77,8 @@ Examples:
 
 ### Light Sensing
 
-* [Sensor Datalogging](https://github.com/tigoe/LightProjects/tree/master/LightSensorProjects/)
-* [Arduino Light Sensor Examples](https://github.com/tigoe/SensorExamples/tree/master/LightSensors)
+* [Sensor Datalogging](https://github.com/tigoe/LightProjects/tree/main/LightSensorProjects/)
+* [Arduino Light Sensor Examples](https://github.com/tigoe/SensorExamples/tree/main/LightSensors)
 
 ### Pattern Making in Code
 

@@ -114,4 +114,4 @@ Here's a pseudocode outline of the Arduino sketch for this.
         // make the HTTP request
 ````
 
-That's the main logic of the program. The full sketch can be found at [this link](https://github.com/tigoe/LightProjects/tree/master/TelephoneDimmer/RotaryDialDimmer0003). 
+That's the main logic of the program. The full sketch can be found at [this link](https://github.com/tigoe/LightProjects/tree/main/TelephoneDimmer/RotaryDialDimmer0003). 

@@ -19,25 +19,25 @@ Each of these curves has a different effect, described below. The graphs below s
 
 _Figure 1. Graph of simple linear fade_ 
 
-Figure 1 shows a graph of the the [simple linear fade](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/SimpleFade). The peak and the trough are sharp changes, and since the power output doesn't match the lightness output, the light seems steady for most of the time, with very quick fades up and down at the ends of the fade.
+Figure 1 shows a graph of the the [simple linear fade](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/SimpleFade). The peak and the trough are sharp changes, and since the power output doesn't match the lightness output, the light seems steady for most of the time, with very quick fades up and down at the ends of the fade.
 
 ![Figure 2. Graph of the sine fade curve](img/SineFadeGraph.png)
 
 _Figure 2. Graph of sine fade curve._ 
 
-Figure 2 shows a graph of a [sine fade curve](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/SineFade). The slope of the curve flattens out at the top and bottom, so the change seems slightly more smooth.
+Figure 2 shows a graph of a [sine fade curve](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/SineFade). The slope of the curve flattens out at the top and bottom, so the change seems slightly more smooth.
 
 ![Figure 3. Graph of the xSquared fade curve](img/squareLawGraph.png)
 
 _Figure 3. Graph of x squared fade curve._ 
 
-Figure 3 shows a graph of the [xSquared fade curve](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/XSquaredFade). The fade feels reasonably even here, particularly at the bottom, but the peak is sharp, so the change from going up to going down feels a little fast.
+Figure 3 shows a graph of the [xSquared fade curve](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/XSquaredFade). The fade feels reasonably even here, particularly at the bottom, but the peak is sharp, so the change from going up to going down feels a little fast.
 
 ![Figure 4. Graph of an exponential fade curve](img/exponentialCurveGraph.png)
 
 _Figure 4. Graph of an exponential fade curve._ 
 
-Figure 4 shows a graph of an [exponential fade curve](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/ExponentialFade) derived by [Diarmuid Mac Namara](https://diarmuid.ie/blog/pwm-exponential-led-fading-on-arduino-or-other-platforms). Mac Namara attempted to correct for the logarithmic change in perceived brightness by trial and error, and came up with the following formula:
+Figure 4 shows a graph of an [exponential fade curve](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/ExponentialFade) derived by [Diarmuid Mac Namara](https://diarmuid.ie/blog/pwm-exponential-led-fading-on-arduino-or-other-platforms). Mac Namara attempted to correct for the logarithmic change in perceived brightness by trial and error, and came up with the following formula:
 ````
 x = x^(2/r) - 1
 ````
@@ -53,7 +53,7 @@ That's pretty close to the x squared curve above, but when you compare Figures 2
 
 _Figure 5. Graph of the CIE1931 fade curve._ 
 
-Figure 5 shows a graph of the [CIE1931 fade curve](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/CIE1931Fade) derived from the [CIE1931 lightness formula](http://www.photonstophotos.net/GeneralTopics/Exposure/Psychometric_Lightness_and_Gamma.htm). It looks pretty close to the x squared curve, but it's a little different in the last 8 percent, where it's linear. This is probably not visible in this graph, but it's noticeable when you run the fade.
+Figure 5 shows a graph of the [CIE1931 fade curve](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/CIE1931Fade) derived from the [CIE1931 lightness formula](http://www.photonstophotos.net/GeneralTopics/Exposure/Psychometric_Lightness_and_Gamma.htm). It looks pretty close to the x squared curve, but it's a little different in the last 8 percent, where it's linear. This is probably not visible in this graph, but it's noticeable when you run the fade.
 
 ## Pre-calculating the Fade Curve 
 In the examples above, you'll see that the values for the fade curves are calculated in the `setup()` function and placed in an array. In the `loop()`, the sketch gets an input from 0 to 255 and then looks up the corresponding value in the array. Calculating complex math formulas like sine, or raising a value to an exponent, takes longer than looking up an array element, so if the formula's not going to change, it makes sense to pre-calculate your fade curve. If you want to use formulas other than the ones shown here, a generic sketch might look something like this:
@@ -94,13 +94,13 @@ Changing the formula will change the fade curve, of course, and changing the fad
 
 ## Fade Curves with Interactive Input
 
-You don't always want your fades to be automated. The most common human input control for fading light is a dimmer switch or rotary knob, usually a potentiometer. To use these fade curves with an external input, all you have to do is to map the input to the range of your fade curve steps (0-255 in all the examples here, because that's the PWM resolution of an Arduino), and look up the corresponding value in the level table.  Examples are included for the [simple fade with input](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/SimpleFadeWithInput), the [sine fade with input](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/SineFadeWithInput), and the [CIE1931 fade with input](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/CIE1931FadeWithInput), but you can use these to derive your own as well.
+You don't always want your fades to be automated. The most common human input control for fading light is a dimmer switch or rotary knob, usually a potentiometer. To use these fade curves with an external input, all you have to do is to map the input to the range of your fade curve steps (0-255 in all the examples here, because that's the PWM resolution of an Arduino), and look up the corresponding value in the level table.  Examples are included for the [simple fade with input](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/SimpleFadeWithInput), the [sine fade with input](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/SineFadeWithInput), and the [CIE1931 fade with input](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/CIE1931FadeWithInput), but you can use these to derive your own as well.
 
 ## Effects of Input Controls
 
 When you start writing fade curves and you notice unpleasant jumps in your fades or other outputs you don't expect, don't automatically assume your fade curve is to blame. Test with the non-interactive fades first, to make sure the curve is not the problem, then check your inputs. For example, is your potentiometer a [linear pot](https://www.digikey.com/product-detail/en/bourns-inc/3310C-102-103L/3310C-102-103L-ND/2534040) or an [audio taper (logarithmic) pot](https://www.digikey.com/product-detail/en/bourns-inc/51UAD-T16-D15L/51UAD-T16-D15L-ND/2564558)? Since pots are so commonly used to control audio and lighting, they are often designed to change their resistance on a logarithmic curve rather than a linear. That could affect your perception of the fade.
 
-Also consider how noisy the output of your potentiometer is. [Write a simple example to test the output](https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/) of the pot and see if the values change when you're not touching it. If so, check your wiring to make sure everything is stable. If the pot is still noisy, consider adding a [smoothing function](https://www.arduino.cc/en/Tutorial/Smoothing) or a Kalman filter to stabilize the pot's readings. The [CIE1931 Fade with Kalman Input example](https://github.com/tigoe/LightProjects/tree/master/FadeCurves/CIE1931FadeWithKalmanInput) shows how you can use  the [SimpleKalmanFilter library](https://github.com/denyssene/SimpleKalmanFilter) to smooth your potentiometer readings. 
+Also consider how noisy the output of your potentiometer is. [Write a simple example to test the output](https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/) of the pot and see if the values change when you're not touching it. If so, check your wiring to make sure everything is stable. If the pot is still noisy, consider adding a [smoothing function](https://www.arduino.cc/en/Tutorial/Smoothing) or a Kalman filter to stabilize the pot's readings. The [CIE1931 Fade with Kalman Input example](https://github.com/tigoe/LightProjects/tree/main/FadeCurves/CIE1931FadeWithKalmanInput) shows how you can use  the [SimpleKalmanFilter library](https://github.com/denyssene/SimpleKalmanFilter) to smooth your potentiometer readings. 
 
 
 ## References

@@ -2,7 +2,7 @@
 /*
    Graph  page JavaScript
    Adapted from Don Coleman's  ITP conndev visualizer:
-   https://github.com/don/itp-conndev/tree/master/public
+   https://github.com/don/itp-conndev/tree/main/public
 
 */
 
