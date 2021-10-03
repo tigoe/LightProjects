@@ -46,7 +46,7 @@ _Figure 1. Breadboard view of an AMS AS7341 sensor connected to a Nano 33 IoT. T
 
 _Figure 1. Schematic view of an AMS AS7341 sensor connected to a Nano 33 IoT. The connections are as described above: SDA to SDA, SCL to SCL, voltage and ground to voltage and ground, respectively. Image created using [Fritzing](https://fritzing.org)._
 
-## Serial to p5.js
+## Serial to p5.js Client
 
 The simplest way to see the readings from the AS7341 is by printing the values out from the Nano's serial port (UART). This example does just that. It prints the sensor readings, converts them to basic counts, applies a daylight correction, and sends the values out to the serial monitor. For an explanation of the process, see the [Spectral Sensor
 Calibration Methods](https://ams.com/documents/20143/36005/AS7341_AN000633_1-00.pdf/fc552673-9800-8d60-372d-fc67cf075740)  application note, section 2.1 - 2.5. 
