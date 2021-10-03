@@ -1,9 +1,9 @@
 # Controlling LED Strips
 LED strips are easy to come by these days, and often you get them without documentation, or you lose the label. In those cases, it's easy to be confused about what you've got. What follows is a guide to some of the more common types of LED strips, and circuits for controlling the non-addressable types from a microcontroller. There are many other good guides to LED strips out there, like Superbrightleds' [Ultimate LED Strip Lighting Guide](https://www.superbrightleds.com/blog/ultimate-led-strip-lighting-guide/5024/).
 
-These notes don't cover [addressable LED strips](addressable-leds.md), as those strips require a different approach to control. 
+These notes don't cover [addressable LED strips](addressable-leds), as those strips require a different approach to control. 
 
-LED strips are type of [low-voltage DC LED source](led-lamps.md), so you might want to read the page on those sources for a general background
+LED strips are type of [low-voltage DC LED source](led-lamps), so you might want to read the page on those sources for a general background
 
 ## Electrical and Physical Characteristics
 There are a number of characteristics to consider when shopping for LED strips:
@@ -18,11 +18,11 @@ All LED strips have a maximum length you can use before there's a voltage drop s
 
 **Package** - Strip LEDs generally come in one of two packages (physical forms): 5050 and 3528. 5050 LEDs are square, 5mm to a side. 3528 LEDs are 3.5mm x 2.8mm. 5050 LEDs usually draw more current than 3528's and are brighter as well. 
 
-**Color or ColorTemperature** - LED strips commonly come in either RGB, RGBW, RGBAW, or tunable white (WWA) variants. For more detail, see the page on [color and color temperature](color-spaces-color-temp.md). 
+**Color or ColorTemperature** - LED strips commonly come in either RGB, RGBW, RGBAW, or tunable white (WWA) variants. For more detail, see the page on [color and color temperature](color-spaces-color-temp). 
 
 **Density** - The number of LEDs per unit length will vary. 60 LEDs per meter and 144 LEDs per meter are common with LEDs in a 5050 package (the *package* of a component refers to its physical shape and size). The density of LEDs affects both the brightness and evenness of the light and the total current draw of the strip. 
 
-**Lumen output** - the brightness of an light strip is often given in *lumens per foot* or *lumens per meter*. A detailed explanation of light characteristics on the [Controlling Low-Voltage DC Lamps](led-lamps.md#light-characteristics) page.
+**Lumen output** - the brightness of an light strip is often given in *lumens per foot* or *lumens per meter*. A detailed explanation of light characteristics on the [Controlling Low-Voltage DC Lamps](led-lamps#light-characteristics) page.
 
 Figure 1 below, taken from [Environmental Lights' datasheet](https://www.environmentallights.com/files/documents/rgb-5in1-5050-60-reference-sheet.pdf), shows the control lines for a  5-channel LED strip. This strip has a common +24V DC connection at the top of the strip's end, and below it, connections for warm white (2700K), green, red, blue, and cool white (6500K). Each of the color control lines is the common anode for all the LEDs of that color in the strip.
 
@@ -32,7 +32,7 @@ _Figure 1. 5-channel 24-volt LED strip. From [Environmental Lights' datasheet](h
 
 ## Control Circuits 
 
-You can control 12-24V DC sources with power transistors or MOSFETs from a microcontroller. The three models described on the  the [Controlling Low-Voltage DC Lamps](led-lamps.md#control-circuits) page work well for this purpose. The circuits shown below are the same circuits from that page, but drawn for LED strip control.
+You can control 12-24V DC sources with power transistors or MOSFETs from a microcontroller. The three models described on the  the [Controlling Low-Voltage DC Lamps](led-lamps#control-circuits) page work well for this purpose. The circuits shown below are the same circuits from that page, but drawn for LED strip control.
 
 Although the circuits below show how to control a 12V LED strip, the same circuit could be used to control any 12-24V DC LED source.
 
