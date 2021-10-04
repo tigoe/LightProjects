@@ -53,10 +53,33 @@ Calibration Methods](https://ams.com/documents/20143/36005/AS7341_AN000633_1-00.
 
 __TO DO:__ The correction math in these examples is crude, and simply applies the numbers in Fig. 10 of the application note with no further math. I haven't yet verified its accuracy. 
 
+There is a browser-based client to read and visualize the data from serial port in this repository as well. It uses [p5.js](https://p5js.org), [chart.js](https://www.chartjs.org/) and the [p5.serialport library](https://github.com/p5-serial/p5.serialport) and [p5SerialControl](https://github.com/p5-serial/p5.serialcontrol/tags) app. 
+
 * [raw code](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341)
 * [p5.js application in gitHub pages](https://tigoe.github.io/LightProjects/spectrometers/AS7341/spectrograph_chartjs_serial/index.html)
 
-## WiFi and MQTT Clients
+## WiFi and MQTT Client
+
+If you've never connected to WiFi using the Nano 33 IoT, you should visit the [WiFiNINA reference](https://www.arduino.cc/en/Reference/WiFiNINA) and [this repository](https://tigoe.github.io/Wifi101_examples/). 
+
+The Message Queueing Telemetry Transfer (MQTT) protocol was made for sensor monitoring over IP networks, so it's a good choice for a WiFi-based system for the spectrometer. MQTT is a __publish-and-subscribe__ or __PubSub__ model, in which clients connect to a broker application and subscribe to different topics. When they have new data, they publish to the topics. Topics can be broken up into subtopics when useful as well. There is very little overhead to the protocol; you just subscribe, then either publish or wait for messages. For more on MQTT, see [this repository](https://tigoe.github.io/mqtt-examples/), or [this definition from IBM](https://developer.ibm.com/technologies/messaging/articles/iot-mqtt-why-good-for-iot), who developed the protocol. 
+
+There are several free online brokers that you can use. The most popular is called  [mosquitto](http://mosquitto.org/). You can run mosquitto on your own computer, or you can use [test.mosquitto.org](https://test.mosquitto.org/) as a test broker. The instructions and port numbers for the various ways of reaching it are listed on the site. [Shiftr.io](https://next.shiftr.io/try) is another MQTT test broker, with a graphic interface so you can see a graph of clients and topics. [mqtt.eclipse.org](https://mqtt.eclipse.org/) is another MQTT test broker with a fairly bare-bones set of documentation and no visualizer.
+
+Once you have a broker set up, you enter your credentials, log in, subscribe, and start sending messages to publish. You can send messages in any format: plain text, CSV, JSON, or whatever suits your needs. 
+
+The criteria you need to log into any broker are:
+* The broker address
+* The broker port (usually 1883 for unencrypted communication, 8883 for encrypted)
+* Your client ID (you can make this up)
+* The topic you want to subscribe to
+* Some will expect a username and password as well.
+
+Each broker will publish their details for login on their website. 
+
+This MQTT example for the Nano 33 IoT publishes to shiftr.io using the topic _spectrometer_. It uses MqTTS, the encrypted version of the protocol, on port 8883. You can modify it to communicate with other brokers by changing the credentials. It uses the same sensor process as the example above: it prints the sensor readings, converts them to basic counts, applies a daylight correction, and sends the values out via MQTT. It prints them serially as well.
+
+There is a browser-based client to read and visualize the data from the broker in this repository as well. It uses the [Eclipse PAHO library](https://www.eclipse.org/paho/index.php?page=clients/js/index.php), [p5.js](https://p5js.org), and [chart.js](https://www.chartjs.org/) like the serial client above. 
 
 * [raw code](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341)
 * [p5.js application in gitHub pages](https://tigoe.github.io/LightProjects/spectrometers/AS7341/spectrograph_chartjs_mqtt/index.html)
