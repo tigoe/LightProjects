@@ -5,6 +5,7 @@ It's common in any lighting practice to need a spectrometer to measure the prope
 Below, you'll see how to get output from your spectrometer via multiple means: 
 * UART serial to [p5.js](https://p5js.org)
 * WiFi and MQTT to an MQTT broker, with a p5.js client
+* Bluetooth LE to a Chrome browser, with a p5.js client
 
 ## The AS7341 Sensor
 
@@ -53,9 +54,10 @@ Calibration Methods](https://ams.com/documents/20143/36005/AS7341_AN000633_1-00.
 
 __TO DO:__ The correction math in these examples is crude, and simply applies the numbers in Fig. 10 of the application note with no further math. I haven't yet verified its accuracy. 
 
-There is a browser-based client to read and visualize the data from serial port in this repository as well. It uses [p5.js](https://p5js.org), [chart.js](https://www.chartjs.org/) and the [p5.serialport library](https://github.com/p5-serial/p5.serialport) and [p5SerialControl](https://github.com/p5-serial/p5.serialcontrol/tags) app. 
+This browser-based client reads and visualizes the data from serial port in this repository. It uses [p5.js](https://p5js.org), [chart.js](https://www.chartjs.org/) and the [p5.serialport library](https://github.com/p5-serial/p5.serialport) and [p5SerialControl](https://github.com/p5-serial/p5.serialcontrol/tags) app. 
 
-* [raw code](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341)
+* [raw JS code](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/spectrograph_chartjs_serial/)
+* [Arduino Serial client](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/AS7341_Spectrometer_serial)
 * [p5.js application in gitHub pages](https://tigoe.github.io/LightProjects/spectrometers/AS7341/spectrograph_chartjs_serial/index.html)
 
 ## WiFi and MQTT Client
@@ -77,9 +79,18 @@ The criteria you need to log into any broker are:
 
 Each broker will publish their details for login on their website. 
 
-This MQTT example for the Nano 33 IoT publishes to shiftr.io using the topic _spectrometer_. It uses MqTTS, the encrypted version of the protocol, on port 8883. You can modify it to communicate with other brokers by changing the credentials. It uses the same sensor process as the example above: it prints the sensor readings, converts them to basic counts, applies a daylight correction, and sends the values out via MQTT. It prints them serially as well.
+This MQTT example for the Nano 33 IoT publishes to shiftr.io using the topic _spectrometer_. It uses MQTTS, the encrypted version of the protocol, on port 8883. You can modify it to communicate with other brokers by changing the credentials. It uses the same sensor process as the example above: it prints the sensor readings, converts them to basic counts, applies a daylight correction, and sends the values out via MQTT. It prints them serially as well.
 
-There is a browser-based client to read and visualize the data from the broker in this repository as well. It uses the [Eclipse PAHO library](https://www.eclipse.org/paho/index.php?page=clients/js/index.php), [p5.js](https://p5js.org), and [chart.js](https://www.chartjs.org/) like the serial client above. 
+This browser-based client uses the [Eclipse PAHO library](https://www.eclipse.org/paho/index.php?page=clients/js/index.php), [p5.js](https://p5js.org), and [chart.js](https://www.chartjs.org/) like the serial client above. 
 
-* [raw code](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341)
+* [raw JS app code](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/spectrograph_chartjs_mqtt/)
+* [Arduino MQTT client](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/AS7341_Spectrometer_MQTT)
 * [p5.js application in gitHub pages](https://tigoe.github.io/LightProjects/spectrometers/AS7341/spectrograph_chartjs_mqtt/index.html)
+
+## Bluetooth LE Client using p5ble.js
+
+The Arduino Nano 33 IOT, MKR WiFi 1010, and Nano 33 BLE and BLE Sense boards can all send data via Bluetooth LE, using the [ArduinoBLE library](https://www.arduino.cc/en/Reference/ArduinoBLE). To complement this, [p5ble.js](https://itpnyu.github.io/p5ble-website/) is a great library for enabling BLE connections from the Chrome browser. The browser-based BLE client in this repo is based on the same chart.js code for visualizing the data as the previous two. It uses [p5.js](https://p5js.org), [chart.js](https://www.chartjs.org/) and the [p5.ble library](https://itpnyu.github.io/p5ble-website/). 
+
+* [raw JS app code](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/spectrograph_chartjs_ble)
+* [Arduino BLE client](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/AS7341_Spectrometer_BLE)
+* [p5.js application in gitHub pages](https://tigoe.github.io/LightProjects/spectrometers/AS7341/spectrograph_chartjs_ble/index.html)
