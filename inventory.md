@@ -43,3 +43,13 @@ I tend to use the MKR series Arduinos a lot:
 * [MKR 1010 WiFi/BLE](https://store.arduino.cc/usa/mkr-wifi-1010)
 * [MKR 1000 WiFi](https://store.arduino.cc/usa/arduino-mkr1000)
 * The [Nano 33 IoT](https://store.arduino.cc/usa/nano-33-iot) works well for these examples also
+
+## Spectrometers
+
+The AS7341 is an 11-channel spectral sensor that can detect light levels in multiple frequencies from around 400nm to 900nm. It has 8 that sense light in visible spectrum; one channel in the near infrared spectrum; one clear channel without a filter; and one channel that detects 50Hz-60Hz light flicker. 
+
+* [product page](https://ams.com/as7341)
+* [datasheet](https://ams.com/documents/20143/36005/AS7341_DS000504_3-00.pdf/5eca1f59-46e2-6fc5-daf5-d71ad90c9b2b).
+* [Sparkfun](https://www.sparkfun.com/products/17719) breakout board
+* [Adafruit](https://www.adafruit.com/product/4698) breakout board
+* [DFRobot](https://www.dfrobot.com/product-2132.html) breakout board
