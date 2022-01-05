@@ -9,7 +9,7 @@
   http://librarymanager/All#ArduinoBLE
 
   created 18 Jun 2021
-  modified 4 Jan 2022
+  modified 5 Jan 2022
   by Tom Igoe
 */
 
@@ -21,9 +21,8 @@
 char serviceUuid[] = "9af01fc3-0000-44b8-8acc-f3ed7a225431";
 char characteristicUuid[] = "9af01fc3-0001-44b8-8acc-f3ed7a225431";
 
-// fill in your device name here. It will be combined with
-// the BLE MAC address in the setup function to set the peripheral BLE name:
-String bleName = "spectro-";
+// fill in your device name here" 
+char bleName = "spectroscope";
 
 // instance of the sensor library:
 Adafruit_AS7341 as7341;
@@ -35,56 +34,50 @@ const int readingLength = 50;
 // string for readings:
 String readingString;
 
-
 // BLE service and characteristic:
 BLEService spectroService(serviceUuid);
 // create sensor characteristic and allow remote device to get notifications:
 BLECharacteristic spectroCharacteristic(characteristicUuid, BLERead | BLENotify, readingLength);
-
 
 void setup() {
   // init serial, wait 3 secs for serial monitor to open:
   Serial.begin(9600);
   // if the serial port's not open, wait 3 seconds:
   if (!Serial) delay(3000);
-
+  // use builtin LED for connection indicator:
+  pinMode(LED_BUILTIN, OUTPUT);
+  
   // readingString will need 50 bytes for all values:
   readingString.reserve(readingLength);
 
   if (!as7341.begin()) {
     Serial.println("Sensor not found, check wiring");
-    //    while (true);
-  } else {
-    // set integration time:
-    as7341.setATIME(35);
-    as7341.setASTEP(10000);
-    as7341.setGain(AS7341_GAIN_256X);
-    // start a new reading cycle:
-    as7341.startReading();
+    while (true);
   }
+  // set sensor integration time, etc:
+  as7341.setATIME(35);
+  as7341.setASTEP(10000);
+  as7341.setGain(AS7341_GAIN_256X);
+  // start a new reading cycle:
+  as7341.startReading();
 
-  // begin initialization
+  // begin BLE initialization
   if (!BLE.begin()) {
     Serial.println("starting BLE failed");
     while (true);
   }
 
   // set the local name peripheral advertises:
-  // first, add the BLE address:
-  bleName += BLE.address();
-  // then convert the String to an constant char array
-  // in order to set name:
-  BLE.setLocalName(bleName.c_str());
-  // finally, print it:
+  BLE.setLocalName(bleName);
+  // print it:
   Serial.println(bleName);
   // set the UUID for the service this peripheral advertises:
   BLE.setAdvertisedService(spectroService);
-
-  // add the characteristic to the service
+  // add the characteristic:
   spectroService.addCharacteristic(spectroCharacteristic);
-
-  // add the service
+  // add the service:
   BLE.addService(spectroService);
+  // convert readingString to a char array set the value:
   spectroCharacteristic.writeValue(readingString.c_str());
 
   // start advertising
@@ -101,25 +94,18 @@ void loop() {
     // print the central's MAC address:
     Serial.print("Connected to central: ");
     Serial.println(central.address());
-
+    // indicate it:
+    digitalWrite(LED_BUILTIN, HIGH);
     // while it's connected, get sensor readings:
     while (central.connected()) {
       // read the sensor, print if there are good values:
-      // if (readSensor()) {
-
-      if (millis() % 2000 < 3) {
-        readingString = "";
-        // print the adjusted readings:
-        for (int r = 0; r < 10; r++) {
-          readingString += String(random(100) / 100.0);
-          // print a comma for all but the last reading:
-          if (r < 9) readingString += ",";
-        }
-
+      if (readSensor()) {
         spectroCharacteristic.writeValue(readingString.c_str());
         Serial.println(readingString);
       }
     }
+    // if the central disconnects, indicate it:
+    digitalWrite(LED_BUILTIN, LOW);
     Serial.println("Disconnected");
   }
 }
