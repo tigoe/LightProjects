@@ -22,7 +22,7 @@ char serviceUuid[] = "9af01fc3-0000-44b8-8acc-f3ed7a225431";
 char characteristicUuid[] = "9af01fc3-0001-44b8-8acc-f3ed7a225431";
 
 // fill in your device name here" 
-char bleName = "spectroscope";
+char bleName[] = "spectroscope";
 
 // instance of the sensor library:
 Adafruit_AS7341 as7341;
