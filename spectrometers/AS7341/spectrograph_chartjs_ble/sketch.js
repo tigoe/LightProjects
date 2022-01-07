@@ -67,7 +67,7 @@ const config = {
 
 function setup() {
   // set up the canvas:
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth-10, windowHeight-10);
 
   // Create a p5ble instance:
   myBLE = new p5ble();
@@ -78,7 +78,7 @@ function setup() {
   connectButton.position(10, 30);
 
   // create a div for local messages:
-  textDiv = createDiv('35 Waiting for BLE connection');
+  textDiv = createDiv('Waiting for BLE connection');
   textDiv.position(20, 10);
 
   // instantiate the chart:
@@ -109,9 +109,8 @@ function draw() {
 }
 
 function windowResized() {
-  textDiv.html('resize');
-  resizeCanvas(windowWidth, windowHeight);
-  chart.resize(windowWidth, windowHeight);
+  resizeCanvas(windowWidth-10, windowHeight-10);
+  chart.resize(windowWidth-10, windowHeight-10);
   chart.update();
 }
 
@@ -148,6 +147,7 @@ function gotCharacteristics(error, characteristics) {
 
 // A function that will be called once got characteristics
 function handleNotifications(result) {
+  // do a read so that you get the whole data string:
   myBLE.read(myCharacteristic, 'string', gotValue);
 }
 
