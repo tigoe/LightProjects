@@ -148,6 +148,7 @@ function gotCharacteristics(error, characteristics) {
 
 // A function that will be called once got characteristics
 function handleNotifications(data) {
+  textDiv.html(data);
   // Split the message into an array:
   let readings = float(split(data, ','));
   // if you have all the readings, put them in the chart:
@@ -156,7 +157,6 @@ function handleNotifications(data) {
     // update the timestamp:
     textDiv.html('last reading: ' + new Date().toLocaleString());
   }
-  textDiv.html('reading');
 }
 
 function disconnectBle() {
