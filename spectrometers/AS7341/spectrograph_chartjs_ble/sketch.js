@@ -13,9 +13,8 @@
   by Tom Igoe
 */
 
-// HTML divs for messages
+// HTML div for messages
 let textDiv;
-let timestampDiv;
 
 // fill in wavelengths of your spectrometer here:
 let wavelengths = [415, 445, 480, 515, 555, 590, 630, 680, 910, 'clear'];
@@ -102,9 +101,6 @@ function setup() {
       }
     }
   }
-  // make a text div for the timestamp of each reading:
-  //timestampDiv = createDiv('last reading at: ');
-  //timestampDiv.position(10, 30);
 }
 
 function draw() {
@@ -114,6 +110,8 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  chart.resize(windowWidth, windowHeight);
+  chart.update();
 }
 
 
@@ -156,9 +154,8 @@ function handleNotifications(data) {
   if (readings.length >= numBands) {
     chart.data.datasets[0].data = readings;
     // update the timestamp:
-    text.html('last reading: ' + new Date().toLocaleString());
+    textDiv.html('last reading: ' + new Date().toLocaleString());
   }
-  textDiv.html(text.html() + '<br>' +data);
 }
 
 function disconnectBle() {
