@@ -147,7 +147,12 @@ function gotCharacteristics(error, characteristics) {
 
 
 // A function that will be called once got characteristics
-function handleNotifications(data) {
+function handleNotifications(result) {
+  myBLE.read(myCharacteristic, 'string', gotValue);
+}
+
+// A function that will be called once got values
+function gotValue(error, data) {
   textDiv.html(data);
   // Split the message into an array:
   let readings = float(split(data, ','));
