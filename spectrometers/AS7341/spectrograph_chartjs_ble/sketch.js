@@ -109,11 +109,11 @@ function draw() {
 }
 
 function windowResized() {
+  textDiv.html('resize');
   resizeCanvas(windowWidth, windowHeight);
   chart.resize(windowWidth, windowHeight);
   chart.update();
 }
-
 
 function connectToBle() {
   // Connect to a device by passing the service UUID
