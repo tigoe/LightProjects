@@ -78,7 +78,7 @@ function setup() {
   connectButton.position(10, 30);
 
   // create a div for local messages:
-  textDiv = createDiv('Waiting for BLE connection');
+  textDiv = createDiv('35 Waiting for BLE connection');
   textDiv.position(20, 10);
 
   // instantiate the chart:
