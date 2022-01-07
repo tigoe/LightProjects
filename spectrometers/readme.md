@@ -91,6 +91,8 @@ This browser-based client uses the [Eclipse PAHO library](https://www.eclipse.or
 
 The Arduino Nano 33 IOT, MKR WiFi 1010, and Nano 33 BLE and BLE Sense boards can all send data via Bluetooth LE, using the [ArduinoBLE library](https://www.arduino.cc/en/Reference/ArduinoBLE). To complement this, [p5ble.js](https://itpnyu.github.io/p5ble-website/) is a great library for enabling BLE connections from the Chrome browser. The browser-based BLE client in this repo is based on the same chart.js code for visualizing the data as the previous two. It uses [p5.js](https://p5js.org), [chart.js](https://www.chartjs.org/) and the [p5.ble library](https://itpnyu.github.io/p5ble-website/). 
 
+Unfortunately this sketch does not work on every browser, particularly on mobile platforms. However, it has been tested successfully on Chrome on MacOS and Windows; Chrome on Android, and [WebBLE](https://apps.apple.com/us/app/webble/id1193531073) on iOS. 
+
 * [raw JS app code](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/spectrograph_chartjs_ble)
 * [Arduino BLE client](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/AS7341_Spectrometer_BLE)
 * [p5.js application in gitHub pages](https://tigoe.github.io/LightProjects/spectrometers/AS7341/spectrograph_chartjs_ble/index.html)
