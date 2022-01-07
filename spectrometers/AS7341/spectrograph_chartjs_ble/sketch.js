@@ -156,6 +156,7 @@ function handleNotifications(data) {
     // update the timestamp:
     textDiv.html('last reading: ' + new Date().toLocaleString());
   }
+  textDiv.html('reading');
 }
 
 function disconnectBle() {
