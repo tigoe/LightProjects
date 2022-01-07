@@ -68,7 +68,7 @@ const config = {
 
 function setup() {
   // set up the canvas:
-  createCanvas(800, 600);
+  createCanvas(windowWidth, windowHeight);
 
   // Create a p5ble instance:
   myBLE = new p5ble();
@@ -103,13 +103,17 @@ function setup() {
     }
   }
   // make a text div for the timestamp of each reading:
-  timestampDiv = createDiv('last reading at: ');
-  timestampDiv.position(windowWidth - 300, 10);
+  //timestampDiv = createDiv('last reading at: ');
+  //timestampDiv.position(10, 30);
 }
 
 function draw() {
   // update the chart:
   chart.update();
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 
@@ -152,9 +156,9 @@ function handleNotifications(data) {
   if (readings.length >= numBands) {
     chart.data.datasets[0].data = readings;
     // update the timestamp:
-    timestampDiv.html('last reading at: ' + new Date().toLocaleString());
+    text.html('last reading: ' + new Date().toLocaleString());
   }
-  textDiv.html(data);
+  textDiv.html(text.html() + '<br>' +data);
 }
 
 function disconnectBle() {
