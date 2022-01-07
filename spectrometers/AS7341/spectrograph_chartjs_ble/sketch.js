@@ -13,6 +13,7 @@
   by Tom Igoe
 */
 
+// TODO: responsive design could be better. Chart does not resize perfectly when mobile device is rotated.
 // HTML div for messages
 let textDiv;
 
