@@ -1,6 +1,6 @@
 # Building Your Own Spectrometer
 
-It's common in any lighting practice to need a spectrometer to measure the properties of light. Good spectrometers are expensive, though. Fortunately, there are some affordable spectral sensors that you can connect to a microcontroller to make your own spectrometer. This tutorial shows you how to connect the AMS [AS7341 11-channel spectral sensor](https://ams.com/as7341#tab/documents) to an [Arduino Nano 33 IoT](https://store-usa.arduino.cc/products/arduino-nano-33-iot). The AS7341 will work with any microcontroller that has an I2C interface, but the Nano 33 IoT has a Bluetooth and WiFi radio, making it easy to connect to via multiple means.
+It's common in any lighting practice to need a spectrometer to measure the properties of light. Good spectrometers are expensive, though. For an example, see this page on the [Sekonic C-800-U](../light-rendering-indices.md). Fortunately, there are some affordable spectral sensors that you can connect to a microcontroller to make your own spectrometer. This tutorial shows you how to connect the AMS [AS7341 11-channel spectral sensor](https://ams.com/as7341#tab/documents) to an [Arduino Nano 33 IoT](https://store-usa.arduino.cc/products/arduino-nano-33-iot). The AS7341 will work with any microcontroller that has an I2C interface, but the Nano 33 IoT has a Bluetooth and WiFi radio, making it easy to connect to via multiple means.
 
 Below, you'll see how to get output from your spectrometer via multiple means: 
 * UART serial to [p5.js](https://p5js.org)
