@@ -8,7 +8,7 @@ Here is a good [video](https://youtu.be/dIFIKTDDTtM)) introducing the [Sekonic C
 
 **TLMF - Television Luminaire Matching Factor** A companion to TLCI, but based on using a reference luminant. Lets you evaluate two light sources relative to each other. Uses all colors from the Color Checker Classic. Based on a pre-digital camera standard (Rec. 709), so may be out of date for some modern cameras. 
 
-**TM-30-18** - The final number is the version number. Uses 99 colors, and gives the ability to judge how saturated colors will look under a source. Color graph lets you know if specific colors are over or under saturated, and what the tendency to shift is. Is expected to replace CRI. TM-30 Rf measures color fidelity, 0-100. Rg is a 60-140 scale, measuring saturation. 100 is proper saturation relative to the reference color. Below 100 is less saturated, above 100 is more saturated.
+**TM-30-18** - The final number is the version number. Uses 99 colors, and gives the ability to judge how saturated colors will look under a source. Color graph lets you know if specific colors are over or under saturated, and what the tendency to shift is. Is expected to replace CRI. TM-30 Rf measures color fidelity, 0-100. R<sub>g</sub> is a 60-140 scale, measuring saturation. 100 is proper saturation relative to the reference color. Below 100 is less saturated, above 100 is more saturated.
 
 More on TMC-30 from [Using TM-30 to Improve Your Lighting Design](https://www.ies.org/fires/using-tm-30-to-improve-your-lighting-design/):
 
