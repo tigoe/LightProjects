@@ -79,7 +79,7 @@ This is where a [Hue, Saturation, Brightness (or Lightness)](https://programming
 _Figure 1. the CIE 1931 Chromaticity reference diagram. Image on Wikipedia._
 ## References
 
-Many of the references here are indebted to the International [Commission on Illumination](http://www.cie.co.at), CIE. Their [glossary](http://eilv.cie.co.at/) is a highly valuable resource for lighting enthusiasts and professionals. The rest of their website is a useful resource as well.
+Many of the references here are indebted to the International [Commission on Illumination](http://www.cie.co.at), CIE. Their [glossary](https://cie.co.at/e-ilv) is a highly valuable resource for lighting enthusiasts and professionals. The rest of their website is a useful resource as well.
 
 There are many different color models, and which one you use depends on the context in which you're talking about color. For a great discussion of [color theory](https://programmingdesignsystems.com/color/a-short-history-of-color-theory/index.html) and [color models and spaces](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html), see Rune Madsen's online book _[Programming Design Systems](https://programmingdesignsystems.com)_. 
 
