@@ -1,17 +1,17 @@
 /*
-  APA102x strip using Adafruit_NeoPixel library
+  WS281x strip using Adafruit_NeoPixel library
 
   This sketch shows the colors of the HSV wheel
   
   Uses Adafruit's NeoPixel library: https://github.com/adafruit/Adafruit_NeoPixel
 
-  modified 4 July 2019
+  modified 31 Jan 2022
   by Tom Igoe
 */
 #include <Adafruit_NeoPixel.h>
 
-const int neoPixelPin = 4;  // control pin
-const int pixelCount = 8;    // number of pixels
+const int neoPixelPin = 5;  // control pin
+const int pixelCount = 7;    // number of pixels
 
 
 

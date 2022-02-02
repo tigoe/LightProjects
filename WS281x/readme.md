@@ -1,12 +1,12 @@
 # WS281x Addressable LEDs and the Adafruit_NeoPixel Library
 
-The [WS281x and SK281x LEDs](../addressable-leds.md#worldsemi-addressable-leds) can be controlled with Adafruit's [NeoPixel library](https://github.com/adafruit/Adafruit_NeoPixel) in a variety of ways. The library supports RGB and RGBW LEDs, and it can set colors using RGB or RGBW values, or HSV values. The HSV converter does not use the white pixel if it's present, however. 
+The [WS281x and SK681x LEDs](../addressable-leds.md#worldsemi-addressable-leds) can be controlled with Adafruit's [NeoPixel library](https://github.com/adafruit/Adafruit_NeoPixel) in a variety of ways. The library supports RGB and RGBW LEDs, and it can set colors using RGB or RGBW values, or HSV values. The HSV converter does not use the white pixel if it's present, however. 
 
 Following are some good practices for using the NeoPixel library successfully. Think of this as a quickstart guide. Adafruit's [NeoPixel UberGuide](https://learn.adafruit.com/adafruit-neopixel-uberguide) covers the best practices of NeoPixels in much more depth. 
 
 ## Initialization
 
-There are a few properties you should know to  initialize a WS281x/SK281x module with the NeoPixel library. Here's the top of nearly every NeoPixel sketch:
+There are a few properties you should know to  initialize a WS281x/SK681x module with the NeoPixel library. Here's the top of nearly every NeoPixel sketch:
 
 ````arduino
 #include <Adafruit_NeoPixel.h>
@@ -27,7 +27,7 @@ To test the order, [here's a sketch](WS281xColorOrderTester/) that will turn on 
 
 ## Setting Color Values
 
-In the sketch above, all the colors are represented in variable, `color`. This allows you to use one hexadecimal number to set R, G, B, and W if you have it, at once, as in HTML colors. For example:
+In the sketch above, all the colors are represented in variable, `color`. This allows you to use one hexadecimal number to set R, G, B, and W if you have it, at once, similar to HTML colors. For example:
 
 ````
 0xFF      - blue
@@ -66,4 +66,20 @@ You can run a small number of WS281x pixels from 3.3V boards like the Nano 33 Io
 ## RGB vs HSV
 
 Controlling addressable LEDs with RGB is fine as long as you only need to control one primary color at a time. However, sometimes you want to do more complex things, like fade from red to orange, or green to teal to blue. In these cases, it's easier if you can use the Hue, Saturation, and Value (HSV) color space. 
+
+To get an RGB color from hue, saturation, and value, you use the `ColorHSV()` function like so:
+
+````arduino
+   unsigned long color = strip.ColorHSV(hue, sat, intensity);
+````
+
+This results in a single color value with the correct red, green, and blue values in it. You might also want to correct the gamma values before you set the colors like so:
+
+````arduino
+   unsigned long correctedColor = strip.gamma32(color);
+    strip.setPixelColor(pixel, color);   // set the color for this pixel
+````
+
+Gamma correction will adjust the color intensities on a power law curve rather than a linear one, color-correcting the red, green, and blue to more appropriately match the hue, saturation, and value that you want. [This sketch](WS281xTester/) demonstrates the use of HSV colors. Here's [another sketch](WS281HSVColorDemo/) that prints out the colors as you move through the HSV color wheel. Here's a [variation on the previous sketch](WS281HSVColorDemoSerial/) that allows you to control the hue cycling with input from the Serial Monitor. 
+
 

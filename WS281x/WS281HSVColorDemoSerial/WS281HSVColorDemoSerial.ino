@@ -12,8 +12,8 @@
 */
 #include <Adafruit_NeoPixel.h>
 
-const int neoPixelPin = 4;  // control pin
-const int pixelCount = 8;    // number of pixels
+const int neoPixelPin = 5;  // control pin
+const int pixelCount = 7;    // number of pixels
 
 
 

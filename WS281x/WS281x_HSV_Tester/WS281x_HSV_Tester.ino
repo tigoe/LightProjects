@@ -8,13 +8,13 @@
   Uses Adafruit's NeoPixel library: https://github.com/adafruit/Adafruit_NeoPixel
 
   created 31 Jan 2017
-  modified 17 Jun 2019
+  modified 31 Jan 2022
   by Tom Igoe
 */
 #include <Adafruit_NeoPixel.h>
 
-const int neoPixelPin = 4;  // control pin
-const int pixelCount = 8;    // number of pixels
+const int neoPixelPin = 5;  // control pin
+const int pixelCount = 7;    // number of pixels
 
 // set up strip:
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(pixelCount, neoPixelPin, NEO_GRBW + NEO_KHZ800);

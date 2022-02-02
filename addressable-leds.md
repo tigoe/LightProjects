@@ -23,7 +23,7 @@ There are multiple variations on WorldSemi's addressable LEDs. The original mode
 
 WorldSemi combined their 2811 driver chip with an RGB LED in a 5050 package to make the WS2812 LED. The more recent [WS2812B model adds some improvements](https://cdn.sparkfun.com/assets/learn_tutorials/1/0/5/WS2812B_VS_WS2812.pdf), like reverse voltage protection, 4 pins instead of 6, higher brightness, and improved thermal control. More recently, WorldSemi has also released the WS2813, which adds a second backup control line so that you don't lose a whole strip if one LED's control line is broken; and the WS2815, which is a 12V variation on the original model. 
 
-You can find a number of simplified examples using the Adafruit NeoPixel library for the WS281x LEDs at [this link](https://github.com/tigoe/NeoPixel_examples). 
+Here's a [quickstart page of NeoPixel examples](WS281x/readme.md) to get you started. You can also find a number of simplified examples using the Adafruit NeoPixel library for the WS281x LEDs at [this link](https://github.com/tigoe/NeoPixel_examples). 
 
 In summary:
 
