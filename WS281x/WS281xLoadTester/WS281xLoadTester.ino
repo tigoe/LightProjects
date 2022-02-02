@@ -1,5 +1,5 @@
 /*
-  WS281x loadTest with Adafruit_DotStar library
+  WS281x loadTest with Adafruit_NeoPixel library
 
   This sketch  loops through all the pixels of a WS281x-compatible device
   one pixel at a time, adding color cumulatively, in the order:
@@ -10,19 +10,20 @@
 
   Change pixelCount to the number of LEDs in your string.
 
-  Uses Adafruit's DotStar library: https://github.com/adafruit/Adafruit_DotStar
+  Uses Adafruit's DotStar library: https://github.com/adafruit/Adafruit_NeoPixel
 
   created 17 Jun 2019
+  modified 31 Jan 2022
   by Tom Igoe
 */
 #include <Adafruit_NeoPixel.h>
 
-const int neoPixelPin = 4;  // control pin
-const int pixelCount = 12;    // number of pixels
+const int neoPixelPin = 5;  // control pin
+const int pixelCount = 7;    // number of pixels
 
 
 // set up strip:
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(pixelCount, neoPixelPin, NEO_GRB+ NEO_KHZ800);
+Adafruit_NeoPixel strip = Adafruit_NeoPixel(pixelCount, neoPixelPin, NEO_GRBW+ NEO_KHZ800);
 
 unsigned long color = 0xFF;   // start with blue
 
@@ -37,7 +38,7 @@ void loop() {
   for (int pixel = 0; pixel < pixelCount; pixel++) {
     strip.setPixelColor(pixel, color);   // set the color for this pixel
     strip.show();    // refresh the strip
-    delay(500);
+    delay(1000);
   }
 
   if (color >= 0xFFFFFF) {   // if the color is greater than white (0xFF000000)
