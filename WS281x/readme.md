@@ -1,6 +1,6 @@
 # WS281x Addressable LEDs and the Adafruit_NeoPixel Library
 
-The WS281x and SK281x LEDs can be controlled with Adafruit's [NeoPixel library](https://github.com/adafruit/Adafruit_NeoPixel) in a variety of ways. The library supports RGB and RGBW LEDs, and it can set colors using RGB or RGBW values, or HSV values. The HSV converter does not use the white pixel if it's present, however. 
+The [WS281x and SK281x LEDs](../addressable-leds.md#worldsemi-addressable-leds) can be controlled with Adafruit's [NeoPixel library](https://github.com/adafruit/Adafruit_NeoPixel) in a variety of ways. The library supports RGB and RGBW LEDs, and it can set colors using RGB or RGBW values, or HSV values. The HSV converter does not use the white pixel if it's present, however. 
 
 Following are some good practices for using the NeoPixel library successfully. Think of this as a quickstart guide. Adafruit's [NeoPixel UberGuide](https://learn.adafruit.com/adafruit-neopixel-uberguide) covers the best practices of NeoPixels in much more depth. 
 
@@ -62,4 +62,8 @@ As the Adafruit NeoPixel Uberguide explains, addressable LEDs take a lot of powe
 Here's a [sketch that turns on one color per pixel at a time](WS281xLoadTester/), adding colors and pixels one at a time as it goes. You can use this to test the current load of a strip. You should see the current go up by the amperage of each channel for each pixel per second. 
 
 You can run a small number of WS281x pixels from 3.3V boards like the Nano 33 IoT. For small modules like the NeoPixel jewels (7 pixels), they work fine from the power from a Nano 33. However, for modules of more than a dozen or so pixels, you should power them from 5V, and if possible, use a 3.3V-to-5V level-shifter for the control pin.
+
+## RGB vs HSV
+
+Controlling addressable LEDs with RGB is fine as long as you only need to control one primary color at a time. However, sometimes you want to do more complex things, like fade from red to orange, or green to teal to blue. In these cases, it's easier if you can use the Hue, Saturation, and Value (HSV) color space. 
 
