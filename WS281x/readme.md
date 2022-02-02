@@ -23,7 +23,7 @@ Most examples you'll find will refer to the variable holding  the library instan
 
 The things you'll change are the pixel that you're controlling the LEDs from (`neoPixelPin`, above); the number of pixels you're controlling (`pixelCount`, above); and the arrangement of pixels (`NEO_GRB`, above). The arrangement of pixels depends on which LEDs you are using. Some WS218x-derivative LEDs arrange the order of LEDs in a different order than the Green-Red-Blue order suggested here. If you have an RGBW module, the last property usually the white LED.
 
-To test the order, [here's a sketch](WS281xColorOrderTester/WS281xColorOrderTester.ino) that will turn on blue, then green, then red, then white for all the LEDs. If the colors don't appear in that order you can change the initializer. Possible values are all permutations of RGB or RGBW. For example, GRB, GBR, RGB, GRBW, etc. Re-ordering the colors will affect which channels are controlled by which color values. Try different orders in the sketch above to see how it works. 
+To test the order, [here's a sketch](WS281xColorOrderTester/) that will turn on blue, then green, then red, then white for all the LEDs. If the colors don't appear in that order you can change the initializer. Possible values are all permutations of RGB or RGBW. For example, GRB, GBR, RGB, GRBW, etc. Re-ordering the colors will affect which channels are controlled by which color values. Try different orders in the sketch above to see how it works. 
 
 ## Setting Color Values
 
@@ -53,8 +53,13 @@ Which you choose depends on what you're trying to do with your colors. Sometimes
 
 ## Setting and Clearing the Module
 
-The only time the LEDs in a module change are when you call one of two functions: `clear()` or `show()`. `clear()` will turn off all the LEDs at once. `show()` will update all the LEDs with whatever values you set them to using `setPixelColor()`. In the [Color order tester sketch](WS281xColorOrderTester/WS281xColorOrderTester.ino), All the module's colors are set in a `for` loop before the `show()` command is called. However, you can also test one pixel and one color at a time by calling `show()` whenever you call getPixelColor. Here's [another tester](WS281xTester/WS281xTester.ino) that tests each pixel one at a time in each color. Both this and the earlier test are good to run with each new module, to make sure all the pixels work.
+The only time the LEDs in a module change are when you call one of two functions: `clear()` or `show()`. `clear()` will turn off all the LEDs at once. `show()` will update all the LEDs with whatever values you set them to using `setPixelColor()`. In the [Color order tester sketch](WS281xColorOrderTester/), All the module's colors are set in a `for` loop before the `show()` command is called. However, you can also test one pixel and one color at a time by calling `show()` whenever you call getPixelColor. Here's [another tester](WS281xTester/W) that tests each pixel one at a time in each color. Both this and the earlier test are good to run with each new module, to make sure all the pixels work.
 
-As the Adafruit NeoPixel Uberguide explains, addressable LEDs take a lot of power: 20 milliamps per channel per pixel at 5V. That means that a 60-pixel RGBW strip takes 20mA * 4 channels * 60 pixels. That's 4800 mA, or 4.8 Amps when all the pixels are on. That's a lot!  More than you can run from a microcontroller running from your USB port, that's for sure. 
+## Voltage and Current
 
-Here's a [sketch that turns on one color per pixel at a time](WS281xLoadTester/WS281xLoadTester.ino), adding colors and pixels one at a time as it goes. You can use this to test the current load of a strip. You should see the current go up by 20mA per second. 
+As the Adafruit NeoPixel Uberguide explains, addressable LEDs take a lot of power: up to 20 milliamps per channel per pixel at 5V. That means that a 60-pixel RGBW strip takes 20mA * 4 channels * 60 pixels. That's 4800 mA, or 4.8 Amps when all the pixels are on. That's a lot!  More than you can run from a microcontroller running from your USB port, that's for sure. 
+
+Here's a [sketch that turns on one color per pixel at a time](WS281xLoadTester/), adding colors and pixels one at a time as it goes. You can use this to test the current load of a strip. You should see the current go up by the amperage of each channel for each pixel per second. 
+
+You can run a small number of WS281x pixels from 3.3V boards like the Nano 33 IoT. For small modules like the NeoPixel jewels (7 pixels), they work fine from the power from a Nano 33. However, for modules of more than a dozen or so pixels, you should power them from 5V, and if possible, use a 3.3V-to-5V level-shifter for the control pin.
+
