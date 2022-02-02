@@ -21,5 +21,12 @@ Adafruit_NeoPixel strip = Adafruit_NeoPixel(pixelCount, neoPixelPin, NEO_GRB + N
 
 The things you'll change are the pixel that you're controlling the LEDs from (`neoPixelPin`, above); the number of pixels you're controlling (`pixelCount`, above); and the arrangement of pixels (`NEO_GRB`, above). The arrangement of pixels depends on which LEDs you are using. Some WS218x-derivative LEDs arrange the order of LEDs in a different order than the Green-Red-Blue order suggested here. If you have an RGBW module, the last property usually the white LED.
 
-To test the order, [here's a sketch](WS281x/WS281xColorOrderTester/WS281xColorOrderTester.ino) that will turn on blue, then green, then red, then white for all the LEDs.
+To test the order, [here's a sketch](WS281x/WS281xColorOrderTester/WS281xColorOrderTester.ino) that will turn on blue, then green, then red, then white for all the LEDs. In this sketch, all the colors are represented in variable, `color`. This allows you to use one hexadecimal number to set R, G, B, and W if you have it, at once, as in HTML colors. For example:
 
+````
+0xFF      - blue
+0xFF00    - green
+0xFF0000  - red
+0xFF00000 - white (if the white channel is present)
+0xFFFFFF  - white (if the white channel is not present)
+````
