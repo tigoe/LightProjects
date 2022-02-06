@@ -66,6 +66,7 @@ const config = {
   type: 'bar',
   data: data,
   options: {
+    responsive: true,
     plugins: {
       // this gets rid of the box by the data label:
       legend: {

@@ -54,7 +54,10 @@ Calibration Methods](https://ams.com/documents/20143/36005/AS7341_AN000633_1-00.
 
 __TO DO:__ The correction math in these examples is crude, and simply applies the numbers in Fig. 10 of the application note with no further math. I haven't yet verified its accuracy. 
 
-This browser-based client reads and visualizes the data from serial port in this repository. It uses [p5.js](https://p5js.org), [chart.js](https://www.chartjs.org/) and the [p5.serialport library](https://github.com/p5-serial/p5.serialport) and [p5SerialControl](https://github.com/p5-serial/p5.serialcontrol/tags) app. 
+This browser-based client reads and visualizes the data from serial port in this repository. It uses [p5.js](https://p5js.org), [chart.js](https://www.chartjs.org/) and the [p5.serialport library](https://github.com/p5-serial/p5.serialport) and [p5SerialControl](https://github.com/p5-serial/p5.serialcontrol/tags) app. Figure 3 shows a screenshot. This is similar to the appearance of the next few client apps below.
+
+![screenshot of the serial-to-chartjs client](../img/chartjs_spectrometer.png)
+_Figure 3. Screenshot of the Serial client in a browser. Ten colored bands representing the sensor's frequencies are visible in a chart in the browser window._
 
 * [raw JS code](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/spectrograph_chartjs_serial/)
 * [Arduino Serial client](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/AS7341_Spectrometer_serial)
