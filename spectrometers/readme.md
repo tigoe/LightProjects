@@ -63,6 +63,15 @@ _Figure 3. Screenshot of the Serial client in a browser. Ten colored bands repre
 * [Arduino Serial client](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/AS7341_Spectrometer_serial)
 * [p5.js application in gitHub pages](https://tigoe.github.io/LightProjects/spectrometers/AS7341/spectrograph_chartjs_serial/index.html)
 
+## WebSerial to p5.js Client
+
+The WebSerial to p5.js Client uses the same chart.js display code as the previous example, but uses [webSerial](https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API) instead of p5.serialport. It does not require the p5.serialcontrol app. It will work in the Chrome and Edge and Opera browsers, but not Safari or Firefox as of this writing. It's otherwise the same as the previous client, but useful to compare to see the difference between webSerial and p5.serialport.
+
+* [raw JS code](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/spectrograph_chartjs_web-serial/)
+* [Arduino Serial client](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/AS7341_Spectrometer_serial)
+* [p5.js application in gitHub pages](https://tigoe.github.io/LightProjects/spectrometers/AS7341/spectrograph_chartjs_web-serial/index.html)
+
+
 ## WiFi and MQTT Client
 
 If you've never connected to WiFi using the Nano 33 IoT, you should visit the [WiFiNINA reference](https://www.arduino.cc/en/Reference/WiFiNINA) and [this repository](https://tigoe.github.io/Wifi101_examples/). 
