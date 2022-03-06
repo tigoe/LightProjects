@@ -40,7 +40,6 @@ String readingString;
 BLEService spectroService(serviceUuid);
 // create sensor characteristic and allow remote device to get notifications:
 BLECharacteristic spectroCharacteristic(characteristicUuid, BLERead | BLENotify, readingLength);
-bool centralConnected = false;
 
 void setup() {
   // init serial, wait 3 secs for serial monitor to open:
@@ -101,10 +100,14 @@ void loop() {
   // poll for BLE events:
   BLE.poll();
 
-  // if you get a good sensor reading and a central is connected,
-  // update the spectroCharacteristic:
-  if (readSensor() && centralConnected) {
-    spectroCharacteristic.writeValue(readingString.c_str());
+  // if you get a good sensor reading:
+  if (readSensor()) {
+    // if a central subscribes to the spectro characteristic:
+    if (spectroCharacteristic.subscribed()) {
+      Serial.println("subscribed");
+      // update the characteristic:
+      spectroCharacteristic.writeValue(readingString.c_str());
+    }
     Serial.println(readingString);
   }
 }
@@ -113,18 +116,16 @@ void blePeripheralConnectHandler(BLEDevice central) {
   // central connected event handler
   Serial.print("Connected event, central: ");
   Serial.println(central.address());
-  centralConnected = true;
   // turn on the builtin LED when connected:
-  digitalWrite(LED_BUILTIN, centralConnected);
+  digitalWrite(LED_BUILTIN, HIGH);
 }
 
 void blePeripheralDisconnectHandler(BLEDevice central) {
   // central disconnected event handler
   Serial.print("Disconnected event, central: ");
   Serial.println(central.address());
-  centralConnected = false;
-    // turn off the builtin LED when disconnected:
-  digitalWrite(LED_BUILTIN, centralConnected);
+  // turn off the builtin LED when disconnected:
+  digitalWrite(LED_BUILTIN, LOW);
 }
 
 bool readSensor() {
