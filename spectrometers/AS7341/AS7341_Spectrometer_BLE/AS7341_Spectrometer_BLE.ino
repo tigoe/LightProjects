@@ -4,12 +4,14 @@
   approach, using the startReading() and checkReadingProgress()
   functions. It's about 2 seconds between readings.
 
+  Updated to use the BLE event handlers to manage the central connection.
+
   Library:
   http://librarymanager/All#Adafruit_AS7341
   http://librarymanager/All#ArduinoBLE
 
   created 18 Jun 2021
-  modified 5 Jan 2022
+  modified 6 Mar 2022
   by Tom Igoe
 */
 
@@ -21,7 +23,7 @@
 char serviceUuid[] = "9af01fc3-0000-44b8-8acc-f3ed7a225431";
 char characteristicUuid[] = "9af01fc3-0001-44b8-8acc-f3ed7a225431";
 
-// fill in your device name here" 
+// fill in your device name here"
 char bleName[] = "spectroscope";
 
 // instance of the sensor library:
@@ -38,6 +40,7 @@ String readingString;
 BLEService spectroService(serviceUuid);
 // create sensor characteristic and allow remote device to get notifications:
 BLECharacteristic spectroCharacteristic(characteristicUuid, BLERead | BLENotify, readingLength);
+bool centralConnected = false;
 
 void setup() {
   // init serial, wait 3 secs for serial monitor to open:
@@ -46,11 +49,14 @@ void setup() {
   if (!Serial) delay(3000);
   // use builtin LED for connection indicator:
   pinMode(LED_BUILTIN, OUTPUT);
-  
+
   // readingString will need 50 bytes for all values:
   readingString.reserve(readingLength);
 
+  pinMode(2, OUTPUT);
+
   if (!as7341.begin()) {
+    digitalWrite(2, HIGH);
     Serial.println("Sensor not found, check wiring");
     while (true);
   }
@@ -77,6 +83,11 @@ void setup() {
   spectroService.addCharacteristic(spectroCharacteristic);
   // add the service:
   BLE.addService(spectroService);
+
+  // assign event handlers for connected, disconnected to peripheral
+  BLE.setEventHandler(BLEConnected, blePeripheralConnectHandler);
+  BLE.setEventHandler(BLEDisconnected, blePeripheralDisconnectHandler);
+
   // convert readingString to a char array set the value:
   spectroCharacteristic.writeValue(readingString.c_str());
 
@@ -87,27 +98,33 @@ void setup() {
 
 
 void loop() {
-  // listen for BLE peripherals to connect:
-  BLEDevice central = BLE.central();
-  // if one connects:
-  if (central) {
-    // print the central's MAC address:
-    Serial.print("Connected to central: ");
-    Serial.println(central.address());
-    // indicate it:
-    digitalWrite(LED_BUILTIN, HIGH);
-    // while it's connected, get sensor readings:
-    while (central.connected()) {
-      // read the sensor, print if there are good values:
-      if (readSensor()) {
-        spectroCharacteristic.writeValue(readingString.c_str());
-        Serial.println(readingString);
-      }
-    }
-    // if the central disconnects, indicate it:
-    digitalWrite(LED_BUILTIN, LOW);
-    Serial.println("Disconnected");
+  // poll for BLE events:
+  BLE.poll();
+
+  // if you get a good sensor reading and a central is connected,
+  // update the spectroCharacteristic:
+  if (readSensor() && centralConnected) {
+    spectroCharacteristic.writeValue(readingString.c_str());
+    Serial.println(readingString);
   }
+}
+
+void blePeripheralConnectHandler(BLEDevice central) {
+  // central connected event handler
+  Serial.print("Connected event, central: ");
+  Serial.println(central.address());
+  centralConnected = true;
+  // turn on the builtin LED when connected:
+  digitalWrite(LED_BUILTIN, centralConnected);
+}
+
+void blePeripheralDisconnectHandler(BLEDevice central) {
+  // central disconnected event handler
+  Serial.print("Disconnected event, central: ");
+  Serial.println(central.address());
+  centralConnected = false;
+    // turn off the builtin LED when disconnected:
+  digitalWrite(LED_BUILTIN, centralConnected);
 }
 
 bool readSensor() {
