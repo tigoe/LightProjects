@@ -1,9 +1,9 @@
 /*
    CIE1931 fade
-   Takes input from an analog sensor and produces an LED fade 
-   that appears visually linear, using the CIE1931 
-   perceived lightness formula. 
-   
+   Takes input from an analog sensor and produces an LED fade
+   that appears visually linear, using the CIE1931
+   perceived lightness formula.
+
    references:
    - http://hyperphysics.phy-astr.gsu.edu/hbase/vision/cie.html
    - https://jared.geek.nz/2013/feb/linear-led-pwm
@@ -11,17 +11,22 @@
   circuit:
   - LED attached to pin 5
   - 10Kilohm potentiometer attached to A0
- 
+
   created 9 June 2019
+  modified 23 May 2022
   by Tom Igoe
 */
 
 int currentLevel = 1; // current light level
 int change = 1;       // change each time you fade
-byte cie1931[256];    // pre-calculated PWM levels
+const int resolution = 10;
+const int steps = pow(2, resolution);
+int cie1931[steps];    // pre-calculated PWM levels
 
 void setup() {
   Serial.begin(9600);
+  while (!Serial) delay(3000);
+  analogWriteResolution(resolution);
   // pre-calculate the PWM levels from CIE1931 formulas:
   fillCIETable();
 }
@@ -30,7 +35,7 @@ void loop() {
   // read potentiometer:
   int sensorReading = analogRead(A0);
   // map to 0-255 range:
-  int currentLevel = map(sensorReading, 0, 1023, 0, 255);
+  int currentLevel = map(sensorReading, 0, 1023, 0, steps);
 
   // PWM output the result. Get levels from
   // the pre-calculated CIE1931 table:
@@ -48,7 +53,7 @@ void fillCIETable() {
     if L* <= 8: Y = L* *903.3 * Yn
   */
   // set the range of values:
-  float maxValue = 255;
+  float maxValue = steps;
   // scaling factor to convert from 0-100 to 0-maxValue:
   float scalingFactor = 100 / maxValue;
   // luminance value:
