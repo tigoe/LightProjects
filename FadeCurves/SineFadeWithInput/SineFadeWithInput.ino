@@ -6,10 +6,9 @@
   - LED attached to pin 5
   - 10Kilohm potentiometer attached to A0
 
-
   to change from 10-bit resolution to 8, change the resolution variable
   and comment out the analogWriteResolution() command
- 
+
   created 30 Jan 2019
   modified 23 May 2022
   by Tom Igoe and lighting & interactivity 2019 class
@@ -28,6 +27,9 @@ void setup() {
 }
 
 void loop() {
+  Serial.begin(9600);
+  while (!Serial) delay(3000);
+  analogWriteResolution(resolution);
   // read potentiometer:
   int sensorReading = analogRead(A0);
   // map to 0-255 range:
@@ -60,7 +62,7 @@ void fillLevelTable() {
       result = result * 127.5;
     */
     //here it all is in one line:
-    float lightLevel = (sin((angle * PI / 180) + PI / 2) + 1) * (steps/2);
+    float lightLevel = (sin((angle * PI / 180) + PI / 2) + 1) * (steps / 2);
     levelTable[l] = lightLevel;
   }
 }
