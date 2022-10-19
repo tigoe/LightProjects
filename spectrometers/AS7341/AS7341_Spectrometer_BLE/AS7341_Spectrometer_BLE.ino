@@ -86,7 +86,7 @@ void setup() {
   // assign event handlers for connected, disconnected to peripheral
   BLE.setEventHandler(BLEConnected, blePeripheralConnectHandler);
   BLE.setEventHandler(BLEDisconnected, blePeripheralDisconnectHandler);
-
+    
   // convert readingString to a char array set the value:
   spectroCharacteristic.writeValue(readingString.c_str());
 
