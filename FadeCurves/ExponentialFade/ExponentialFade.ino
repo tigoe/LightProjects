@@ -13,24 +13,33 @@
   by Tom Igoe
 */
 
-int currentLevel = 1; // current light level
-int change = 1;       // change each time you fade
+// analogWrite resolution (can be 10 for SAMD boards, has to be 8 for Uno):
 const int resolution = 10;
+// number of steps = 2^resolution:
 const int steps = pow(2, resolution);
-int levelTable[steps]; // pre-calculated PWM levels
+// change between steps:
+int change = 1;
+// current level:
+int currentLevel = 1;
+// pre-calculated PWM levels:
+int levelTable[steps];
 
 void setup() {
   Serial.begin(9600);
-    while(!Serial) delay(3000);
-  analogWriteResolution(resolution);
+  // wait for serial monitor to open:
+  if (!Serial) delay(3000);
   // pre-calculate the PWM levels from the formula:
   fillLevelTable();
+  // set the analogWrite resolution:
+  analogWriteResolution(resolution);
+  // initialize digital pin 5 as an output:
+  pinMode(5, OUTPUT);
 }
 
 void loop() {
   // decrease or increase by 1 point each time
   // if at the bottom or top, change the direction:
-  if (currentLevel <= 0 || currentLevel >= steps) {
+  if (currentLevel <= 0 || currentLevel >= steps - 1) {
     change = -change;
   }
   currentLevel += change;
@@ -42,14 +51,13 @@ void loop() {
 }
 
 void fillLevelTable() {
-  // set the range of values:
-  float maxValue = steps;
+
   // Calculate the scaling factor based on the
   // number of PWM steps you want:
-  float scalingFactor = (maxValue * log10(2)) / (log10(steps));
+  float scalingFactor = (steps * log10(2)) / (log10(steps));
 
   // iterate over the array and calculate the right value for it:
-  for (int l = 0; l <= maxValue; l++) {
+  for (int l = 0; l < steps; l++) {
     int lightLevel = pow(2, (l / scalingFactor)) - 1;
     levelTable[l] = lightLevel;
   }
