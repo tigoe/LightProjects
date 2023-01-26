@@ -41,17 +41,16 @@ void setup() {
 }
 
 void loop() {
-   // read potentiometer:
+  // read potentiometer:
   int sensorReading = analogRead(A0);
   // map to range:
-  int currentLevel = map(sensorReading, 0, 1023, 0, steps-1);
+  int currentLevel = map(sensorReading, 0, 1023, 0, steps - 1);
 
   //PWM output the result:
   analogWrite(5, levelTable[currentLevel]);
   delay(10);
   Serial.println(levelTable[currentLevel]);
 }
-
 
 void fillLevelTable() {
   /*

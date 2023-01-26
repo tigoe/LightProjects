@@ -56,7 +56,6 @@ void loop() {
   Serial.println(levelTable[currentLevel]);
 }
 
-
 void fillLevelTable() {
   /*
     For CIE1931, the following formulas have  Y as luminance, and
