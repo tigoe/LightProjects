@@ -1,5 +1,15 @@
+/*
+  Candle example
+  Runs only on SAMD boards (Nano 33 IoT, MKR series)
+  uses Adafruit's NeoPixel library and the ColorHSV function therein
+  Also uses Scheduler library, which runs only on SAMD boards.
+
+  created  6 Jun 2020
+  modified 6 Feb 2023
+  by Tom Igoe
+*/
+
 #include <Adafruit_NeoPixel.h>
-#include <ColorConverter.h>
 #include <Scheduler.h>
 
 const int neoPixelPin = 5;   // control pin
@@ -7,7 +17,6 @@ const int pixelCount = 7;    // number of pixels
 
 // set up strip:
 Adafruit_NeoPixel candle = Adafruit_NeoPixel(pixelCount, neoPixelPin, NEO_GRBW + NEO_KHZ800);
-ColorConverter converter;
 
 int hues[pixelCount];
 int saturations[pixelCount];
@@ -30,30 +39,29 @@ void setup() {
   // set all initial hues, sats, intensities, and colorConverters
   for (int p = 0; p < 2; p++) {
     int thisPixel = highPixels[p];
-    hues[thisPixel] = random(10) + 8;
-    saturations[thisPixel] = random(2) + 98;
-    intensities[thisPixel] = random(20) + 70;
+    hues[thisPixel] = random(1200) + 1200;
+    saturations[thisPixel] = random(10) + 240;
+    intensities[thisPixel] = random(20) + 200;
   }
 
   for (int p = 0; p < 2; p++) {
     int thisPixel = lowPixels[p];
-    hues[thisPixel] = random(12) + 3;
-    saturations[thisPixel] = 100;
-    intensities[thisPixel] = random(20) + 30;
+    hues[thisPixel] = random(800) + 300;
+    saturations[thisPixel] = 255;
+    intensities[thisPixel] = random(20) + 100;
   }
 
   for (int p = 0; p < 2; p++) {
     int thisPixel = lightPixels[p];
-    hues[thisPixel] = random(16) + 4;
-    saturations[thisPixel] = random(10) + 80;
-    intensities[thisPixel] = random(20) + 30;
+    hues[thisPixel] = random(1500) + 800;
+    saturations[thisPixel] = random(20) + 220;
+    intensities[thisPixel] = random(40) + 110;
   }
 
 
-  hues[bluePixel] = random(40) + 240;
-  saturations[bluePixel] = random(5) + 95;
-  intensities[bluePixel] = random(10) + 5;
-
+  hues[bluePixel] = random(200) + 30000;
+  saturations[bluePixel] = random(10) + 230;
+  intensities[bluePixel] = random(20) + 30;
 
   // set up some loops for timing:
   Scheduler.startLoop(fastLoop);
@@ -64,9 +72,6 @@ void setup() {
 void loop() {
   for (int p = 0; p < 2; p++) {
     int thisPixel = highPixels[p];
-    RGBColor colors = converter.HSItoRGBW(hues[thisPixel],
-                                            saturations[thisPixel],
-                                            intensities[thisPixel]);
 
     // change the hue:
     hues[thisPixel] = hues[thisPixel] + changeValues[thisPixel];
@@ -75,11 +80,10 @@ void loop() {
     if (hues[thisPixel] < 8 || hues[thisPixel] > 18) {
       changeValues[thisPixel] = -changeValues[thisPixel];
     }
-    candle.setPixelColor(thisPixel,
-                         colors.red,
-                         colors.green,
-                         colors.blue,
-                         colors.white);
+    long thisColor = candle.ColorHSV(hues[thisPixel],
+                                     saturations[thisPixel],
+                                     intensities[thisPixel]);
+    candle.setPixelColor(thisPixel, thisColor);
   }
   candle.show();
   delay(50);
@@ -90,10 +94,6 @@ void loop() {
 void fastLoop() {
   for (int p = 0; p < 2; p++) {
     int thisPixel = lowPixels[p];
-    RGBColor colors = converter.HSItoRGBW(hues[thisPixel],
-                                            saturations[thisPixel],
-                                            intensities[thisPixel]);
-
     // change the hue:
     hues[thisPixel] = hues[thisPixel] + changeValues[thisPixel];
     // keep the change within the min/max range,
@@ -101,11 +101,10 @@ void fastLoop() {
     hues[thisPixel] += (random(3) - 1);
     hues[thisPixel] = constrain(hues[thisPixel], 4, 16);
 
-    candle.setPixelColor(thisPixel,
-                         colors.red,
-                         colors.green,
-                         colors.blue,
-                         colors.white);
+    long thisColor = candle.ColorHSV(hues[thisPixel],
+                                     saturations[thisPixel],
+                                     intensities[thisPixel]);
+    candle.setPixelColor(thisPixel, thisColor);
   }
   candle.show();
   delay(30);
@@ -115,9 +114,6 @@ void fastLoop() {
 void medLoop() {
   for (int p = 0; p < 2; p++) {
     int thisPixel = lightPixels[p];
-    RGBColor colors = converter.HSItoRGBW(hues[thisPixel],
-                                            saturations[thisPixel],
-                                            intensities[thisPixel]);
 
     // change the hue:
     hues[thisPixel] = hues[thisPixel] + changeValues[thisPixel];
@@ -126,21 +122,16 @@ void medLoop() {
     if (hues[thisPixel] < 4 || hues[thisPixel] > 20) {
       changeValues[thisPixel] = -changeValues[thisPixel];
     }
-    candle.setPixelColor(thisPixel,
-                         colors.red,
-                         colors.green,
-                         colors.blue,
-                         colors.white);
+    long thisColor = candle.ColorHSV(hues[thisPixel],
+                                     saturations[thisPixel],
+                                     intensities[thisPixel]);
+    candle.setPixelColor(thisPixel, thisColor);
   }
   candle.show();
   delay(60);
 }
 
 void slowLoop() {
-  RGBColor colors = converter.HSItoRGBW(hues[bluePixel],
-                                          saturations[bluePixel],
-                                          intensities[bluePixel]);
-
   // change the hue:
   hues[bluePixel] = hues[bluePixel] + changeValues[bluePixel];
   // change the intensity and constrain it:
@@ -152,12 +143,10 @@ void slowLoop() {
   if (hues[bluePixel] < 200 || hues[bluePixel] > 280) {
     changeValues[bluePixel] = -changeValues[bluePixel];
   }
-
-  candle.setPixelColor(bluePixel,
-                       colors.red,
-                       colors.green,
-                       colors.blue,
-                       colors.white);
+  long thisColor = candle.ColorHSV(hues[bluePixel],
+                                   saturations[bluePixel],
+                                   intensities[bluePixel]);
+  candle.setPixelColor(bluePixel, thisColor);
   candle.show();
   delay(100);
   yield();
