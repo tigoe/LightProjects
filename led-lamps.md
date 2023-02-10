@@ -67,14 +67,19 @@ In the circuits below, a transistor is connected to a GPIO pin of the microcontr
 
 The TIP120 transistor commonly comes in a TO-220 package that fits nicely into a solderless breadboard. If you're holding the TIP120 with the tab at the top and the bulk of the component facing you, then the pins, from left to right, are: base, collector, emitter. The base is the control pin. The collector is where the electrical energy comes in, and the emitter is where it flows out to ground. The base should be connected to a 1 kilohm resistor, and the other side of the resistor should be connected to the GPIO pin of your  microcontroller. The collector should be connected to the cathode of the LED source, and the emitter pin should be connected to ground. 
 
- Figure 1 shows the circuit for a TIP120 Darlington transistor controlling a 12V DC LED source. The same circuit can be used for a 24V source, with a different power supply. 
+ Figure 1 shows the circuit for a TIP120 Darlington transistor controlling a 12V DC LED source from a MKR Zero. The same circuit can be used for a 24V source, with a different power supply. Figure 2 shows the same circuit with a Nano 33 IoT.
 
 ![Figure 1. TIP120 transistor controlling an LED source](img/12VDC_LED_TIP120_lamp_circuit_bb.png)
 
-_Figure 1. TIP120 transistor controlling an LED lamp._ 
+_Figure 1. TIP120 transistor controlling an LED lamp from a MKR Zero._ 
 
-#### Circuit Description (Figure 1)
-In Figure 1, the MKR Zero microcontroller is straddling the center of a breadboard with its top pins plugged into row 1 of the board. The Vcc pin (physical pin 26) is connected to the breadboard's voltage bus, and the ground pin (physical pin 25) is connected to the ground bus. The voltage and ground buses on either side of the board are connected to each other. A TIP120 transistor is mounted in the right center section of the board below the microcontroller. The MKR Zero's pin D5 (physical pin 14) is connected to the base of the transistor. The transistor's emitter pin is connected to ground. The transistor's collector pin is connected to the LED source. The other connector of the source is connected to the positive terminal of a +12V DC power jack. The power jack's negative terminal is connected to the breadboard's ground bus. The jack should be connected to a +12V DC power supply. 
+![Figure 2. TIP120 transistor controlling an LED source](img/12VDC_LED_TIP120_Nano_lamp_circuit_bb.png)
+
+_Figure 2. TIP120 transistor controlling an LED lamp from a Nano 33 IoT._ 
+
+
+#### Circuit Description (Figure 1 and 2)
+In Figure 1 and Figure 2, the  microcontroller is straddling the center of a breadboard with its top pins plugged into row 1 of the board. Figure 1 shows a MKR Zero and Figure 2 shows a Nano 33 IoT. The Vcc pin (physical pin 26 on the MKR Zero, pin 2 on the Nano 33 IoT) is connected to the breadboard's voltage bus, and the ground pin (physical pin 25 on the MKR Zero, pin 14 on the Nano 33 IoT) is connected to the ground bus. The voltage and ground buses on either side of the board are connected to each other. A TIP120 transistor is mounted in the right center section of the board below the microcontroller. The microcontroller's pin D5 (physical pin 14 on the MKR Zero, pin 23 on the Nano 33 IoT) is connected to the base of the transistor through a 1-kilohm resistor in series with the base. The transistor's emitter pin is connected to ground. The transistor's collector pin is connected to the LED source. The other connector of the source is connected to the positive terminal of a +12V DC power jack. The power jack's negative terminal is connected to the breadboard's ground bus. The jack should be connected to a +12V DC power supply. 
 
 ### FQP30N06L N-Channel MOSFET
 A MOSFET (Metal Oxide Semiconductor Field-Effect Transistor) is a slightly more modern transistor, designed specifically for switching applications. Bipolar transistors require a certain amount of current at the base to switch, while MOSFETs draw almost no control current. They're ideal for switching LED sources. They are more sensitive to electrostatic discharge than bipolar transistors, though, so you have to be more careful not to accidentally expose them to a static shock. Make sure you've grounded yourself well before working with MOSFETs. 
@@ -83,21 +88,19 @@ The FQP30N06L MOSFET  commonly comes in a TO-220 package that fits nicely into a
 
 The [FQP30N06L](https://octopart.com/search?q=FQP30N06L) MOSFET [(datasheet)](https://cdn.sparkfun.com/datasheets/Components/General/FQP30N06L.pdf) is an N-channel MOSFET designed for switching high-speed circuits, and it's perfect for switching LEDs. It can control up to a 60V, 30A load and can be switched from 3.3V or 5V.
 
-![Figure 2. FQP30N06L MOSFET controlling an LED lamp from an Arduino MKRZero](img/12VDC_LED_MOSFET_lamp_circuit_bb.png)
+![Figure 3. FQP30N06L MOSFET controlling an LED lamp from an Arduino MKRZero](img/12VDC_LED_MOSFET_lamp_circuit_bb.png)
 
-_Figure 2. MKR Zero connected to a FQP30N06L MOSFET for controlling an LED lamp._ 
+_Figure 3. MKR Zero connected to a FQP30N06L MOSFET for controlling an LED lamp._ 
 
-![Figure 3. FQP30N06L MOSFET controlling an LED lamp from an Arduino Nano](img/12VDC_Nano_LED_MOSFET_lamp_circuit_bb.png)
+![Figure 4. FQP30N06L MOSFET controlling an LED lamp from an Arduino Nano](img/12VDC_Nano_LED_MOSFET_lamp_circuit_bb.png)
 
-_Figure 3. Arduino Nano 33 IoT connected to a FQP30N06L MOSFET for controlling an LED lamp._ 
+_Figure 4. Arduino Nano 33 IoT connected to a FQP30N06L MOSFET for controlling an LED lamp._ 
 
- Figure 2 shows the circuit for a MOSFET transistor controlling a 12V DC LED lamp from an Arduino MKR Zero. The same circuit can be used for a 24V source, with a different power supply. The wiring is similar to the TIP120 wiring, but the 1 kilohm resistors are omitted. Figure 3 shows the same wiring on a Nano 33 IoT board.
+ Figure 3 shows the circuit for a MOSFET transistor controlling a 12V DC LED lamp from an Arduino MKR Zero. The same circuit can be used for a 24V source, with a different power supply. The wiring is similar to the TIP120 wiring, but the 1 kilohm resistors are omitted. Figure 4 shows the same wiring on a Nano 33 IoT board.
 
-#### Circuit Description (Figure 2)
-In Figure 2, the MKR Zero microcontroller is straddling the center of a breadboard with its top pins plugged into row 1 of the board. The Vcc pin (physical pin 26) is connected to the breadboard's voltage bus, and the ground pin (physical pin 25) is connected to the ground bus. The voltage and ground buses on either side of the board are connected to each other. A FQP30N06L MOSFET is mounted in the right center section of the board below the microcontroller. The MKR Zero's pin D5 (physical pin 14) is connected to the gate of the MOSFET. The MOSFET's source pin is connected to ground. The MOSFET's drain pin is connected to cathode of the LED source. The anode of the source is connected to the positive terminal of a +12V DC power jack. The power jack's negative terminal is connected to the breadboard's ground bus. The jack should be connected to a +12V DC power supply. 
+#### Circuit Description (Figure 3 and 4)
 
-#### Circuit Description (Figure 3)
-Figure 3 is similar to Figure 2, but with a different microcontroller board, the Arduino Nano 33 IoT instead of the MKR Zero.  The microcontroller is straddling the center of a breadboard with its top pins plugged into row 1 of the board. The Vcc pin (physical pin 2) is connected to the breadboard's voltage bus, and the ground pin (physical pin 14) is connected to the ground bus. The voltage and ground buses on either side of the board are connected to each other. A FQP30N06L MOSFET is mounted in the right center section of the board below the microcontroller. The Nano 33 IoT's pin D5 (physical pin 23) is connected to the gate of the MOSFET. The MOSFET's source pin is connected to ground. The MOSFET's drain pin is connected to cathode of the LED source. The anode of the source is connected to the positive terminal of a +12V DC power jack. The power jack's negative terminal is connected to the breadboard's ground bus. The jack should be connected to a +12V DC power supply. 
+In Figure 3 and Figure 3, the  microcontroller is straddling the center of a breadboard with its top pins plugged into row 1 of the board. Figure 1 shows a MKR Zero and Figure 2 shows a Nano 33 IoT. The Vcc pin (physical pin 26 on the MKR Zero, pin 2 on the Nano 33 IoT) is connected to the breadboard's voltage bus, and the ground pin (physical pin 25 on the MKR Zero, pin 14 on the Nano 33 IoT) is connected to the ground bus. The voltage and ground buses on either side of the board are connected to each other. A MOSFET transistor is mounted in the right center section of the board below the microcontroller. The microcontroller's pin D5 (physical pin 14 on the MKR Zero, pin 23 on the Nano 33 IoT) is connected to the gate of the MOSFET. The MOSFET's source pin is connected to ground. The MOSFET's drain pin is connected to cathode of the LED source. The anode of the source is connected to the positive terminal of a +12V DC power jack. The power jack's negative terminal is connected to the breadboard's ground bus. The jack should be connected to a +12V DC power supply. 
 
 ### IRLB8721 N-Channel MOSFET
 
