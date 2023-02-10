@@ -55,12 +55,6 @@ Examples:
 * HSV Tester. Fades hue through the whole hue color wheel on all LEDs, while keeping saturation and intensity constant. [APA102x_HSV_Tester](https://github.com/tigoe/LightProjects/tree/main/APA102x/APA102x_HSV_Tester) and [WS281x_HSV_Tester](https://github.com/tigoe/LightProjects/tree/main/WS281x/WS281x_HSV_Tester)
 * A digital candle effect made by varying the hue of LEDs from red to orange. [APA102xCandle](https://github.com/tigoe/LightProjects/tree/main/Candles/APA102xCandle)
 
-I've also written a [ColorConverter library](https://www.github.com/tigoe/ColorConverter) that converts RGB and RGBW values to hue, saturation, and intensity (HSI values); and converts HSI values to RGB. 
-
-Examples:
-* [APA102 Serial to Color Converter](https://github.com/tigoe/LightProjects/tree/main/APA102x/APA102x_SerialToColorConverter) - reads serial input values and interprets them as RGB or HSV values to control a set of addressable LEDs. 
-
-
 ### Tunable White (Color Temperature) Examples
 
 * Color temperature fade. Fades a strip of tunable white LEDs (non-addressable) from warm to cool. [ColorTempFade](https://github.com/tigoe/LightProjects/tree/main/ColorTempFade/)
