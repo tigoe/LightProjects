@@ -1,3 +1,5 @@
+# Making Electronic Candles
+
 Electronic candles are common in restaurants and bars these days, and they’re usually pretty low-fidelity representations of the behavior of real candles. It’s possible to make them with more complex behaviors, and it’s a good way to learn about programmable LEDs. What follows is an introduction to programmable LEDs, using electronic candle-making as an application through which to learn. In the process, you’ll learn a bit about how colors are reproduced using LEDs and computation, and hopefully a few things about diffusion and reflection as well.
 
 ## What You Need to Know
@@ -12,27 +14,27 @@ Figures 1-5 show the parts you’ll need for this exercise. Click on any image f
 
 <a href="img/candles/breadboard_short-e1532116106284-150x150-1.jpeg" _target="blank"><img src="img/candles/breadboard_short-e1532116106284-150x150-1.jpeg" alt="Solderless Breadboard" height="75%"></a>
 
-Figure 1. Solderless Breadboard
+_Figure 1. Solderless Breadboard_
 
-<a href="img/candles/MKRZero-e1530487647686.jpg" alt="MKRZero" width="75%" target="_blank"><img src="img/candles/MKRZero-e1530487647686.jpg" alt="MKRZero" width="75%"></a>
+<a href="img/candles/MKRZero-e1530487647686.jpg" alt="MKRZero" width="75%" target="_blank"><img src="img/candles/MKRZero-e1530487647686.jpg" alt="MKRZero" width="50%"></a>
 
-Figure 2. Arduino board
+_Figure 2. Arduino board_
 
-<a href="img/candles/hookup_wires.jpg" alt="Hookup wires" width="75%" target="_blank"><img src="img/candles/hookup_wires.jpg" alt="Hookup wires" width="75%"></a>
+<a href="img/candles/hookup_wires.jpg" alt="Hookup wires" width="75%" target="_blank"><img src="img/candles/hookup_wires.jpg" alt="Hookup wires" width="50%"></a>
 
-Figure 3. Hookup wires
+_Figure 3. Hookup wires_
 
-<a href="img/candles/LED_ring.jpg" alt="LED Ring" width="75%" target="_blank"><img src="img/candles/LED_ring.jpg" alt="LED Ring" width="75%"></a>
+<a href="img/candles/LED_ring.jpg" alt="LED Ring" width="75%" target="_blank"><img src="img/candles/LED_ring.jpg" alt="LED Ring" width="50%"></a>
 
-Figure 4. Programmable LED Ring or module
+_Figure 4. Programmable LED Ring or module_
 
-<a href="img/candles/microUSB.jpg" alt="microUSB cable" width="75%" target="_blank"><img src="img/candles/microUSB.jpg" alt="microUSB cable" width="75%"></a>
+<a href="img/candles/microUSB.jpg" alt="microUSB cable" width="75%" target="_blank"><img src="img/candles/microUSB.jpg" alt="microUSB cable" width="50%"></a>
 
-Figure 5. microUSB cable
+_Figure 5. microUSB cable_
 
 ___
 
--   an Arduino-compatible microcontroller. The [MKRZero](https://store.arduino.cc/usa/arduino-mkrzero) is used below, but everything you’ll see here works on all models including the Uno and [Nano 33 IoT](https://store-usa.arduino.cc/products/arduino-nano-33-iot?selectedStore=us).
+-   an Arduino-compatible microcontroller. The [MKRZero](https://store.arduino.cc/usa/arduino-mkrzero) is used below, but everything you’ll see here works on all models including the Uno, [Nano 33 IoT](https://store-usa.arduino.cc/products/arduino-nano-33-iot?selectedStore=us). and [Nano Every](https://store-usa.arduino.cc/products/arduino-nano-every)
 -   a personal computer with the Arduino software installed.
 -   a set of WorldSemi programmable LEDs, the WS2812/SK6812 types. You can buy these from many retailers. Adafruit’s [NeoPixel](https://www.adafruit.com/product/2226) line are all compatible, as are SparkFun’s [LilyPad Pixel Board](https://www.sparkfun.com/products/13264) Seeedstudio’s [WS2812 offerings](https://www.seeedstudio.com/s/ws2812.html),  and many others. Here is a [quickstart guide to the NeoPixel library](https://tigoe.github.io/LightProjects/WS281x/).
 -   A solderless breadboard, some jumper wires, and a USB cable to match your Arduino
@@ -44,13 +46,15 @@ If you watch a candle flame over time, you’ll see many colors in it: pale yell
 
 ## Turning On The LEDs
 
-To get started, download and install the Arduino microcontroller integrated development environment (IDE) on your computer. From the IDE’s Tools menu, choose _Manage Libraries…_ and install the Adafruit NeoPixel library. If you’re using the Nano 33 or any of the MKR boards you can use the Adafruit NeoPixel DMA library instead. The library manager will automatically install the library into the IDE.
+To get started, download and install the [Arduino microcontroller integrated development environment (IDE)](https://www.arduino.cc/en/software) on your computer. From the IDE’s Tools menu, choose _Manage Libraries…_ then search for and install the Adafruit NeoPixel library. If you’re using the Nano 33 or any of the MKR boards you can use the Adafruit NeoPixel DMA library instead. The library manager will automatically install the library into the IDE.
 
-There are many different models of Arduino and compatible microcontroller boards. Any of them will work for this exercise. The MKRZero model is shown in Figure 6.. If you’re using a MKRZero or other MKR-style Arduino with pins on either side, plug it into a solderless breadboard as shown here. Don’t leave it in the black foam in which it’s shipped. This foam is conductive foam, to protect the board during shipping, but it will damage the board if you power it while it’s in the foam. Once you’ve mounted it on a solderless breadboard, plug your board into your computer’s USB port.
+There are many different models of Arduino and compatible microcontroller boards. Any of them will work for this exercise. The MKRZero model is shown in Figure 6. If you’re using a MKRZero or other MKR-style Arduino with pins on either side, plug it into a solderless breadboard as shown here. Don’t leave it in the black foam in which it’s shipped. This foam is conductive foam, to protect the board during shipping, but it will damage the board if you power it while it’s in the foam. You can find typical breadboard layouts for the Uno, Nano, and MKR boards at [this link](https://itp.nyu.edu/physcomp/labs/breadboard-layouts/). 
+
+Once you’ve mounted it on a solderless breadboard, plug your board into your computer’s USB port.
 
 <a href="img/candles/MKRZero_breadboard-177x300.jpg" alt="MKRZero attached to the center of a breadboard" width="75%" target="_blank"><img src="img/candles/MKRZero_breadboard-177x300.jpg" alt="MKRZero attached to the center of a breadboard" width="75%"></a>
 
-Figure 6. MKRZero on a breadboard
+_Figure 6. MKRZero on a breadboard_
 
 Now it’s time to light your first LED. Most Arduino and Arduino-compatible boards come with a built-in LED. The MKRZero is no exception. Click the File menu, then Examples, then _01\. Basics_, then _Blink_. This will open a new file that looks something like this (Click the copy button in the code header to copy this code):
 
@@ -70,38 +74,44 @@ void loop() {
 }
 ```
 
-Click the _Tools_ menu, then click _Board:_ and choose the name corresponding to your board. The MKRZero and Nano 33 IoT boards can be found under the _Arduino SAMD Boards_ submenu. If it’s not in the menu, choose the Boards Manager from that same menu and search for the type of board you’re using and install it. When you’ve got the board selected, click the _Tools_ menu again, then click _P0rt:_ and choose the port with the name corresponding to your board. For example, the one shown in Figure 7 is called _/dev/cu.usbmodem14141 (Arduino MKRZERO)_.
+Click the _Tools_ menu, then click _Board:_ and choose the name corresponding to your board. The MKRZero and Nano 33 IoT boards can be found under the _Arduino SAMD Boards_ submenu. The Nano Every is under _Arduino MegaAVR boards_. If your board is not in the menu, choose the Boards Manager from that same menu and search for the type of board you’re using and install it. 
+
+When you’ve got the board selected, click the _Tools_ menu again, then click _Port:_ and choose the port with the name corresponding to your board. For example, the one shown in Figure 7 is called _/dev/cu.usbmodem14141 (Arduino MKRZERO)_.
+
+Note: in the Arduino IDE version 2.0.0 and later, the board and port should show up in the board menu of the Sketch window as long as the IDE recognizes your board. Figure 8 shows the 2.0 Board/Port menu in the sketch window. 
 
 
 <img src="img/candles/Tools_menu-1024x450.png" alt="tools menu of the Arduino IDE showing how to select the port to your connected Arduino" width="75%">
 
-Figure 7. Tools menu of the Arduino IDE
+_Figure 7. Tools menu of the Arduino IDE_
 
-When you’ve picked the right board and the right port, click the Upload button on the toolbar as shown in Figure 8. You can also type command-U (MacOS) or control-U (Windows):
+<img src="img/candles/IDE-20-board-port-menu.png" alt="tools menu of the Arduino IDE showing how to select the port to your connected Arduino" width="75%">
+
+_Figure 8. Board and port menu in the Sketch window of the Arduino IDE 2.0 and later._
+
+When you’ve picked the right board and the right port, click the Upload button on the toolbar as shown in Figure 9. You can also type command-U (MacOS) or control-U (Windows):
 
 [<img src="img/candles/upload_button.png" alt="location of upload button on the Arduino tool bar in the upper left corner. You can also type command-U (MacOS) or control-U (Windows)" width="75%">
 
-Figure 8. U.pload button on the Arduino tool bar
+_Figure 9. U.pload button on the Arduino tool bar_
 
 The IDE will now compile your Blink program to a binary file,  transfer it to the Arduino, and start running it. You should see the builtin LED on your board blinking, as seen in Video 1 below Congratulations!
 
 <a href="https://vimeo.com/277706585" target="_blank">Video 1: The LED Blinking on a MKRZero</a>
 
-Controlling a few LEDs at a time on an Arduino is simple. You attach one leg of the LED (the longer leg, called the _anode_) to one of the input-output (I/O) pins, attach the other leg (the shorter leg, or _cathode_) and apply voltage to the pin to turn the LED on. The `digitalWrite()` command does this. `digitalWrite(pinNumber, HIGH)` applies voltage, and `digitalWrite(pinNumber, LOW)` turns it off. Each LED is just one color, though. If you want to change the color of your light, you need multiple LEDs. To mix red, green, and blue into a range of colors, for example, you need three LEDs. Fortunately, you can buy components that have multiple LEDs in one package. A typical RGB LED might look like those in Figure 9:
+Controlling a few LEDs at a time on an Arduino is simple. You attach one leg of the LED (the longer leg, called the _anode_) to one of the input-output (I/O) pins, attach the other leg (the shorter leg, or _cathode_) and apply voltage to the pin to turn the LED on. The `digitalWrite()` command does this. `digitalWrite(pinNumber, HIGH)` applies voltage, and `digitalWrite(pinNumber, LOW)` turns it off. Each LED is just one color, though. If you want to change the color of your light, you need multiple LEDs. To mix red, green, and blue into a range of colors, for example, you need three LEDs. Fortunately, you can buy components that have multiple LEDs in one package. A typical RGB LED might look like those in Figure 10:
 
 [<img src="https://itp.nyu.edu/physcomp/wp-content/uploads/leds1.jpg" alt="Four LED components. The one on the right is an RGB LED and has 4 wires coming out of it. The others each have two wires.](https://itp.nyu.edu/physcomp/wp-content/uploads/leds1-300x200.jpg)" width="75%">
 
-Figure 9. Four LED components
-
-_Four LED components. The one on the right is an RGB LED. Note that it has four legs. It contains three LEDs in the one package. The long one is a common cathode. The three others are the anodes for the red, green, and blue LEDs in the package._
+_Figure 10. Four LED components. The one on the right is an RGB LED. Note that it has four legs. It contains three LEDs in the one package. The long one is a common cathode. The three others are the anodes for the red, green, and blue LEDs in the package._
 
 To control an RGB LED like the one shown on the right above, you need three I/O pins. The common cathode is attached to ground. As you can imagine, you run out of I/O pins fast if every LED needs its own pin. This is where **programmable LEDs** come in handy. Programmable LEDs are components containing an LED and a very limited processor to control them. They’re chained together so that you can control many of them from one I/O pin. Your microcontroller sends a series of electronic pulses on the I/O pin, and the string of programmable LEDs interprets the pulses to know which LED to turn on, and how bright. Each LED in the chain (for example, the ring shown in Figure 4 above) gets its own address, and you send pulses indicating the address, then the levels for each color channel at that address. This communication is a form of [serial communication](https://itp.nyu.edu/physcomp/lessons/#Serial_Communication), a common way that computers talk to each other. You can think of each LED as its own tiny computer, listening for messages from your master computer (your Arduino).
 
-The programmable LEDs you’re using are a variant of [WorldSemi’s WS2812 LEDs](http://www.world-semi.com/products/index.html). They listen for a specific protocol set by the manufacturer, and you can send it from your microcontroller using the Adafruit NeoPixel library which you installed earlier. Disconnect your board from the computer _**(Always disconnect your microcontroller from power before changing the circuit!)**_ Then connect your programmable LED ring to the board as shown in Figure 10 below, with the voltage input pin of the LEDs attached to the Arduino’s Vcc, the GND pin attached to ground, and the DI pin attached to digital pin 5:
+The programmable LEDs you’re using are a variant of [WorldSemi’s WS2812 LEDs](http://www.world-semi.com/products/index.html). They listen for a specific protocol set by the manufacturer, and you can send it from your microcontroller using the Adafruit NeoPixel library which you installed earlier. Disconnect your board from the computer _**(Always disconnect your microcontroller from power before changing the circuit!)**_ Then connect your programmable LED ring to the board as shown in Figure 11 below, with the voltage input pin of the LEDs attached to the Arduino’s Vcc, the GND pin attached to ground, and the DI pin attached to digital pin 5:
 
-[<img src="img/candles/MKRZero-Neopixel-1.png" alt="MKRZero attached to a breadboard along with a programmable LED ring" width="75%">
+<img src="img/candles/MKRZero-Neopixel-1.png" alt="MKRZero attached to a breadboard along with a programmable LED ring" width="75%">
 
-Figure 10. MKRZero with programmable LED ring
+_Figure 11. MKRZero with programmable LED ring_
 
 The current available from the microcontroller’s Vcc pin isn’t much, but it’s enough to supply seven or eight programmable LEDs. You’ll be controlling the LEDs from pin 5 of the microcontroller. Now open a new file in the IDE, and enter the following program (Click the copy button in the code header to copy this code):
 
