@@ -10,23 +10,23 @@ To follow along with this tutorial, you’ll need:
 
 Figures 1-5 show the parts you’ll need for this exercise. Click on any image for a larger view.
 
-<img src="img/candles/breadboard_short-e1532116106284-150x150-1.jpeg" alt="Solderless Breadboard" height="50%">
+<a href="img/candles/breadboard_short-e1532116106284-150x150-1.jpeg" _target="blank"><img src="img/candles/breadboard_short-e1532116106284-150x150-1.jpeg" alt="Solderless Breadboard" height="75%"></a>
 
 Figure 1. Solderless Breadboard
 
-<img src="img/candles/MKRZero-e1530487647686.jpg" alt="MKRZero" width="50%">
+<a href="img/candles/MKRZero-e1530487647686.jpg" alt="MKRZero" width="75%" target="_blank"><img src="img/candles/MKRZero-e1530487647686.jpg" alt="MKRZero" width="75%"></a>
 
 Figure 2. Arduino board
 
-<img src="img/candles/hookup_wires.jpg" alt="Hookup wires" width="50%">
+<a href="img/candles/hookup_wires.jpg" alt="Hookup wires" width="75%" target="_blank"><img src="img/candles/hookup_wires.jpg" alt="Hookup wires" width="75%"></a>
 
 Figure 3. Hookup wires
 
-<img src="img/candles/LED_ring.jpg" alt="LED Ring" width="50%">
+<a href="img/candles/LED_ring.jpg" alt="LED Ring" width="75%" target="_blank"><img src="img/candles/LED_ring.jpg" alt="LED Ring" width="75%"></a>
 
 Figure 4. Programmable LED Ring or module
 
-<img src="img/candles/microUSB.jpg" alt="microUSB cable" width="50%">
+<a href="img/candles/microUSB.jpg" alt="microUSB cable" width="75%" target="_blank"><img src="img/candles/microUSB.jpg" alt="microUSB cable" width="75%"></a>
 
 Figure 5. microUSB cable
 
@@ -48,7 +48,7 @@ To get started, download and install the Arduino microcontroller integrated deve
 
 There are many different models of Arduino and compatible microcontroller boards. Any of them will work for this exercise. The MKRZero model is shown in Figure 6.. If you’re using a MKRZero or other MKR-style Arduino with pins on either side, plug it into a solderless breadboard as shown here. Don’t leave it in the black foam in which it’s shipped. This foam is conductive foam, to protect the board during shipping, but it will damage the board if you power it while it’s in the foam. Once you’ve mounted it on a solderless breadboard, plug your board into your computer’s USB port.
 
-<img src="img/candles/MKRZero_breadboard-177x300.jpg" alt="MKRZero attached to the center of a breadboard" width="50%">
+<a href="img/candles/MKRZero_breadboard-177x300.jpg" alt="MKRZero attached to the center of a breadboard" width="75%" target="_blank"><img src="img/candles/MKRZero_breadboard-177x300.jpg" alt="MKRZero attached to the center of a breadboard" width="75%"></a>
 
 Figure 6. MKRZero on a breadboard
 
@@ -73,13 +73,13 @@ void loop() {
 Click the _Tools_ menu, then click _Board:_ and choose the name corresponding to your board. The MKRZero and Nano 33 IoT boards can be found under the _Arduino SAMD Boards_ submenu. If it’s not in the menu, choose the Boards Manager from that same menu and search for the type of board you’re using and install it. When you’ve got the board selected, click the _Tools_ menu again, then click _P0rt:_ and choose the port with the name corresponding to your board. For example, the one shown in Figure 7 is called _/dev/cu.usbmodem14141 (Arduino MKRZERO)_.
 
 
-<img src="img/candles/Tools_menu-1024x450.png" alt="tools menu of the Arduino IDE showing how to select the port to your connected Arduino" width="50%">
+<img src="img/candles/Tools_menu-1024x450.png" alt="tools menu of the Arduino IDE showing how to select the port to your connected Arduino" width="75%">
 
 Figure 7. Tools menu of the Arduino IDE
 
 When you’ve picked the right board and the right port, click the Upload button on the toolbar as shown in Figure 8. You can also type command-U (MacOS) or control-U (Windows):
 
-[<img src="img/candles/upload_button.png" alt="location of upload button on the Arduino tool bar in the upper left corner. You can also type command-U (MacOS) or control-U (Windows)" width="50%">
+[<img src="img/candles/upload_button.png" alt="location of upload button on the Arduino tool bar in the upper left corner. You can also type command-U (MacOS) or control-U (Windows)" width="75%">
 
 Figure 8. U.pload button on the Arduino tool bar
 
@@ -89,7 +89,7 @@ The IDE will now compile your Blink program to a binary file,  transfer it to t
 
 Controlling a few LEDs at a time on an Arduino is simple. You attach one leg of the LED (the longer leg, called the _anode_) to one of the input-output (I/O) pins, attach the other leg (the shorter leg, or _cathode_) and apply voltage to the pin to turn the LED on. The `digitalWrite()` command does this. `digitalWrite(pinNumber, HIGH)` applies voltage, and `digitalWrite(pinNumber, LOW)` turns it off. Each LED is just one color, though. If you want to change the color of your light, you need multiple LEDs. To mix red, green, and blue into a range of colors, for example, you need three LEDs. Fortunately, you can buy components that have multiple LEDs in one package. A typical RGB LED might look like those in Figure 9:
 
-[<img src="https://itp.nyu.edu/physcomp/wp-content/uploads/leds1.jpg" alt="Four LED components. The one on the right is an RGB LED and has 4 wires coming out of it. The others each have two wires.](https://itp.nyu.edu/physcomp/wp-content/uploads/leds1-300x200.jpg)" width="50%">
+[<img src="https://itp.nyu.edu/physcomp/wp-content/uploads/leds1.jpg" alt="Four LED components. The one on the right is an RGB LED and has 4 wires coming out of it. The others each have two wires.](https://itp.nyu.edu/physcomp/wp-content/uploads/leds1-300x200.jpg)" width="75%">
 
 Figure 9. Four LED components
 
@@ -99,7 +99,7 @@ To control an RGB LED like the one shown on the right above, you need three I/O 
 
 The programmable LEDs you’re using are a variant of [WorldSemi’s WS2812 LEDs](http://www.world-semi.com/products/index.html). They listen for a specific protocol set by the manufacturer, and you can send it from your microcontroller using the Adafruit NeoPixel library which you installed earlier. Disconnect your board from the computer _**(Always disconnect your microcontroller from power before changing the circuit!)**_ Then connect your programmable LED ring to the board as shown in Figure 10 below, with the voltage input pin of the LEDs attached to the Arduino’s Vcc, the GND pin attached to ground, and the DI pin attached to digital pin 5:
 
-[<img src="img/candles/MKRZero-Neopixel-1.png" alt="MKRZero attached to a breadboard along with a programmable LED ring" width="50%">
+[<img src="img/candles/MKRZero-Neopixel-1.png" alt="MKRZero attached to a breadboard along with a programmable LED ring" width="75%">
 
 Figure 10. MKRZero with programmable LED ring
 
