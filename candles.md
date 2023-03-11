@@ -22,7 +22,7 @@ An Arduino-compatible microcontroller. The [MKRZero](https://store.arduino.cc/us
 
 _Figure 2. Programmable LED Ring or module_
 
-a set of WorldSemi programmable LEDs, the WS2812/SK6812 types. You can buy these from many retailers. Adafruit’s [NeoPixel](https://www.adafruit.com/product/2226) line are all compatible, as are SparkFun’s [LilyPad Pixel Board](https://www.sparkfun.com/products/13264) Seeedstudio’s [WS2812 offerings](https://www.seeedstudio.com/s/ws2812.html),  and many others. Here is a [quickstart guide to the NeoPixel library](https://tigoe.github.io/LightProjects/WS281x/).
+A set of WorldSemi programmable LEDs, the WS2812/SK6812 types. You can buy these from many retailers. Adafruit’s [NeoPixel](https://www.adafruit.com/product/2226) line are all compatible, as are SparkFun’s [LilyPad Pixel Board](https://www.sparkfun.com/products/13264) Seeedstudio’s [WS2812 offerings](https://www.seeedstudio.com/s/ws2812.html),  and many others. Here is a [quickstart guide to the NeoPixel library](https://tigoe.github.io/LightProjects/WS281x/).
 
 
 <a href="img/candles/breadboard_short-e1532116106284-150x150-1.jpeg" _target="blank"><img src="img/candles/breadboard_short-e1532116106284-150x150-1.jpeg" alt="Solderless Breadboard" height="75%"></a>
@@ -63,7 +63,7 @@ If you’re using a MKR or Nano board or  plug it into a solderless breadboard a
 
 _Figure 7. Arduino Nano 33 IoT mounted on a breadboard. Physical pins are numbered in a u shape from top left. Pin function numbers for the Nano 33 IoT can be found at [this link](https://docs.arduino.cc/hardware/nano-33-iot), and for the Nano Every at [this link](https://docs.arduino.cc/hardware/nano-every). The pin arrangement are the same for all Nanos. Wires extend from the 3.3V and Ground pins of the Nano (physical pins 2 and 14, respectively) to the breadboard's vertical rows on the left hand side. These form voltage and ground buses. Wires connect the vertical rows on the left side with those on the right side so that both sides of the breadboard have voltage and ground buses._ 
 
-<a href="img/candles/MKR_bb.png" alt="Arduino MKR Zero mounted on a breadboard" width="50%" target="_blank"><img src="img/candles/MKR_bb.png" alt="Arduino MKR Zero on a breadboard" width="75%"></a>
+<a href="img/candles/MKR_bb.png" alt="Arduino MKR Zero mounted on a breadboard" width="50%" target="_blank"><img src="img/candles/MKR_bb.png" alt="Arduino MKR Zero on a breadboard" width="50%"></a>
 
 _Figure 8. Arduino MKR Zero mounted on a breadboard. Physical pins are numbered in a u shape from top left. Pin function numbers for the MKR Zero can be found at [this link](https://docs.arduino.cc/hardware/mkr-zero). Wires extend from the 3.3V and Ground pins of the Nano (physical pins 26 and 25, respectively) to the breadboard's vertical rows on the right hand side. These form voltage and ground buses. Wires connect the vertical rows on the right side with those on the left side so that both sides of the breadboard have voltage and ground buses._ 
 
