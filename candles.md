@@ -1,6 +1,6 @@
 # Making Electronic Candles
 
-Electronic candles are common in restaurants and bars these days, and they’re usually pretty low-fidelity representations of the behavior of real candles. It’s possible to make them with more complex behaviors, and it’s a good way to learn about programmable LEDs. What follows is an introduction to programmable LEDs, using electronic candle-making as an application through which to learn. In the process, you’ll learn a bit about how colors are reproduced using LEDs and computation, and hopefully a few things about diffusion and reflection as well.
+Electronic candles are common in restaurants and bars these days, and they’re usually pretty low-fidelity representations of the behavior of real candles. It’s possible to make them with more complex behaviors, and it’s a good way to learn about addressable, LEDs. What follows is an introduction to addressable LEDs, using electronic candle-making as an application through which to learn. In the process, you’ll learn a bit about how colors are reproduced using LEDs and computation, and hopefully a few things about diffusion and reflection as well.
 
 ## What You Need to Know
 
@@ -20,9 +20,9 @@ An Arduino-compatible microcontroller. The [MKRZero](https://store.arduino.cc/us
 
 <a href="img/candles/LED_ring.jpg" alt="LED Ring" width="75%" target="_blank"><img src="img/candles/LED_ring.jpg" alt="LED Ring" width="50%"></a>
 
-_Figure 2. Programmable LED Ring or module_
+_Figure 2. Addressable LED Ring or module_
 
-A set of WorldSemi programmable LEDs, the WS2812/SK6812 types. You can buy these from many retailers. Adafruit’s [NeoPixel](https://www.adafruit.com/product/2226) line are all compatible, as are SparkFun’s [LilyPad Pixel Board](https://www.sparkfun.com/products/13264) Seeedstudio’s [WS2812 offerings](https://www.seeedstudio.com/s/ws2812.html),  and many others. Here is a [quickstart guide to the NeoPixel library](https://tigoe.github.io/LightProjects/WS281x/).
+A set of WorldSemi addressable LEDs, the WS2812/SK6812 types. You can buy these from many retailers. Adafruit’s [NeoPixel](https://www.adafruit.com/product/2226) line are all compatible, as are SparkFun’s [LilyPad Pixel Board](https://www.sparkfun.com/products/13264) Seeedstudio’s [WS2812 offerings](https://www.seeedstudio.com/s/ws2812.html),  and many others. Here is a [quickstart guide to the NeoPixel library](https://tigoe.github.io/LightProjects/WS281x/).
 
 
 <a href="img/candles/breadboard_short-e1532116106284-150x150-1.jpeg" _target="blank"><img src="img/candles/breadboard_short-e1532116106284-150x150-1.jpeg" alt="Solderless Breadboard" height="75%"></a>
@@ -119,15 +119,15 @@ Controlling a few LEDs at a time on an Arduino is simple. You attach one leg of 
 
 _Figure 12. Four LED components. The one on the right is an RGB LED. Note that it has four legs. It contains three LEDs in the one package. The long one is a common cathode. The three others are the anodes for the red, green, and blue LEDs in the package._
 
-To control an RGB LED like the one shown on the right above, you need three I/O pins. The common cathode is attached to ground. As you can imagine, you run out of I/O pins fast if every LED needs its own pin. This is where **programmable LEDs** come in handy. Programmable LEDs are components containing an LED and a very limited processor to control them. They’re chained together so that you can control many of them from one I/O pin. Your microcontroller sends a series of electronic pulses on the I/O pin, and the string of programmable LEDs interprets the pulses to know which LED to turn on, and how bright. Each LED in the chain (for example, the ring shown in Figure 4 above) gets its own address, and you send pulses indicating the address, then the levels for each color channel at that address. This communication is a form of [serial communication](https://itp.nyu.edu/physcomp/lessons/#Serial_Communication), a common way that computers talk to each other. You can think of each LED as its own tiny computer, listening for messages from your master computer (your Arduino).
+To control an RGB LED like the one shown on the right above, you need three I/O pins. The common cathode is attached to ground. As you can imagine, you run out of I/O pins fast if every LED needs its own pin. This is where **[addressable LEDs](addressable-leds.md)** come in handy. Addressable LEDs or programmable LEDs as they're also called, are components containing an LED and a very limited processor to control them. They’re chained together so that you can control many of them from one I/O pin. Your microcontroller sends a series of electronic pulses on the I/O pin, and the string of addressable LEDs interprets the pulses to know which LED to turn on, and how bright. Each LED in the chain (for example, the ring shown in Figure 4 above) gets its own address, and you send pulses indicating the address, then the levels for each color channel at that address. This communication is a form of [serial communication](https://itp.nyu.edu/physcomp/lessons/#Serial_Communication), a common way that computers talk to each other. You can think of each LED as its own tiny computer, listening for messages from your master computer (your Arduino).
 
-The programmable LEDs you’re using are a variant of [WorldSemi’s WS2812 LEDs](http://www.world-semi.com/products/index.html). They listen for a specific protocol set by the manufacturer, and you can send it from your microcontroller using the Adafruit NeoPixel library which you installed earlier. Disconnect your board from the computer _**(Always disconnect your microcontroller from power before changing the circuit!)**_ Then connect your programmable LED ring to the board as shown in Figure 13 below, with the voltage input pin of the LEDs attached to the Arduino’s Vcc, the GND pin attached to ground, and the DI pin attached to digital pin 5. You can use this same (programmable LED voltage, ground, and control on pin 5) arrangement on all Arduino models:
+The addressable LEDs you’re using are a variant of [WorldSemi’s WS2812 LEDs](http://www.world-semi.com/products/index.html). They listen for a specific protocol set by the manufacturer, and you can send it from your microcontroller using the Adafruit NeoPixel library which you installed earlier. Disconnect your board from the computer _**(Always disconnect your microcontroller from power before changing the circuit!)**_ Then connect your addressable LED ring to the board as shown in Figure 13 below, with the voltage input pin of the LEDs attached to the Arduino’s Vcc, the GND pin attached to ground, and the DI pin attached to digital pin 5. You can use this same (addressable LED voltage, ground, and control on pin 5) arrangement on all Arduino models:
 
-<a href="img/candles/MKRZero-Neopixel-1.png" target= "_blank"><img src="img/candles/MKRZero-Neopixel-1.png" alt="MKRZero attached to a breadboard along with a programmable LED ring" width="75%"></a>
+<a href="img/candles/MKRZero-Neopixel-1.png" target= "_blank"><img src="img/candles/MKRZero-Neopixel-1.png" alt="MKRZero attached to a breadboard along with a addressable LED ring" width="75%"></a>
 
-_Figure 13. MKRZero with programmable LED ring_
+_Figure 13. MKRZero with addressable LED ring_
 
-The current available from the microcontroller’s Vcc pin isn’t much, but it’s enough to supply seven or eight programmable LEDs. You’ll be controlling the LEDs from pin 5 of the microcontroller. Now open a new file in the IDE, and enter the following program:
+The current available from the microcontroller’s Vcc pin isn’t much, but it’s enough to supply seven or eight addressable LEDs. You’ll be controlling the LEDs from pin 5 of the microcontroller. Now open a new file in the IDE, and enter the following program:
 
 ```
 #include <Adafruit_NeoPixel.h>
@@ -162,19 +162,19 @@ If you want to test each of the LEDs and colors in a NeoPixel module, here is a 
 
 Video 2 below shows the LEDs of an addressable ring turning on in red, one at a time. The Arduino in that video is running the code above.
 
-<a href="https://player.vimeo.com/video/277706645?h=7e206c39b5" target="_blank">Video 2: Programmable LEDs turning on one at a time</a>
+<a href="https://player.vimeo.com/video/277706645?h=7e206c39b5" target="_blank">Video 2: Addressable LEDs turning on one at a time</a>
 
-This program contains the basic elements of any program for controlling neoPixel programmable LEDs:
+This program contains the basic elements of any program for controlling neoPixel addressable LEDs:
 
 1.  Include the library
 2.  Set the I/O pin to control them from
-3.  Set the number of programmable LEDs you plan to control
+3.  Set the number of addressable LEDs you plan to control
 4.  Establish the group of LEDs as a set (`strip` in this case) and set its parameters
 5.  Initialize the set of LEDs in the `setup()` function
 6.  In the main loop, use `strip.setPixelColor()` to change the color of any given LED. Each channel’s brightness ranges from 0-255.
 7.  refresh the whole set of LEDs with `strip.show()`
 
-Although the LEDs you’re using are likely just RGB LEDs, they’re not your only option. Programmable LEDs come in other options.  RGB+white and white-white-amber (WWA), which have a cool white, a warm white, and an amber LED, are available as well.  And the NeoPixel library isn’t your only option for programming them. More experienced coders may want to look at the [FastLED library](http://fastled.io/), or the [light\_WS2812 library](https://github.com/cpldcpu/light_ws2812). Most of the libraries will follow the same pattern of control shown above.
+Although the LEDs you’re using are likely just RGB LEDs, they’re not your only option. Addressable LEDs come in other options.  RGB+white and white-white-amber (WWA), which have a cool white, a warm white, and an amber LED, are available as well.  And the NeoPixel library isn’t your only option for programming them. More experienced coders may want to look at the [FastLED library](http://fastled.io/), or the [light\_WS2812 library](https://github.com/cpldcpu/light_ws2812). Most of the libraries will follow the same pattern of control shown above.
 
 The magic in creating movement, color change, and animation lies in how you time the changes between colors of each given LED.  Play around with these parameters in the previous program and try a few variations of your own, to see what you can do. Try making your LED fade from orange (which is a combination of red and green and blue, like 191, 104, 38) to a yellow (something like 205, 206, 36). Try writing a program to turn each of the LEDs in the ring a different color found in the candle flame.
 
@@ -241,7 +241,7 @@ void loop() {
 
 The HSV color space makes it much easier to change individual colors across a range of hues without having to work out the color mixing to RGB yourself. Video 3 shows the program in action.
 
-<a href="https://player.vimeo.com/video/277706591?h=4550d579f1" target="_blank">Video 3. A ring of programmable LEDs fading from red to orange</a>
+<a href="https://player.vimeo.com/video/277706591?h=4550d579f1" target="_blank">Video 3. A ring of addressable LEDs fading from red to orange</a>
 
 Try modifying the program above to create different hues, and then write your own program to fade between them.
 
@@ -249,13 +249,13 @@ Try modifying the program above to create different hues, and then write your ow
 
 Making a light is more than just turning on and off the LEDs. It’s about the surfaces through which the light is refracted, and off which it’s reflected. What makes any light interesting, in the end, is what it illuminates, and how it does it. There are a few constraints that can be useful in thinking about this:
 
--   Pick your  color palette and work with it. A color palette sets the mood. Rainbow color scrolling is not a design choice, it’s a default program for programmable LEDs. If you’re not confident, start with a tool like [color.adobe.com](https://color.adobe.com/explore/?filter=most-popular&time=month) to make a color scheme.
+-   Pick your  color palette and work with it. A color palette sets the mood. Rainbow color scrolling is not a design choice, it’s a default program for addressable LEDs. If you’re not confident, start with a tool like [color.adobe.com](https://color.adobe.com/explore/?filter=most-popular&time=month) to make a color scheme.
 -   Don’t show the source: diffuse it, reflect it, or redirect it in some way or another. Notice how the videos above do not show the LEDs themselves, only their reflection off paper. This is much more pleasing to the eye than looking at the sources directly.
 -   Draw attention to the light on the subject, not the light itself
 
 ## A Few Examples
 
-The first two videos belows give you some ideas for what’s possible with programmable LEDs. Video 4 shows one of these programmable pixel rings inside a hand-crafted tea candle holder made from glazed ceramic. The glaze of the ceramic makes a nice reflection. 
+The first two videos belows give you some ideas for what’s possible with addressable LEDs. Video 4 shows one of these addressable pixel rings inside a hand-crafted tea candle holder made from glazed ceramic. The glaze of the ceramic makes a nice reflection. 
 
 <a href="https://player.vimeo.com/video/278016455" target="_blank">Video 4. A NeoPixel ring fading in a candle holder. Video by Denise Hand.</a>
 
