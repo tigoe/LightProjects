@@ -12,7 +12,7 @@ To follow along with this tutorial, you’ll need:
 
 Figures 1-5 show the parts you’ll need for this exercise. Click on any image for a larger view.
 
-<a href="img/candles/arduino-nano-33-iot.jpg" alt="Arduino Nano 33 IoT" width="75%" target="_blank"><img src="img/candles/arduino-nano-33-iot.jpg" alt="Arduino Nano 33 IoT" width="50%"></a>
+<a href="img/candles/arduino-nano-33-iot.jpg" target="_blank"><img src="img/candles/arduino-nano-33-iot.jpg" alt="Arduino Nano 33 IoT" width="25%"></a>
 
 _Figure 1. Arduino board. Shown here is the Nano 33 IoT._
 
