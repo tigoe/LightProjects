@@ -56,11 +56,11 @@ _Figure 6. Arduino Uno next to a breadboard. Pin function numbers can be found a
 
 If you’re using a MKR or Nano board or  plug it into a solderless breadboard as shown in Figures 7 and 8. Don’t leave it in the black foam in which it’s shipped. This foam is conductive foam, to protect the board during shipping, but it will damage the board if you power it while it’s in the foam. You can find typical breadboard layouts for the Uno, Nano, and MKR boards at [this link](https://itp.nyu.edu/physcomp/labs/breadboard-layouts/). 
 
-<a href="img/candles/LabTemplateNanoShort_bb.png" alt="Arduino Nano 33 IoT mounted on a breadboard" width="75%" target="_blank"><img src="img/candles/LabTemplateNanoShort_bb.png" alt="Arduino nano on a breadboard" width="75%"></a>
+<a href="img/candles/LabTemplateNanoShort_bb.png" alt="Arduino Nano 33 IoT mounted on a breadboard" width="75%" target="_blank"><img src="img/candles/LabTemplateNanoShort_bb.png" alt="Arduino nano on a breadboard" width="50%"></a>
 
 _Figure 7. Arduino Nano 33 IoT mounted on a breadboard. Physical pins are numbered in a u shape from top left. Pin function numbers for the Nano 33 IoT can be found at [this link](https://docs.arduino.cc/hardware/nano-33-iot), and for the Nano Every at [this link](https://docs.arduino.cc/hardware/nano-every). The pin arrangement are the same for all Nanos. Wires extend from the 3.3V and Ground pins of the Nano (physical pins 2 and 14, respectively) to the breadboard's vertical rows on the left hand side. These form voltage and ground buses. Wires connect the vertical rows on the left side with those on the right side so that both sides of the breadboard have voltage and ground buses._ 
 
-<a href="img/candles/MKR_bb.png" alt="Arduino MKR Zero mounted on a breadboard" width="75%" target="_blank"><img src="img/candles/MKR_bb.png" alt="Arduino MKR Zero on a breadboard" width="75%"></a>
+<a href="img/candles/MKR_bb.png" alt="Arduino MKR Zero mounted on a breadboard" width="50%" target="_blank"><img src="img/candles/MKR_bb.png" alt="Arduino MKR Zero on a breadboard" width="75%"></a>
 
 _Figure 8. Arduino MKR Zero mounted on a breadboard. Physical pins are numbered in a u shape from top left. Pin function numbers for the MKR Zero can be found at [this link](https://docs.arduino.cc/hardware/mkr-zero). Wires extend from the 3.3V and Ground pins of the Nano (physical pins 26 and 25, respectively) to the breadboard's vertical rows on the right hand side. These form voltage and ground buses. Wires connect the vertical rows on the right side with those on the left side so that both sides of the breadboard have voltage and ground buses._ 
 
