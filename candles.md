@@ -12,11 +12,11 @@ To follow along with this tutorial, you’ll need:
 
 Figures 1-5 show the parts you’ll need for this exercise. Click on any image for a larger view.
 
-<a href="img/candles/MKRZero-e1530487647686.jpg" alt="MKRZero" width="75%" target="_blank"><img src="img/candles/MKRZero-e1530487647686.jpg" alt="MKRZero" width="50%"></a>
+<a href="img/candles/arduino-nano-33-iot.jpg" alt="Arduino Nano 33 IoT" width="75%" target="_blank"><img src="img/candles/arduino-nano-33-iot.jpg" alt="Arduino Nano 33 IoT" width="50%"></a>
 
-_Figure 1. Arduino board_
+_Figure 1. Arduino board. Shown here is the Nano 33 IoT._
 
-An Arduino-compatible microcontroller. The [MKRZero](https://store.arduino.cc/usa/arduino-mkrzero) is used below, but everything you’ll see here works on all models including the Uno, [Nano 33 IoT](https://store-usa.arduino.cc/products/arduino-nano-33-iot?selectedStore=us). and [Nano Every](https://store-usa.arduino.cc/products/arduino-nano-every)
+An Arduino-compatible microcontroller. Everything you’ll see here works on all models including the [Uno](https://docs.arduino.cc/hardware/uno-rev3), [Nano 33 IoT](https://docs.arduino.cc/hardware/nano-33-iot) and [Nano Every](https://docs.arduino.cc/hardware/nano-every), adn the [MKR boards](https://docs.arduino.cc/hardware/mkr-zero). 
 
 <a href="img/candles/LED_ring.jpg" alt="LED Ring" width="75%" target="_blank"><img src="img/candles/LED_ring.jpg" alt="LED Ring" width="50%"></a>
 
