@@ -103,7 +103,7 @@ _Figure 10. Board and port menu in the Sketch window of the Arduino IDE 2.0 and 
 
 When you’ve picked the right board and the right port, click the Upload button on the toolbar as shown in Figure 11. You can also type command-U (MacOS) or control-U (Windows):
 
-[<img src="img/candles/upload_button.png" alt="location of upload button on the Arduino tool bar in the upper left corner. You can also type command-U (MacOS) or control-U (Windows)" width="75%">
+<img src="img/candles/upload_button.png" alt="location of upload button on the Arduino tool bar in the upper left corner. You can also type command-U (MacOS) or control-U (Windows)" width="75%">
 
 _Figure 11. Upload button on the Arduino tool bar_
 
@@ -113,7 +113,7 @@ The IDE will now compile your Blink program to a binary file,  transfer it to t
 
 Controlling a few LEDs at a time on an Arduino is simple. You attach one leg of the LED (the longer leg, called the _anode_) to one of the input-output (I/O) pins through a 220-ohm resistor, attach the other leg (the shorter leg, or _cathode_) and apply voltage to the pin to turn the LED on. The `digitalWrite()` command does this. `digitalWrite(pinNumber, HIGH)` applies voltage, and `digitalWrite(pinNumber, LOW)` turns it off. Each LED is just one color, though. If you want to change the color of your light, you need multiple LEDs. To mix red, green, and blue into a range of colors, for example, you need three LEDs. Fortunately, you can buy components that have multiple LEDs in one package. A typical RGB LED might look like those in Figure 12:
 
-[<img src="https://itp.nyu.edu/physcomp/wp-content/uploads/leds1.jpg" alt="Four LED components. The one on the right is an RGB LED and has 4 wires coming out of it. The others each have two wires.](https://itp.nyu.edu/physcomp/wp-content/uploads/leds1-300x200.jpg)" width="75%">
+<img src="https://itp.nyu.edu/physcomp/wp-content/uploads/leds1.jpg" alt="Four LED components. The one on the right is an RGB LED and has 4 wires coming out of it. The others each have two wires.(https://itp.nyu.edu/physcomp/wp-content/uploads/leds1-300x200.jpg)" width="75%">
 
 _Figure 12. Four LED components. The one on the right is an RGB LED. Note that it has four legs. It contains three LEDs in the one package. The long one is a common cathode. The three others are the anodes for the red, green, and blue LEDs in the package._
 
