@@ -55,6 +55,8 @@ There are many different models of Arduino and compatible microcontroller boards
 
 <a href="img/candles/LabTemplate_bb.png" alt="Arduino Uno next to a breadboard" width="75%" target="_blank"><img src="img/candles/LabTemplate_bb.png" alt="Arduino Uno next to a breadboard" width="75%"></a>
 
+_All circuit board images made with [Fritzing](https://www.fritzing.org)_
+
 _Figure 6. Arduino Uno next to a breadboard. Pin function numbers can be found at [this link](https://docs.arduino.cc/hardware/uno-rev3). Wires extend from the 5V and Ground pins of the Uno to the breadboard's vertical rows on the left hand side. These form voltage and ground buses. Wires connect the vertical rows on the left side with those on the right side so that both sides of the breadboard have voltage and ground buses._ 
 
 If you’re using a MKR or Nano board or  plug it into a solderless breadboard as shown in Figures 7 and 8. Don’t leave it in the black foam in which it’s shipped. This foam is conductive foam, to protect the board during shipping, but it will damage the board if you power it while it’s in the foam. You can find typical breadboard layouts for the Uno, Nano, and MKR boards at [this link](https://itp.nyu.edu/physcomp/labs/breadboard-layouts/). 
