@@ -16,7 +16,7 @@ Figures 1-5 show the parts you’ll need for this exercise. Click on any image f
 
 _Figure 1. Arduino board. Shown here is the Nano 33 IoT._
 
-An Arduino-compatible microcontroller. Everything you’ll see here works on all models including the [Uno](https://docs.arduino.cc/hardware/uno-rev3), [Nano 33 IoT](https://docs.arduino.cc/hardware/nano-33-iot) and [Nano Every](https://docs.arduino.cc/hardware/nano-every), adn the [MKR boards](https://docs.arduino.cc/hardware/mkr-zero). 
+An Arduino-compatible microcontroller. Everything you’ll see here works on all models including the [Uno](https://docs.arduino.cc/hardware/uno-rev3), [Nano 33 IoT](https://docs.arduino.cc/hardware/nano-33-iot) and [Nano Every](https://docs.arduino.cc/hardware/nano-every), and the [MKR boards](https://docs.arduino.cc/hardware/mkr-zero). 
 
 <a href="img/candles/LED_ring.jpg" alt="LED Ring" width="75%" target="_blank"><img src="img/candles/LED_ring.jpg" alt="LED Ring" width="50%"></a>
 
