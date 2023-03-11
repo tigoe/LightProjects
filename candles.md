@@ -50,13 +50,11 @@ To get started, download and install the [Arduino microcontroller integrated dev
 
 There are many different models of Arduino and compatible microcontroller boards. Any of them will work for this exercise. Figures 6 through 8 show breadboard layouts for the MKR boards, the Nano boards, and the Uno.
 
-If you’re using a MKR or Nano board or  plug it into a solderless breadboard as shown in Figures 7 and 8. Don’t leave it in the black foam in which it’s shipped. This foam is conductive foam, to protect the board during shipping, but it will damage the board if you power it while it’s in the foam. You can find typical breadboard layouts for the Uno, Nano, and MKR boards at [this link](https://itp.nyu.edu/physcomp/labs/breadboard-layouts/). 
-
-Once you’ve mounted it on a solderless breadboard, plug your board into your computer’s USB port.
-
 <a href="img/candles/LabTemplate_bb.png" alt="Arduino Uno next to a breadboard" width="75%" target="_blank"><img src="img/candles/LabTemplate_bb.png" alt="Arduino Uno next to a breadboard" width="75%"></a>
 
 _Figure 6. Arduino Uno next to a breadboard. Pin function numbers can be found at [this link](https://docs.arduino.cc/hardware/uno-rev3). Wires extend from the 5V and Ground pins of the Uno to the breadboard's vertical rows on the left hand side. These form voltage and ground buses. Wires connect the vertical rows on the left side with those on the right side so that both sides of the breadboard have voltage and ground buses._ 
+
+If you’re using a MKR or Nano board or  plug it into a solderless breadboard as shown in Figures 7 and 8. Don’t leave it in the black foam in which it’s shipped. This foam is conductive foam, to protect the board during shipping, but it will damage the board if you power it while it’s in the foam. You can find typical breadboard layouts for the Uno, Nano, and MKR boards at [this link](https://itp.nyu.edu/physcomp/labs/breadboard-layouts/). 
 
 <a href="img/candles/LabTemplateNanoShort_bb.png" alt="Arduino Nano 33 IoT mounted on a breadboard" width="75%" target="_blank"><img src="img/candles/LabTemplateNanoShort_bb.png" alt="Arduino nano on a breadboard" width="75%"></a>
 
@@ -66,7 +64,9 @@ _Figure 7. Arduino Nano 33 IoT mounted on a breadboard. Physical pins are number
 
 _Figure 8. Arduino MKR Zero mounted on a breadboard. Physical pins are numbered in a u shape from top left. Pin function numbers for the MKR Zero can be found at [this link](https://docs.arduino.cc/hardware/mkr-zero). Wires extend from the 3.3V and Ground pins of the Nano (physical pins 26 and 25, respectively) to the breadboard's vertical rows on the right hand side. These form voltage and ground buses. Wires connect the vertical rows on the right side with those on the left side so that both sides of the breadboard have voltage and ground buses._ 
 
-Now it’s time to light your first LED. Most Arduino and Arduino-compatible boards come with a built-in LED. The MKRZero is no exception. Click the File menu, then Examples, then _01\. Basics_, then _Blink_. This will open a new file that looks something like this (Click the copy button in the code header to copy this code):
+Once you’ve arranged your Arduino with a solderless breadboard, plug it into your computer’s USB port.
+
+Now it’s time to light your first LED. Most Arduino and Arduino-compatible boards come with a built-in LED. Click the File menu, then Examples, then _01\. Basics_, then _Blink_. This will open a new file that looks something like this (Click the copy button in the code header to copy this code):
 
 ```
 // the setup function runs once when you press reset or power the board
@@ -90,7 +90,6 @@ When you’ve got the board selected, click the _Tools_ menu again, then click _
 
 Note: in the Arduino IDE version 2.0.0 and later, the board and port should show up in the board menu of the Sketch window as long as the IDE recognizes your board. Figure 10 shows the 2.0 Board/Port menu in the sketch window. 
 
-
 <img src="img/candles/Tools_menu-1024x450.png" alt="tools menu of the Arduino IDE showing how to select the port to your connected Arduino" width="75%">
 
 _Figure 9. Tools menu of the Arduino IDE_
@@ -105,11 +104,11 @@ When you’ve picked the right board and the right port, click the Upload button
 
 _Figure 11. Upload button on the Arduino tool bar_
 
-The IDE will now compile your Blink program to a binary file,  transfer it to the Arduino, and start running it. You should see the builtin LED on your board blinking, as seen in Video 1 below Congratulations!
+The IDE will now compile your Blink program to a binary file,  transfer it to the Arduino, and start running it. You should see the builtin LED on your board blinking, as seen in Video 1 below. Congratulations!
 
 <a href="https://vimeo.com/277706585" target="_blank">Video 1: The LED Blinking on a MKRZero</a>
 
-Controlling a few LEDs at a time on an Arduino is simple. You attach one leg of the LED (the longer leg, called the _anode_) to one of the input-output (I/O) pins, attach the other leg (the shorter leg, or _cathode_) and apply voltage to the pin to turn the LED on. The `digitalWrite()` command does this. `digitalWrite(pinNumber, HIGH)` applies voltage, and `digitalWrite(pinNumber, LOW)` turns it off. Each LED is just one color, though. If you want to change the color of your light, you need multiple LEDs. To mix red, green, and blue into a range of colors, for example, you need three LEDs. Fortunately, you can buy components that have multiple LEDs in one package. A typical RGB LED might look like those in Figure 12:
+Controlling a few LEDs at a time on an Arduino is simple. You attach one leg of the LED (the longer leg, called the _anode_) to one of the input-output (I/O) pins through a 220-ohm resistor, attach the other leg (the shorter leg, or _cathode_) and apply voltage to the pin to turn the LED on. The `digitalWrite()` command does this. `digitalWrite(pinNumber, HIGH)` applies voltage, and `digitalWrite(pinNumber, LOW)` turns it off. Each LED is just one color, though. If you want to change the color of your light, you need multiple LEDs. To mix red, green, and blue into a range of colors, for example, you need three LEDs. Fortunately, you can buy components that have multiple LEDs in one package. A typical RGB LED might look like those in Figure 12:
 
 [<img src="https://itp.nyu.edu/physcomp/wp-content/uploads/leds1.jpg" alt="Four LED components. The one on the right is an RGB LED and has 4 wires coming out of it. The others each have two wires.](https://itp.nyu.edu/physcomp/wp-content/uploads/leds1-300x200.jpg)" width="75%">
 
