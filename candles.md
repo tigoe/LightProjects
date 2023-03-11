@@ -95,17 +95,17 @@ When you’ve got the board selected, click the _Tools_ menu again, then click _
 
 Note: in the Arduino IDE version 2.0.0 and later, the board and port should show up in the board menu of the Sketch window as long as the IDE recognizes your board. Figure 10 shows the 2.0 Board/Port menu in the sketch window. 
 
-<img src="img/candles/Tools_menu-1024x450.png" alt="tools menu of the Arduino IDE showing how to select the port to your connected Arduino" width="75%">
+<a href="img/candles/Tools_menu-1024x450.png" target="_blank"><img src="img/candles/Tools_menu-1024x450.png" alt="tools menu of the Arduino IDE showing how to select the port to your connected Arduino" width="75%"></a>
 
 _Figure 9. Tools menu of the Arduino IDE_
 
-<img src="img/candles/IDE-20-board-port-menu.png" alt="tools menu of the Arduino IDE showing how to select the port to your connected Arduino" width="75%">
+<a href="img/candles/IDE-20-board-port-menu.png" target="_blank"><img src="img/candles/IDE-20-board-port-menu.png" alt="tools menu of the Arduino IDE showing how to select the port to your connected Arduino" width="75%"></a>
 
 _Figure 10. Board and port menu in the Sketch window of the Arduino IDE 2.0 and later._
 
 When you’ve picked the right board and the right port, click the Upload button on the toolbar as shown in Figure 11. You can also type command-U (MacOS) or control-U (Windows):
 
-<img src="img/candles/upload_button.png" alt="location of upload button on the Arduino tool bar in the upper left corner. You can also type command-U (MacOS) or control-U (Windows)" width="75%">
+<a href="img/candles/upload_button.png" target="_blank"><img src="img/candles/upload_button.png" alt="location of upload button on the Arduino tool bar in the upper left corner. You can also type command-U (MacOS) or control-U (Windows)" width="75%"></a>
 
 _Figure 11. Upload button on the Arduino tool bar_
 
@@ -115,7 +115,7 @@ The IDE will now compile your Blink program to a binary file,  transfer it to t
 
 Controlling a few LEDs at a time on an Arduino is simple. You attach one leg of the LED (the longer leg, called the _anode_) to one of the input-output (I/O) pins through a 220-ohm resistor, attach the other leg (the shorter leg, or _cathode_) and apply voltage to the pin to turn the LED on. The `digitalWrite()` command does this. `digitalWrite(pinNumber, HIGH)` applies voltage, and `digitalWrite(pinNumber, LOW)` turns it off. Each LED is just one color, though. If you want to change the color of your light, you need multiple LEDs. To mix red, green, and blue into a range of colors, for example, you need three LEDs. Fortunately, you can buy components that have multiple LEDs in one package. A typical RGB LED might look like those in Figure 12:
 
-<img src="https://itp.nyu.edu/physcomp/wp-content/uploads/leds1.jpg" alt="Four LED components. The one on the right is an RGB LED and has 4 wires coming out of it. The others each have two wires.(https://itp.nyu.edu/physcomp/wp-content/uploads/leds1-300x200.jpg)" width="75%">
+<a href="img/candles/leds1-300x200.jpg" target="_blank"><img src="img/candles/leds1-300x200.jpg" alt="Four LED components. The one on the right is an RGB LED and has 4 wires coming out of it. The others each have two wires." width="75%"></a>
 
 _Figure 12. Four LED components. The one on the right is an RGB LED. Note that it has four legs. It contains three LEDs in the one package. The long one is a common cathode. The three others are the anodes for the red, green, and blue LEDs in the package._
 
@@ -123,7 +123,7 @@ To control an RGB LED like the one shown on the right above, you need three I/O 
 
 The programmable LEDs you’re using are a variant of [WorldSemi’s WS2812 LEDs](http://www.world-semi.com/products/index.html). They listen for a specific protocol set by the manufacturer, and you can send it from your microcontroller using the Adafruit NeoPixel library which you installed earlier. Disconnect your board from the computer _**(Always disconnect your microcontroller from power before changing the circuit!)**_ Then connect your programmable LED ring to the board as shown in Figure 13 below, with the voltage input pin of the LEDs attached to the Arduino’s Vcc, the GND pin attached to ground, and the DI pin attached to digital pin 5. You can use this same (programmable LED voltage, ground, and control on pin 5) arrangement on all Arduino models:
 
-<img src="img/candles/MKRZero-Neopixel-1.png" alt="MKRZero attached to a breadboard along with a programmable LED ring" width="75%">
+<a href="img/candles/MKRZero-Neopixel-1.png" target= "_blank"><img src="img/candles/MKRZero-Neopixel-1.png" alt="MKRZero attached to a breadboard along with a programmable LED ring" width="75%"></a>
 
 _Figure 13. MKRZero with programmable LED ring_
 
