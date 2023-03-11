@@ -25,6 +25,8 @@ WorldSemi combined their 2811 driver chip with an RGB LED in a 5050 package to m
 
 Here's a [quickstart page of NeoPixel examples](WS281x/readme.md) to get you started. You can also find a number of simplified examples using the Adafruit NeoPixel library for the WS281x LEDs at [this link](https://github.com/tigoe/NeoPixel_examples). 
 
+For an exercise using WorldSemi LEDs to make an electronic candle, see [this link](candles.md). 
+
 In summary:
 
 * WS2801 - driver IC for LEDs, separate clock and data lines, low speed clock
