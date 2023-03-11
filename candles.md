@@ -12,33 +12,36 @@ To follow along with this tutorial, you’ll need:
 
 Figures 1-5 show the parts you’ll need for this exercise. Click on any image for a larger view.
 
-<a href="img/candles/breadboard_short-e1532116106284-150x150-1.jpeg" _target="blank"><img src="img/candles/breadboard_short-e1532116106284-150x150-1.jpeg" alt="Solderless Breadboard" height="75%"></a>
-
-_Figure 1. Solderless Breadboard_
-
 <a href="img/candles/MKRZero-e1530487647686.jpg" alt="MKRZero" width="75%" target="_blank"><img src="img/candles/MKRZero-e1530487647686.jpg" alt="MKRZero" width="50%"></a>
 
-_Figure 2. Arduino board_
+_Figure 1. Arduino board_
+
+An Arduino-compatible microcontroller. The [MKRZero](https://store.arduino.cc/usa/arduino-mkrzero) is used below, but everything you’ll see here works on all models including the Uno, [Nano 33 IoT](https://store-usa.arduino.cc/products/arduino-nano-33-iot?selectedStore=us). and [Nano Every](https://store-usa.arduino.cc/products/arduino-nano-every)
+
+<a href="img/candles/LED_ring.jpg" alt="LED Ring" width="75%" target="_blank"><img src="img/candles/LED_ring.jpg" alt="LED Ring" width="50%"></a>
+
+_Figure 2. Programmable LED Ring or module_
+
+a set of WorldSemi programmable LEDs, the WS2812/SK6812 types. You can buy these from many retailers. Adafruit’s [NeoPixel](https://www.adafruit.com/product/2226) line are all compatible, as are SparkFun’s [LilyPad Pixel Board](https://www.sparkfun.com/products/13264) Seeedstudio’s [WS2812 offerings](https://www.seeedstudio.com/s/ws2812.html),  and many others. Here is a [quickstart guide to the NeoPixel library](https://tigoe.github.io/LightProjects/WS281x/).
+
+
+<a href="img/candles/breadboard_short-e1532116106284-150x150-1.jpeg" _target="blank"><img src="img/candles/breadboard_short-e1532116106284-150x150-1.jpeg" alt="Solderless Breadboard" height="75%"></a>
+
+_Figure 3. Solderless Breadboard_
 
 <a href="img/candles/hookup_wires.jpg" alt="Hookup wires" width="75%" target="_blank"><img src="img/candles/hookup_wires.jpg" alt="Hookup wires" width="50%"></a>
 
 _Figure 3. Hookup wires_
 
-<a href="img/candles/LED_ring.jpg" alt="LED Ring" width="75%" target="_blank"><img src="img/candles/LED_ring.jpg" alt="LED Ring" width="50%"></a>
-
-_Figure 4. Programmable LED Ring or module_
-
 <a href="img/candles/microUSB.jpg" alt="microUSB cable" width="75%" target="_blank"><img src="img/candles/microUSB.jpg" alt="microUSB cable" width="50%"></a>
 
 _Figure 5. microUSB cable_
 
-___
+A solderless breadboard, some jumper wires, and a USB cable to match your Arduino.
 
--   an Arduino-compatible microcontroller. The [MKRZero](https://store.arduino.cc/usa/arduino-mkrzero) is used below, but everything you’ll see here works on all models including the Uno, [Nano 33 IoT](https://store-usa.arduino.cc/products/arduino-nano-33-iot?selectedStore=us). and [Nano Every](https://store-usa.arduino.cc/products/arduino-nano-every)
--   a personal computer with the Arduino software installed.
--   a set of WorldSemi programmable LEDs, the WS2812/SK6812 types. You can buy these from many retailers. Adafruit’s [NeoPixel](https://www.adafruit.com/product/2226) line are all compatible, as are SparkFun’s [LilyPad Pixel Board](https://www.sparkfun.com/products/13264) Seeedstudio’s [WS2812 offerings](https://www.seeedstudio.com/s/ws2812.html),  and many others. Here is a [quickstart guide to the NeoPixel library](https://tigoe.github.io/LightProjects/WS281x/).
--   A solderless breadboard, some jumper wires, and a USB cable to match your Arduino
--   Some material for diffusing and reflecting the light: paper, cloth, glass, plastic, whatever strikes your fancy.
+You'll also need a personal computer with the Arduino software installed.
+
+When you start making a housing for your candle, some material for diffusing and reflecting the light will be useful as well: paper, cloth, glass, plastic, whatever strikes your fancy.
 
 ## Candle Flames and Artificial Sources
 
