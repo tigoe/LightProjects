@@ -71,7 +71,7 @@ _Figure 8. Arduino MKR Zero mounted on a breadboard. Physical pins are numbered 
 
 Once you’ve arranged your Arduino with a solderless breadboard, plug it into your computer’s USB port.
 
-Now it’s time to light your first LED. Most Arduino and Arduino-compatible boards come with a built-in LED. Click the File menu, then Examples, then _01\. Basics_, then _Blink_. This will open a new file that looks something like this (Click the copy button in the code header to copy this code):
+Now it’s time to light your first LED. Most Arduino and Arduino-compatible boards come with a built-in LED. Click the File menu, then Examples, then _01\. Basics_, then _Blink_. This will open a new file that looks something like this:
 
 ```
 // the setup function runs once when you press reset or power the board
@@ -127,7 +127,7 @@ The programmable LEDs you’re using are a variant of [WorldSemi’s WS2812 LEDs
 
 _Figure 13. MKRZero with programmable LED ring_
 
-The current available from the microcontroller’s Vcc pin isn’t much, but it’s enough to supply seven or eight programmable LEDs. You’ll be controlling the LEDs from pin 5 of the microcontroller. Now open a new file in the IDE, and enter the following program (Click the copy button in the code header to copy this code):
+The current available from the microcontroller’s Vcc pin isn’t much, but it’s enough to supply seven or eight programmable LEDs. You’ll be controlling the LEDs from pin 5 of the microcontroller. Now open a new file in the IDE, and enter the following program:
 
 ```
 #include <Adafruit_NeoPixel.h>
