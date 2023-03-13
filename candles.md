@@ -121,13 +121,21 @@ _Figure 12. Four LED components. The one on the right is an RGB LED. Note that i
 
 To control an RGB LED like the one shown on the right above, you need three I/O pins. The common cathode is attached to ground. As you can imagine, you run out of I/O pins fast if every LED needs its own pin. This is where **[addressable LEDs](addressable-leds.md)** come in handy. Addressable LEDs or programmable LEDs as they're also called, are components containing an LED and a very limited processor to control them. They’re chained together so that you can control many of them from one I/O pin. Your microcontroller sends a series of electronic pulses on the I/O pin, and the string of addressable LEDs interprets the pulses to know which LED to turn on, and how bright. Each LED in the chain (for example, the ring shown in Figure 4 above) gets its own address, and you send pulses indicating the address, then the levels for each color channel at that address. This communication is a form of [serial communication](https://itp.nyu.edu/physcomp/lessons/#Serial_Communication), a common way that computers talk to each other. You can think of each LED as its own tiny computer, listening for messages from your master computer (your Arduino).
 
-The addressable LEDs you’re using are a variant of [WorldSemi’s WS2812 LEDs](http://www.world-semi.com/products/index.html). They listen for a specific protocol set by the manufacturer, and you can send it from your microcontroller using the Adafruit NeoPixel library which you installed earlier. Disconnect your board from the computer _**(Always disconnect your microcontroller from power before changing the circuit!)**_ Then connect your addressable LED ring to the board as shown in Figure 13 below, with the voltage input pin of the LEDs attached to the Arduino’s Vcc, the GND pin attached to ground, and the DI pin attached to digital pin 5. You can use this same (addressable LED voltage, ground, and control on pin 5) arrangement on all Arduino models:
+The addressable LEDs you’re using are a variant of [WorldSemi’s WS2812 LEDs](http://www.world-semi.com/products/index.html). They listen for a specific protocol set by the manufacturer, and you can send it from your microcontroller using the Adafruit NeoPixel library which you installed earlier. Disconnect your board from the computer _**(Always disconnect your microcontroller from power before changing the circuit!).**_ Then connect your addressable LED ring to the board as shown in Figures 13-15 below. The voltage input pin of the LEDs is attached to the Arduino’s Vcc, the GND pin is attached to ground, and the Data In (DI) pin attached to digital pin 5. These LEDs ideally run on 5V, but for smaller numbers of LEDs (less than 10), you can run them on 3.3V. The current available from the microcontroller’s Vcc pin isn’t much, but it’s enough to supply less than 10 addressable LEDs. You can use this same arrangement (addressable LED voltage, ground, and control on pin 5) arrangement on all Arduino models.
 
 <a href="img/candles/MKRZero-Neopixel-1.png" target= "_blank"><img src="img/candles/MKRZero-Neopixel-1.png" alt="MKRZero attached to a breadboard along with a addressable LED ring" width="75%"></a>
 
 _Figure 13. MKRZero with addressable LED ring_
 
-The current available from the microcontroller’s Vcc pin isn’t much, but it’s enough to supply seven or eight addressable LEDs. You’ll be controlling the LEDs from pin 5 of the microcontroller. Now open a new file in the IDE, and enter the following program:
+<a href="img/candles/nano-neopixel-ring_bb.png" target= "_blank"><img src="img/candles/nano-neopixel-ring_bb.png" alt="Nano 33 IoT attached to a breadboard along with a addressable LED ring" width="75%"></a>
+
+_Figure 14. Nano 33 IoT with addressable LED ring_
+
+<a href="img/candles/Uno_w_LED_ring_bb.png" target= "_blank"><img src="img/candles/Uno_w_LED_ring_bb.png" alt="Arduino Uno attached to a an addressable LED ring" width="75%"></a>
+
+_Figure 15. Arduino Uno with addressable LED ring_
+
+Now open a new file in the IDE, and enter the following program:
 
 ```
 #include <Adafruit_NeoPixel.h>
