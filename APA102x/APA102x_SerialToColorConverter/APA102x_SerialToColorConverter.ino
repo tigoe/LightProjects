@@ -18,7 +18,7 @@
    by Tom Igoe
 */
 
-#include <ColorConverter.h>
+//#include <ColorConverter.h>
 #include <Adafruit_DotStar.h>
 
 const int pixelCount = 4;    // number of pixels
@@ -31,7 +31,7 @@ const int clockPin = 9;     // clock pin
 //Adafruit_DotStar strip(pixelCount, dataPin, clockPin, DOTSTAR_BRG);
 Adafruit_DotStar strip(pixelCount, DOTSTAR_BGR);
 
-ColorConverter converter;
+//ColorConverter converter;
 void setup() {
   Serial.begin(9600);       // initialize serial communication
   while (!Serial);          // wait until serial monitor is opened
@@ -49,16 +49,17 @@ void loop() {
       int h = Serial.parseInt();    // read ASCII numeric strings
       int s = Serial.parseInt();
       int i = Serial.parseInt();
+      long thisColor = strip.ColorHSV(h, s, i);
       // do the conversion:
-      RGBColor color = converter.HSItoRGB(h, s, i);
-      // print the results:
-      Serial.print(color.red);
-      Serial.print(" ");
-      Serial.print(color.green);
-      Serial.print(" ");
-      Serial.println(color.blue);
+//      RGBColor color = converter.HSItoRGB(h, s, i);
+//      // print the results:
+//      Serial.print(color.red);
+//      Serial.print(" ");
+//      Serial.print(color.green);
+//      Serial.print(" ");
+//      Serial.println(color.blue);
       for (int pixel = 0; pixel < pixelCount; pixel++) {
-        strip.setPixelColor(pixel, color.red, color.green, color.blue);   // set the color for this pixel
+        strip.setPixelColor(pixel, thisColor);   // set the color for this pixel
       }
     }
     if (c == 'r') {      // if byte was r:
