@@ -1,10 +1,10 @@
 /*
-  This sketch calculates CCT from the basic count readings of an
+  This sketch calculates lux, CCT, x, y, and z  from the basic count readings of an
   AMS AS7341 sensor.  
   
-  This is a first draft and is probably very wrong. Readings do not correlate
-  with a Sekonic C-800-U measuring next to the sensor. The sensor is not 
-  diffused either.
+  This is a first draft and needs corrections. Readings do not correlate
+  with a Sekonic C-800-U measuring next to the sensor. 
+  The sensor is diffused with a single sheet of Kimoto Optsaver L-57 diffuser.
 
   It sends the following out as a JSON object, 
   using the Arduino_JSON library:
@@ -53,8 +53,8 @@ Adafruit_AS7341 as7341;
 JSONVar lightReadings;
 
 // properties of the object (the channels of the sensor):
-String properties[] = { "415", "445", "480", "515", "555", "590", "630",
-                        "680", "910", "clear", "x", "y", "z", "lux", "cct", "flicker" };
+int wavelengths[] = { 415, 445, 480, 515, 555, 590, 630, 680, 910 };
+
 
 // XYZ correction matrix from the spreadsheet at
 // https://ams.com/documents/20143/36005/AS7341_AD000198_3-00.xlsx
@@ -77,17 +77,13 @@ Matrix<10> correctedValues;
 // normalized sensor values:
 Matrix<10> normalizedValues;
 
-float lux;
-float CCT;
-float x;
-float y;
-float z;
 
 void setup() {
   // init serial, wait 3 secs for serial monitor to open:
   Serial.begin(9600);
   // if the serial port's not open, wait 3 seconds:
   if (!Serial) delay(3000);
+
   // check for the sensor:
   while (!as7341.begin()) {
     Serial.println("Sensor not found, check wiring");
@@ -105,21 +101,21 @@ void setup() {
 void loop() {
   // read the sensor, print if there are good values:
   if (as7341.checkReadingProgress()) {
-    readSensor();
-    calculateLightValues();
-    Serial.println(lightReadings);
-
+    if (readSensor()) {
+      calculateLightValues();
+      Serial.println(lightReadings);
+    }
     // start a new reading cycle:
     as7341.startReading();
   }
 }
 
-void readSensor() {
+bool readSensor() {
   // check to see if readings are done
   uint16_t data[12];
 
-  // get the readings:
-  if (!as7341.readAllChannels(data)) return;
+  // if you get no readings, return:
+  if (!as7341.readAllChannels(data)) return false;
   // there are ten channels, eight of which are visible bands
   // but two channels, the NIR and clear, repeat.
   // so we need to read from the 12 channels into 10 places of a data array:
@@ -134,6 +130,7 @@ void readSensor() {
     // increment channel counter:
     c++;
   }
+  return true;
 }
 
 void calculateLightValues() {
@@ -144,32 +141,35 @@ void calculateLightValues() {
   normalizedValues.Fill(0);
   // max reading for the normalization:
   float maxReading = 0.0;
-
   // loop over the readings and find the max:
   for (int r = 0; r < 10; r++) {
     correctedValues(r) = correctionFactors(r) * (readings(r) - offsets(r));
+    maxReading = max(correctedValues(r), maxReading);
+    normalizedValues(r) = correctedValues(r) / maxReading;
+
     // give the lightReadings JSON elements names from the properties array,
     // and give them values from the correctedValues matrix:
-    lightReadings[properties[r]] = correctedValues(r);
-    maxReading = max(correctedValues(r), maxReading);
+    String myWavelength = String(wavelengths[r]);
+    if (r < 9) lightReadings[myWavelength] = correctedValues(r);
+    // the clear reading comes last:
+    else if (r == 9) lightReadings["clear"] = correctedValues(r);
   }
 
-  // not really using this anywhere:
-  for (int r = 0; r < 10; r++) {
-    normalizedValues(r) = correctedValues(r) / maxReading;
-  }
+
   // from spreadsheet , tab: demonstration calculations, J10-12:
   XYZ = corrMatrix * correctedValues;
-
   // from spreadsheet, tab: demonstration calculations, J14-16:
   float XYZSum = XYZ(0) + XYZ(1) + XYZ(2);
-  lightReadings["x"] = XYZ(0) / XYZSum;
-  lightReadings["y"] = XYZ(1) / XYZSum;
-  lightReadings["z"] = XYZ(2) / XYZSum;
+  float x = XYZ(0) / XYZSum;
+  float y = XYZ(1) / XYZSum;
+  float z = XYZ(2) / XYZSum;
+  lightReadings["x"] = x;
+  lightReadings["y"] = y;
+  lightReadings["z"] = z;
 
   // not clear on the origin of the constants below:
   // from spreadsheet, tab: demonstration calculations, J17:
-  lightReadings["lux"] = XYZ(1) * 683;
+  lightReadings["lux"] = XYZ(1) * 683.0;
   // from spreadsheet, tab: demonstration calculations, J22:
   lightReadings["cct"] = 437 * pow(((x - 0.332) / (0.1858 - y)), 3) + 3601 * pow(((x - 0.332) / (0.1858 - y)), 2) + 6861 * ((x - 0.332) / (0.1858 - y)) + 5517;
   // add flicker detection:
