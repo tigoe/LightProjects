@@ -1,5 +1,6 @@
 #include <BasicLinearAlgebra.h>
 #include <Adafruit_AS7341.h>
+#include <Arduino_JSON.h>
 
 // use the BasicLinearAlgebra namespace.
 //  You might need to add BLA::  before all the Matrix declarations
@@ -7,7 +8,9 @@ using namespace BLA;
 
 // instance of the sensor library:
 Adafruit_AS7341 as7341;
-
+// make a data object
+JSONVar lightReadings;
+int wavelengths[] = { 415, 445, 480, 515, 555, 590, 630, 680, 910 };
 
 // XYZ correction matrix from the spreadsheet at
 // https://ams.com/documents/20143/36005/AS7341_AD000198_3-00.xlsx
@@ -30,8 +33,8 @@ Matrix<10> correctedValues;
 // normalized sensor values:
 Matrix<10> normalizedValues;
 
-float lux;
-float CCT;
+// float lux;
+// float CCT;
 float x;
 float y;
 float z;
@@ -46,6 +49,18 @@ void setup() {
     Serial.println("Sensor not found, check wiring");
     delay(1000);
   }
+
+  // set names for all the properties of the lightReadings object:
+  for (int c = 0; c < 9; c++) {
+    String channel = String(wavelengths[c]);
+    lightReadings[channel] = 0;
+  }
+  lightReadings["clear"] = 0;
+  lightReadings["x"] = 0;
+  lightReadings["y"] = 0;
+  lightReadings["z"] = 0;
+  lightReadings["lux"] = 0;
+  lightReadings["cct"] = 0;
 
   // set integration time:
   as7341.setATIME(35);
@@ -64,24 +79,14 @@ void loop() {
     for (int r = 0; r < 10; r++) {
       // print to 5 decimal places:
       // TODO: should I print normalized values?
-      Serial.print(correctedValues(r), 5);
-      if (r < 9) Serial.print(",");
+
+      // Serial.print(correctedValues(r), 5);
+      // // if (r < 9)
+      // Serial.print(",");
     }
-    Serial.println();
 
-    Serial.print("Lux: ");
-    Serial.println(lux, 5);
 
-    Serial.print("   CCT: ");
-    Serial.print(CCT, 5);
-
-    Serial.print("   x: ");
-    Serial.print(x, 5);
-    Serial.print("  y: ");
-    Serial.print(y, 5);
-    Serial.print("  z: ");
-    Serial.println(z, 5);
-    Serial.println();
+    Serial.println(lightReadings);
 
     // start a new reading cycle:
     as7341.startReading();
@@ -90,13 +95,13 @@ void loop() {
 
 void readSensor() {
   // check to see if readings are done
-  //  checkReadingProgress() is non-blocking:
   uint16_t data[12];
-  // if there is a reading, do corrections and parse it
-  // into readingString:
 
   // get the readings:
   as7341.getAllChannels(data);
+  // there are ten channels, eight of which are visible bands
+  // but two channels are repeats. And the last two are NIR and clear.
+  // so we need to read from the 12 channels into 10 places of a data array:
   int c = 0;
   // loop over the readings and print them out:
   for (int r = 0; r < 12; r++) {
@@ -117,7 +122,7 @@ void calculateLightValues() {
   // max reading for the normalization:
   float maxReading = 0.0;
 
-  // loop over the readings and print them out:
+  // loop over the readings and find the max:
   for (int r = 0; r < 10; r++) {
     correctedValues(r) = correctionFactors(r) * (readings(r) - offsets(r));
     // thisReading = thisReading * corrections[r];
@@ -139,7 +144,10 @@ void calculateLightValues() {
 
   // not clear on the origin of the constants below:
   // from spreadsheet, tab: demonstration calculations, J17:
-  lux = XYZ(1) * 683;
+  lightReadings["lux"] = XYZ(1) * 683;
   // from spreadsheet, tab: demonstration calculations, J22:
-  CCT = 437 * pow(((x - 0.332) / (0.1858 - y)), 3) + 3601 * pow(((x - 0.332) / (0.1858 - y)), 2) + 6861 * ((x - 0.332) / (0.1858 - y)) + 5517;
+  lightReadings["cct"] = 437 * pow(((x - 0.332) / (0.1858 - y)), 3) + 3601 * pow(((x - 0.332) / (0.1858 - y)), 2) + 6861 * ((x - 0.332) / (0.1858 - y)) + 5517;
+  lightReadings["x"] = x;
+  lightReadings["y"] = y;
+  lightReadings["z"] = z;
 }
