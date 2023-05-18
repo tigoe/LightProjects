@@ -4,7 +4,7 @@ Electronic candles are common in restaurants and bars these days, and they’re 
 
 ## What You Need to Know
 
-In order to make the most of this tutorial, you should know what a [microcontroller](https://itp.nyu.edu/physcomp/lessons/microcontrollers-the-basics/) is, what the [Arduino](https://www.arduino.cc/) microcontroller programming environment is, and how to use it, [at least at a beginning level](https://itp.nyu.edu/physcomp/labs/labs-arduino-digital-and-analog/digital-input-and-output-with-an-arduino/). You should [download and install the Arduino IDE](https://www.arduino.cc/en/Main/Software) on your computer to follow along with the programming below. The [ITP Intro to Physical Computing](https://itp.nyu.edu/physcomp/lessons/#Microcontroller_Fundamentals) Topics and Video Links offer helpful background if you’re new to electronics and microcontrollers.
+In order to make the most of this tutorial, you should know what a [microcontroller](https://itp.nyu.edu/physcomp/lessons/microcontrollers-the-basics/) is, what the [Arduino](https://www.arduino.cc/) microcontroller programming environment is, and [the basics of how to use it](https://itp.nyu.edu/physcomp/labs/labs-arduino-digital-and-analog/digital-input-and-output-with-an-arduino/). You should [download and install the Arduino IDE](install-arduino-ide.md) (integrated development environment) on your computer to follow along with the programming below. The [ITP Intro to Physical Computing](https://itp.nyu.edu/physcomp/lessons/#Microcontroller_Fundamentals) Topics and Video Links offer helpful background if you’re new to electronics and microcontrollers.
 
 ## Equipment You’ll Need
 
