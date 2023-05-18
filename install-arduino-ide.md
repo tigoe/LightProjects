@@ -20,7 +20,7 @@ _Figure 2. The Arduino IDE with Boards Manager open._
 
 ## Install Libraries
 
-To install any libraries needed, click the Libraries icon (third icon on the left) to open the Library Manager. The Library Manager works like the Boards manager: type in the library you want to filter the list. For the Electronic Candles project in this repository, you'll need the Adafruit NeoPixel library, or Adafruit DMA NeoPixel library if you're using a Nano 33 IoT or other SAMD-based board.
+To install any libraries needed, click the Libraries icon (third icon on the left) to open the Library Manager. The Library Manager works like the Boards manager: type in the library you want to filter the list. For the [Electronic Candles](candles.md) project in this repository, you'll need the Adafruit NeoPixel library, or Adafruit DMA NeoPixel library if you're using a Nano 33 IoT or other SAMD-based board.
 
 When you install libraries, they usually come with examples. Click on the File menu, choose Examples, and navigate to your library and you'll see the relevant examples. Figure 3 shows the File menu open to the Adafruit NeoPixel examples. 
 
