@@ -39,7 +39,7 @@ _Figure 5. microUSB cable_
 
 A solderless breadboard, some jumper wires, and a USB cable to match your Arduino.
 
-You'll also need a personal computer with the Arduino software installed.
+You'll also need a personal computer with the [Arduino software installed](install-arduino-ide.md).
 
 When you start making a housing for your candle, some material for diffusing and reflecting the light will be useful as well: paper, cloth, glass, plastic, whatever strikes your fancy.
 
