@@ -29,11 +29,11 @@ To test the order, [here's a sketch](WS281xColorOrderTester/) that will turn on 
 
 Before you do anything else you should test your modules to make sure that each pixel and each color channel on each pixel works. 
 
-You can test each pixel with [this test]({{codeurl}}/WS281xTester/). It will turn on each pixel one at a time and one color at a time. 
+You can test each pixel with [this test]({{site.codeurl}}/WS281xTester/). It will turn on each pixel one at a time and one color at a time. 
 
-You can test all the pixels of a given channel at once with [this test]({{codeurl}}/WS281xColorOrderTester/). It will turn on all the pixels of a given channel at a time. 
+You can test all the pixels of a given channel at once with [this test]({{site.codeurl}}/WS281xColorOrderTester/). It will turn on all the pixels of a given channel at a time. 
 
-You can test a specific color with [this test]({{codeurl}}/WS281xOneColor/). It will listen for an incoming hexadecimaly serial string and set all the pixels with the value of that string. For example, sending `0,255,0,0` will set the pixels to red, `0,0,255,0` will set it to green, etc. 
+You can test a specific color with [this test]({{site.codeurl}}/WS281xOneColor/). It will listen for an incoming hexadecimaly serial string and set all the pixels with the value of that string. For example, sending `0,255,0,0` will set the pixels to red, `0,0,255,0` will set it to green, etc. 
 
 ## Setting Color Values
 
