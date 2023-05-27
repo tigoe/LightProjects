@@ -16,7 +16,7 @@
 #include <Adafruit_NeoPixel.h>
 
 const int neoPixelPin = 5;  // control pin
-const int pixelCount = 7;   // number of pixels
+const int pixelCount = 8;   // number of pixels
 int color = 0xFF;           // blue
 
 // set up strip:
@@ -40,5 +40,7 @@ void loop() {
   // shift color by 8 bits each time through the loop:
   if (color < 0xFF000000) {
     color = color << 8;
+  } else {
+    color = 0xFF;
   }
 }
