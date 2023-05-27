@@ -19,7 +19,7 @@ To see the differences in control of color afforded by HSV vs. RGB vs. HSL, chec
 * [HSV color model](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html#hsv-cylinder)
 * [HSL color model](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html#hsl-cylinder)
 
-Although HSV and HSL are useful ways to describe color, they are not native properties to a lighting system that relies on RGB or RGBW control. To control these systems using HSV descriptions, you need a color conversion algorithm. Most LED control libraries now incorporate HSV coneversions. For an overview of the engineering behind this, see Saiko LED's slide deck on [Color Spaces in LED Lighting](http://saikoled.com/assets/img/Color%20Spaces%20in%20LED%20Lighting.pdf).
+Although HSV and HSL are useful ways to describe color, they are not native properties to a lighting system that relies on RGB or RGBW control. To control these systems using HSV descriptions, you need a color conversion algorithm. Most LED control libraries now incorporate HSV coneversions.
 
 White light is composed of multiple wavelengths of light, and when describing it, lighting designers and engineers speak about the *color temperature* of the light, referring to its relative warmth or coolness. Warmer light contains more longer wavelengths, toward the red end of the spectrum, while cooler light contains more shorter wavelengths, toward the blue end of the spectrum.
 
@@ -48,7 +48,7 @@ Now imagine you're writing a program to fade your LEDs. What would the  fade fro
   // if it reaches 0, set it back to 0xFFFFFF:
   if (color == 0) color = 0xFFFFFF;
 ````
- [Try it](https://github.com/tigoe/LightProjects/tree/main/APA102x/APA102xRGBFade). It's probably not what you expect.
+ [Try it]({{site.codeurl}}APA102x/APA102xRGBFade). It's probably not what you expect.
 
  You could rearrange things to that you're fading all three colors at the same time:
 
@@ -72,7 +72,7 @@ This works pretty well for white, but when you try it for an arbitrary set of th
 
 ### Hue, Saturation, and Brightness
 
-This is where a [Hue, Saturation, Brightness (or Lightness)](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html#color-models-and-color-spaces-JDQ1fRD) model becomes useful. In the HSL model, hue is positioned on a color cylinder, with red at the top (0 degrees), green at 120 degrees, and blue at 240 degrees. Saturation is the radius of the cylinder, and lightness is the depth of the cylinder. Here's an [interactive visualization](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html#hsl-cylinder) from Rune Madsen's book _Programming Design Systems_. The advantage of this model is that it allows you to change lightness or saturation without changing the hue. It becomes much simpler to create a[ flickering candle](https://github.com/tigoe/LightProjects/tree/main/APA102x/APA102xCandle) that changes from red to yellow through orange, for example. 
+This is where a [Hue, Saturation, Brightness (or Lightness)](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html#color-models-and-color-spaces-JDQ1fRD) model becomes useful. In the HSL model, hue is positioned on a color cylinder, with red at the top (0 degrees), green at 120 degrees, and blue at 240 degrees. Saturation is the radius of the cylinder, and lightness is the depth of the cylinder. Here's an [interactive visualization](https://programmingdesignsystems.com/color/color-models-and-color-spaces/index.html#hsl-cylinder) from Rune Madsen's book _Programming Design Systems_. The advantage of this model is that it allows you to change lightness or saturation without changing the hue. It becomes much simpler to create a[ flickering candle]({{site.codeurl}}Candles/APA102xCandle) that changes from red to yellow through orange, for example. 
 
 ![CIE 1931 reference diagram, from Wikimedia](https://upload.wikimedia.org/wikipedia/commons/5/5f/CIE-1931_diagram_in_LAB_space.svg)
 
@@ -91,8 +91,4 @@ For more details on the conversion from RGB and RGBW to HSI, see Saiko LED's [Wh
 
 [ETC Lighting](http://etcconnect.com/) works hard at increasing the quality of color rendering in their stage lighting fixtures. Here's a nice [description of how they do it in their ColorSource fixtures](https://www.etcconnect.com/Products/Lighting-Fixtures/ColorSource-Spot/Deep-Blue.aspx), and here's a [white paper on color mixing with LEDs](https://www.etcconnect.com/WorkArea/DownloadAsset.aspx?id=10737494297) that forms the basis of their work. 
 
-<<<<<<< Updated upstream
- [Ketra](https://www.ketra.com/) are architectural lighting manufacturers who work toward similarly high standards in architecture as ETC in the stage lighting area. Here's a nice explanation of Ketra's approach to [warm dimming](https://www.ketra.com/why-ketra/warm-dimming-led-lighting). Ketra is now a division of [Lutron](https://www.lutron.com)
-=======
  [Ketra](https://www.ketra.com/) are architectural lighting manufacturers who work toward similarly high standards in architecture as ETC in the stage lighting area. Here's a nice explanation of Ketra's approach to [warm dimming](https://www.ketra.com/why-ketra/warm-dimming-led-lighting). 
->>>>>>> Stashed changes
