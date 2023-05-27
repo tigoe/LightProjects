@@ -32,6 +32,7 @@ void setup() {
     Serial.println("Sensor not found, check wiring");
     while (true);
   }
+
   // set integration time:
   as7341.setATIME(35);
   as7341.setASTEP(10000);
@@ -59,7 +60,7 @@ bool readSensor() {
   // into readingString:
   if (result) {
     // correction factors:
-    // TODO: This is crued, and could be better with matrix math.
+    // TODO: This is crude, and could be better with matrix math.
     // from https://ams.com/documents/20143/36005/AS7341_AN000633_1-00.pdf/fc552673-9800-8d60-372d-fc67cf075740
     // fig 10
 
