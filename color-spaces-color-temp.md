@@ -91,4 +91,8 @@ For more details on the conversion from RGB and RGBW to HSI, see Saiko LED's [Wh
 
 [ETC Lighting](http://etcconnect.com/) works hard at increasing the quality of color rendering in their stage lighting fixtures. Here's a nice [description of how they do it in their ColorSource fixtures](https://www.etcconnect.com/Products/Lighting-Fixtures/ColorSource-Spot/Deep-Blue.aspx), and here's a [white paper on color mixing with LEDs](https://www.etcconnect.com/WorkArea/DownloadAsset.aspx?id=10737494297) that forms the basis of their work. 
 
+<<<<<<< Updated upstream
  [Ketra](https://www.ketra.com/) are architectural lighting manufacturers who work toward similarly high standards in architecture as ETC in the stage lighting area. Here's a nice explanation of Ketra's approach to [warm dimming](https://www.ketra.com/why-ketra/warm-dimming-led-lighting). Ketra is now a division of [Lutron](https://www.lutron.com)
+=======
+ [Ketra](https://www.ketra.com/) are architectural lighting manufacturers who work toward similarly high standards in architecture as ETC in the stage lighting area. Here's a nice explanation of Ketra's approach to [warm dimming](https://www.ketra.com/why-ketra/warm-dimming-led-lighting). 
+>>>>>>> Stashed changes
