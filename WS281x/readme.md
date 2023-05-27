@@ -63,13 +63,13 @@ Which you choose depends on what you're trying to do with your colors. Sometimes
 
 ## Setting and Clearing the Module
 
-The only time the LEDs in a module change are when you call one of two functions: `clear()` or `show()`. `clear()` will turn off all the LEDs at once. `show()` will update all the LEDs with whatever values you set them to using `setPixelColor()`. In the [Color order tester sketch](({{site.codeurl}}/WS281x/WS281xColorOrderTester/), All the module's colors are set in a `for` loop before the `show()` command is called. However, you can also test one pixel and one color at a time by calling `show()` whenever you call getPixelColor. Here's [another tester](({{site.codeurl}}/WS281x/WS281xTester/) that tests each pixel one at a time in each color. Both this and the earlier test are good to run with each new module, to make sure all the pixels work.
+The only time the LEDs in a module change are when you call one of two functions: `clear()` or `show()`. `clear()` will turn off all the LEDs at once. `show()` will update all the LEDs with whatever values you set them to using `setPixelColor()`. In the [Color order tester sketch]({{site.codeurl}}/WS281x/WS281xColorOrderTester/), All the module's colors are set in a `for` loop before the `show()` command is called. However, you can also test one pixel and one color at a time by calling `show()` whenever you call getPixelColor. Here's [another tester]({{site.codeurl}}/WS281x/WS281xTester/) that tests each pixel one at a time in each color. Both this and the earlier test are good to run with each new module, to make sure all the pixels work.
 
 ## Voltage and Current
 
 As the Adafruit NeoPixel Uberguide explains, addressable LEDs take a lot of power: up to 20 milliamps per channel per pixel at 5V. That means that a 60-pixel RGBW strip takes 20mA * 4 channels * 60 pixels. That's 4800 mA, or 4.8 Amps when all the pixels are on. That's a lot!  More than you can run from a microcontroller running from your USB port, that's for sure. 
 
-Here's a [sketch that turns on one color per pixel at a time](({{site.codeurl}}/WS281x/WS281xLoadTester/), adding colors and pixels one at a time as it goes. You can use this to test the current load of a strip. You should see the current go up by the amperage of each channel for each pixel per second. 
+Here's a [sketch that turns on one color per pixel at a time]({{site.codeurl}}/WS281x/WS281xLoadTester/), adding colors and pixels one at a time as it goes. You can use this to test the current load of a strip. You should see the current go up by the amperage of each channel for each pixel per second. 
 
 You can run a small number of WS281x pixels from 3.3V boards like the Nano 33 IoT. For small modules like the NeoPixel jewels (7 pixels), they work fine from the power from a Nano 33. However, for modules of more than a dozen or so pixels, you should power them from 5V, and if possible, use a 3.3V-to-5V level-shifter for the control pin.
 
@@ -91,5 +91,3 @@ This results in a single color value with the correct red, green, and blue value
 ````
 
 Gamma correction will adjust the color intensities on a power law curve rather than a linear one, color-correcting the red, green, and blue to more appropriately match the hue, saturation, and value that you want. [This sketch]({{site.codeurl}}/WS281x/WS281x_HSV_Tester/) demonstrates the use of HSV colors. Here's [another sketch]({{site.codeurl}}/WS281x/WS281HSVColorDemo/) that prints out the colors as you move through the HSV color wheel. Here's a [variation on the previous sketch]({{site.codeurl}}/WS281x/WS281HSVColorDemoSerial/) that allows you to control the hue cycling with input from the Serial Monitor. 
-
-
