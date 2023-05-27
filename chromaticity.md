@@ -20,11 +20,11 @@ _Figure 2. The CIE1976 Chromaticity Diagram. Image from Wikimedia_
 
 
 ![Figure 3. The CIE1931 Chromaticity Diagram with Macadam ellipses](https://lightquality.blog/wp-content/uploads/2018/06/graphic-4.jpg)
-_Figure 3. The CIE1931 Chromaticity Diagram with Macadam Ellipses. Image from [lightquality blog](https://lightquality.blog/)_
+_Figure 3. The CIE1931 Chromaticity Diagram with Macadam Ellipses. Image from [lightquality blog](https://lightquality.blog/). They have different areas depending on which region of the graph they are in._
 
 
 ![Figure 4. The CIE1976 Chromaticity Diagram with Macadam ellipses](https://lightquality.blog/wp-content/uploads/2018/06/graphic-2.jpg)
-_Figure 4. The CIE1976 Chromaticity Diagram with Macadam Ellipses. Image from [lightquality blog](https://lightquality.blog/)_
+_Figure 4. The CIE1976 Chromaticity Diagram with Macadam Ellipses. Image from [lightquality blog](https://lightquality.blog/). Ellipses in different regions of the graph are closer to the same area (if not shape)._
 
 ## Color Gamuts
 
