@@ -23,7 +23,7 @@ Most examples you'll find will refer to the variable holding  the library instan
 
 The things you'll change are the pixel that you're controlling the LEDs from (`neoPixelPin`, above); the number of pixels you're controlling (`pixelCount`, above); and the arrangement of pixels (`NEO_GRB`, above). The arrangement of pixels depends on which LEDs you are using. Some WS218x-derivative LEDs arrange the order of LEDs in a different order than the Green-Red-Blue order suggested here. If you have an RGBW module, the last property usually the white LED.
 
-To test the order, [here's a sketch](WS281xColorOrderTester/) that will turn on blue, then green, then red, then white for all the LEDs. If the colors don't appear in that order you can change the initializer. Possible values are all permutations of RGB or RGBW. For example, GRB, GBR, RGB, GRBW, etc. Re-ordering the colors will affect which channels are controlled by which color values. Try different orders in the sketch above to see how it works. 
+To test the order, [here's a sketch]({{site.codeurl}}/WS281x/WS281xColorOrderTester/) that will turn on blue, then green, then red, then white for all the LEDs. If the colors don't appear in that order you can change the initializer. Possible values are all permutations of RGB or RGBW. For example, GRB, GBR, RGB, GRBW, etc. Re-ordering the colors will affect which channels are controlled by which color values. Try different orders in the sketch above to see how it works. 
 
 ## Testing Your Modules
 
@@ -90,6 +90,6 @@ This results in a single color value with the correct red, green, and blue value
     strip.setPixelColor(pixel, color);   // set the color for this pixel
 ````
 
-Gamma correction will adjust the color intensities on a power law curve rather than a linear one, color-correcting the red, green, and blue to more appropriately match the hue, saturation, and value that you want. [This sketch](({{site.codeurl}}/WS281x/WS281x_HSV_Tester/) demonstrates the use of HSV colors. Here's [another sketch](({{site.codeurl}}/WS281x/WS281HSVColorDemo/) that prints out the colors as you move through the HSV color wheel. Here's a [variation on the previous sketch](({{site.codeurl}}/WS281x/WS281HSVColorDemoSerial/) that allows you to control the hue cycling with input from the Serial Monitor. 
+Gamma correction will adjust the color intensities on a power law curve rather than a linear one, color-correcting the red, green, and blue to more appropriately match the hue, saturation, and value that you want. [This sketch]({{site.codeurl}}/WS281x/WS281x_HSV_Tester/) demonstrates the use of HSV colors. Here's [another sketch]({{site.codeurl}}/WS281x/WS281HSVColorDemo/) that prints out the colors as you move through the HSV color wheel. Here's a [variation on the previous sketch]({{site.codeurl}}/WS281x/WS281HSVColorDemoSerial/) that allows you to control the hue cycling with input from the Serial Monitor. 
 
 
