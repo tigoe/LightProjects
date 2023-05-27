@@ -29,7 +29,7 @@ void setup() {
   strip.begin();    // initialize pixel strip
   strip.clear();    // turn all LEDs off
   strip.show();     // refresh strip
-  delay(3000);
+  delay(2000);      // delay 2 seconds before starting
 }
 
 void loop() {
@@ -40,7 +40,7 @@ void loop() {
       strip.setPixelColor(pixel - 1, 1); // turn off the last pixel
     }
     strip.show();    // refresh the strip
-    delay(250);
+    delay(250);      // 1/4 sec delay after each pixel
   }
 
   if (color >= 0xFF000000) {   // if the color is greater than white (0xFF000000)

@@ -6,11 +6,12 @@
   Change pixelCount to the number of LEDs in your string.
 
   Note: if you don't plan to use an RGBW string, change NEO_GRBW to NEO_GRB
+  and change "  if (color < 0xFF000000) {" to "  if (color < 0xFF0000) {"
 
   Uses Adafruit's NeoPixel library: https://github.com/adafruit/Adafruit_NeoPixel
 
   created 31 Jan 2017
-  modified 31 Jan 2022
+  modified 27 May 2023
   by Tom Igoe
 */
 #include <Adafruit_NeoPixel.h>
@@ -39,8 +40,8 @@ void loop() {
 
   // shift color by 8 bits each time through the loop:
   if (color < 0xFF000000) {
-    color = color << 8;
+    color = color << 8;     // shift to the next color
   } else {
-    color = 0xFF;
+    color = 0xFF;           // when you've gone through all the colors, shift to the first.
   }
 }

@@ -25,6 +25,16 @@ The things you'll change are the pixel that you're controlling the LEDs from (`n
 
 To test the order, [here's a sketch](WS281xColorOrderTester/) that will turn on blue, then green, then red, then white for all the LEDs. If the colors don't appear in that order you can change the initializer. Possible values are all permutations of RGB or RGBW. For example, GRB, GBR, RGB, GRBW, etc. Re-ordering the colors will affect which channels are controlled by which color values. Try different orders in the sketch above to see how it works. 
 
+## Testing Your Modules
+
+Before you do anything else you should test your modules to make sure that each pixel and each color channel on each pixel works. 
+
+You can test each pixel with [this test](WS281xTester/). It will turn on each pixel one at a time and one color at a time. 
+
+You can test all the pixels of a given channel at once with [this test](WS281xColorOrderTester/). It will turn on all the pixels of a given channel at a time. 
+
+You can test a specific color with [this test](WS281xOneColor/). It will listen for an incoming hexadecimaly serial string and set all the pixels with the value of that string. For example, sending `0,255,0,0` will set the pixels to red, `0,0,255,0` will set it to green, etc. 
+
 ## Setting Color Values
 
 In the sketch above, all the colors are represented in variable, `color`. This allows you to use one hexadecimal number to set R, G, B, and W if you have it, at once, similar to HTML colors. For example:
@@ -53,7 +63,7 @@ Which you choose depends on what you're trying to do with your colors. Sometimes
 
 ## Setting and Clearing the Module
 
-The only time the LEDs in a module change are when you call one of two functions: `clear()` or `show()`. `clear()` will turn off all the LEDs at once. `show()` will update all the LEDs with whatever values you set them to using `setPixelColor()`. In the [Color order tester sketch](WS281xColorOrderTester/), All the module's colors are set in a `for` loop before the `show()` command is called. However, you can also test one pixel and one color at a time by calling `show()` whenever you call getPixelColor. Here's [another tester](WS281xTester/W) that tests each pixel one at a time in each color. Both this and the earlier test are good to run with each new module, to make sure all the pixels work.
+The only time the LEDs in a module change are when you call one of two functions: `clear()` or `show()`. `clear()` will turn off all the LEDs at once. `show()` will update all the LEDs with whatever values you set them to using `setPixelColor()`. In the [Color order tester sketch](WS281xColorOrderTester/), All the module's colors are set in a `for` loop before the `show()` command is called. However, you can also test one pixel and one color at a time by calling `show()` whenever you call getPixelColor. Here's [another tester](WS281xTester/) that tests each pixel one at a time in each color. Both this and the earlier test are good to run with each new module, to make sure all the pixels work.
 
 ## Voltage and Current
 
