@@ -1,3 +1,4 @@
 theme: jekyll-theme-minimal
 title: Light Projects
 description: A collection LED control examples for Arduino
+codeurl: https://github.com/tigoe/hue-control/tree/main
