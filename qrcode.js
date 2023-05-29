@@ -8,7 +8,7 @@ function getQrCode() {
   let qrImg = qr.createImgTag(2, 8, "qr code of " + document.URL);
  // get the image and label:
   let label = document.getElementById('qrcode');
-  label.innerHTML = qrImg + '<br>' + document.URL;
+  label.innerHTML = qrImg;
 }
 
 // on page load, call the QR code function:
