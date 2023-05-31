@@ -18,17 +18,15 @@
   - 10Kilohm potentiometer attached to A0
 
   created 9 June 2019
-  modified 25 Jan 2023
+  modified 31 May 2023
   by Tom Igoe
 */
 
 #include <SimpleKalmanFilter.h>
 SimpleKalmanFilter filter(2, 2, 0.01);
 
-// analogWrite resolution (can be 10 for SAMD boards, has to be 8 for Uno):
-const int resolution = 10;
 // number of steps = 2^resolution:
-const int steps = pow(2, resolution);
+const int steps = 256;
 // change between steps:
 int change = 1;
 // current level:
@@ -42,8 +40,6 @@ void setup() {
   if (!Serial) delay(3000);
   // pre-calculate the PWM levels from the formula:
   fillLevelTable();
-  // set the analogWrite resolution:
-  analogWriteResolution(resolution);
   // initialize digital pin 5 as an output:
   pinMode(5, OUTPUT);
 }

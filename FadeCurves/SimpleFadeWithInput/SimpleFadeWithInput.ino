@@ -12,20 +12,18 @@
   and comment out the analogWriteResolution() command
 
   created by nearly everyone who's used an Arduino
-  modified 23 May 2022
+  modified 31 May 2023
   by Tom Igoe
 */
 
 int brightness = 0;
 int change = 1;
-const int resolution = 10;
-const int steps = pow(2, resolution);
+const int steps = 8;
 
 void setup() {
   Serial.begin(9600);
   // put your setup code here, to run once:
   while (!Serial) delay(3000);
-  analogWriteResolution(resolution);
   pinMode(5, OUTPUT);
 }
 void loop() {
