@@ -23,10 +23,11 @@ let numBands = 10;
 
 // array to put the readings from the sensors into:
 let readings = new Array();
-
+let lux, cct, flicker;
 // instance of the chart:
 let chart;
-
+// canvas to contain the chart:
+let myChart;
 // advertised service UUID of the  to search for:
 const serviceUuid = "9af01fc3-0000-44b8-8acc-f3ed7a225431";
 // characteristic that you plan to read:
@@ -61,22 +62,25 @@ const config = {
     },
     // change the animation from one reading to the next:
     animation: {
-      duration: 200 // in ms
+      duration: 150 // in ms
     }
   }
 };
 
 function setup() {
   // set up the canvas:
-  createCanvas(windowWidth-10, windowHeight-10);
+  noCanvas();
+  myChart = createElement('canvas');
+  // myChart.position(0, 80);
 
+  console.log(myChart);
   // Create a p5ble instance:
   myBLE = new p5ble();
 
   // Create a 'Connect' button
   connectButton = createButton('Connect')
   connectButton.mousePressed(connectToBle);
-  connectButton.position(10, 30);
+  connectButton.position(250, 10);
 
   // create a div for local messages:
   textDiv = createDiv('Waiting for BLE connection');
@@ -84,9 +88,10 @@ function setup() {
 
   // instantiate the chart:
   chart = new Chart(
-    this,   // context: this sketch
+    myChart.elt,   // context: this sketch
     config  // config from the global variables
   );
+
   // push each wavelength onto the chart's
   // background color and borderColor:
   for (w of wavelengths) {
@@ -106,12 +111,17 @@ function setup() {
 
 function draw() {
   // update the chart:
+  if (lux && cct && flicker) {
+  textDiv.html("Illuminance: " + lux + "lx<br>CCT: " + cct + " &deg;K<br>Flicker: " + flicker +  "Hz");
+  }
+  myChart.position(0, 80);
   chart.update();
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth-10, windowHeight-10);
-  chart.resize(windowWidth-10, windowHeight-10);
+  resizeCanvas(windowWidth - 10, windowHeight - 10);
+  myChart.position(0, 80);
+  chart.resize(windowWidth, windowHeight);
   chart.update();
 }
 
@@ -158,11 +168,24 @@ function gotValue(error, data) {
   // Split the message into an array:
   let readings = float(split(data, ','));
   // if you have all the readings, put them in the chart:
-  if (readings.length >= numBands) {
-    chart.data.datasets[0].data = readings;
+  for (r = 0; r < readings.length; r++) {
+    if (r < numBands) {
+      chart.data.datasets[0].data[r] = readings[r];
+    }
+    switch (r) {
+      case 10:
+        lux = readings[r];
+        break;
+      case 11:
+        cct = readings[r];
+        break;
+      case 12:
+        flicker = readings[r];
+        break;
+    }
+  }
     // update the timestamp:
     textDiv.html('last reading: ' + new Date().toLocaleString());
-  }
 }
 
 function disconnectBle() {
