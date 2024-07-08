@@ -13,7 +13,7 @@
 
 
 // number of steps = 2^PWM resolution:
-const int steps = 256;
+const int steps = 255;
 // change between steps:
 int change = 1;
 // current level:
