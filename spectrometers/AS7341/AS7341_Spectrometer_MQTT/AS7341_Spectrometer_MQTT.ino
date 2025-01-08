@@ -11,13 +11,13 @@
    http://librarymanager/All#Adafruit_AS7341 (for the sensor)
 
   created 13 Jun 2021
-  modified 3 Oct 2021
+  modified 8 Jan 2025
   by Tom Igoe
 */
 // include required libraries and config files
-#include <SPI.h>
-//#include <WiFi101.h>        // for MKR1000 modules
+//#include <WiFi101.h>    // for MKR1000 modules
 #include <WiFiNINA.h>  // for MKR1010 modules and Nano 33 IoT modules
+// #include <WiFi.h>  // for Nano ESP32 modules; doesn't work in SSL mode
 #include <ArduinoMqttClient.h>
 // I2C and light sensor libraries:
 #include <Wire.h>
@@ -38,6 +38,11 @@ MqttClient mqttClient(wifi);
 // details for MQTT client:
 const char broker[] = "public.cloud.shiftr.io";
 const int port = 8883;
+
+// variables for setting interval for sending:
+long lastUpdate = 0;
+int interval = 30 * 1000;
+
 // you should use more unique names than this:
 const char topic[] = "spectrometer";
 String clientID = "spectrometerClient";
@@ -53,7 +58,8 @@ void setup() {
   // initialize the sensor:
   if (!as7341.begin()) {
     Serial.println("Sensor not found, check wiring");
-    while (true);
+    while (true)
+      ;
   }
   // set integration time:
   as7341.setATIME(35);
@@ -69,12 +75,16 @@ void loop() {
   //if you disconnected from the network, reconnect:
   if (WiFi.status() != WL_CONNECTED) {
     connectToNetwork();
+    return;
   }
 
   // if not connected to the broker, try to connect:
   if (!mqttClient.connected()) {
     connectToBroker();
+    return;
   }
+  // only read sensor once every interval:
+  if (millis() - lastUpdate < interval) return;
 
   // if you got a good read, send it:
   if (readSensor()) {
@@ -83,6 +93,7 @@ void loop() {
     // send the message:
     mqttClient.endMessage();
     Serial.println(readingString);
+    lastUpdate = millis();
   }
 }
 
@@ -102,7 +113,7 @@ boolean readSensor() {
     // fig 10
 
     // Added in 0 for 4 and 5 since those channels are not used below.
-    float corrections[] = {3.20, 3.00, 2.07, 1.30, 0, 0, 1.07, 0.93, 0.78, 0.71};
+    float corrections[] = { 3.20, 3.00, 2.07, 1.30, 0, 0, 1.07, 0.93, 0.78, 0.71 };
 
     // get the readings:
     as7341.getAllChannels(readings);
