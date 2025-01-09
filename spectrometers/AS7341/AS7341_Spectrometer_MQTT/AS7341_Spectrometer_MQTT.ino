@@ -6,7 +6,7 @@
   Works with MKR1010, MKR1000, Nano 33 IoT
   Uses the following libraries:
    http://librarymanager/All#WiFi101  // use this for MKR1000
-   http://librarymanager/All#WiFiNINA  // use this for MKR1010, Nano 33 IoT
+   http://librarymanager/All#WiFiNINA  // use this for MKR1010, Nano 33 IoT, Nano RP2040 Connect
    http://librarymanager/All#ArduinoMqttClient
    http://librarymanager/All#Adafruit_AS7341 (for the sensor)
 
@@ -16,7 +16,7 @@
 */
 // include required libraries and config files
 //#include <WiFi101.h>    // for MKR1000 modules
-#include <WiFiNINA.h>  // for MKR1010 modules and Nano 33 IoT modules
+#include <WiFiNINA.h>  // for MKR1010, Nano 33 IoT, and Nano RP2040 modules
 // #include <WiFi.h>  // for Nano ESP32 modules; doesn't work in SSL mode
 #include <ArduinoMqttClient.h>
 // I2C and light sensor libraries:
