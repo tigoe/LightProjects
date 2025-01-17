@@ -2,6 +2,10 @@
    CIE1931 fade
    Produces an LED fade that appears visually linear, using the CIE1931
    perceived lightness formula.
+   Modified levelTable to a byte so that the whole sketch will fit
+   in an ATTiny85. To make this work with the ATTiny85, 
+   change the faderPin to one of the ATTiny85's PWM pins,
+   and comment out all the references to Serial.
 
    references:
    - http://hyperphysics.phy-astr.gsu.edu/hbase/vision/cie.html
@@ -11,28 +15,29 @@
   - LED attached to pin 5
  
   created 5 May 2019
-  modified 31 May 2023
+  modified 17 Jan 2025
   by Tom Igoe
 */
 
 
 // number of steps = 2^(PWM resolution):
 const int steps = 256;
+const int faderPin = 5;
 // change between steps:
 int change = 1;
 // current level:
 int currentLevel = 1;
 // pre-calculated PWM levels:
-int levelTable[steps];
+byte levelTable[steps];
 
 void setup() {
-  Serial.begin(9600);
-  // wait for serial monitor to open:
-  if (!Serial) delay(3000);
+   Serial.begin(9600);
+  // // wait for serial monitor to open:
+   if (!Serial) delay(3000);
   // pre-calculate the PWM levels from the formula:
   fillLevelTable();
   // initialize digital pin 5 as an output:
-  pinMode(5, OUTPUT);
+  pinMode(faderPin, OUTPUT);
 }
 
 void loop() {
@@ -44,7 +49,7 @@ void loop() {
   currentLevel += change;
 
   //PWM output the result:
-  analogWrite(5, levelTable[currentLevel]);
+  analogWrite(faderPin, levelTable[currentLevel]);
   delay(10);
   Serial.println(levelTable[currentLevel]);
 }
@@ -74,6 +79,6 @@ void fillLevelTable() {
       luminance = pow(luminance, 3);
     }
     // multiply to get 0 to steps, and fill in the table:
-    levelTable[l] = int(luminance * steps);
+    levelTable[l] = byte(luminance * steps);
   }
 }
