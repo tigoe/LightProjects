@@ -39,8 +39,11 @@ void setup() {
   // set all initial hues, sats, intensities, and colorConverters
   for (int p = 0; p < 2; p++) {
     int thisPixel = highPixels[p];
+    // between 1200 - 2400:
     hues[thisPixel] = random(1200) + 1200;
+    // 240 - 250:
     saturations[thisPixel] = random(10) + 240;
+    // 200 - 220:
     intensities[thisPixel] = random(20) + 200;
   }
 
