@@ -53,4 +53,4 @@ Even though there is a point where these two lines meet, Figure 5 shows how the 
 
 Chromaticity diagrams give you a way to think about a given color of light in terms of the wavelengths of which it's composed. Though a spectral power distribution diagram is more useful for analyzing the range of color frequencies producible by a light source (see [this page](light-rendering-indices.md) for more), these are more useful for thinking about synthesizing color. They can be particularly useful when you want to reproduce colors at the edges of the chromaticity curve, to see if they're producible within the gamut of your sources. They're also useful for thinking about fading light from one color to another. 
 
-For more on this, see Chandler Abraham's essay *[A Beginner's Guide to (CIE) Colorimetry](https://medium.com/hipster-color-science/a-beginners-guide-to-colorimetry-401f1830b65a* which covers everything mentioned here in more depth. 
+For more on this, see Chandler Abraham's essay *[A Beginner's Guide to (CIE) Colorimetry](https://medium.com/hipster-color-science/a-beginners-guide-to-colorimetry-401f1830b65a)* which covers everything mentioned here in more depth. 
