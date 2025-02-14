@@ -85,9 +85,11 @@ void setup() {
   if (!Serial) delay(3000);
 
   // check for the sensor:
-  while (!as7341.begin()) {
+  // initialize the sensor:
+  if (!as7341.begin()) {
     Serial.println("Sensor not found, check wiring");
-    delay(1000);
+    while (true)
+      ;
   }
 
   // set integration time:
