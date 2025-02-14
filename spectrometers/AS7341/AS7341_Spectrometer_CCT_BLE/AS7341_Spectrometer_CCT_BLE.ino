@@ -35,6 +35,7 @@
   https://ams.com/documents/20143/36005/AS7341_AD000198_3-00.xlsx
  
   created 2 May 2023
+  updated 19 Sep 2023
   by Tom Igoe
 */
 
@@ -223,7 +224,9 @@ void calculateLightValues() {
   float maxReading = 0.0;
   // loop over the readings and find the max:
   for (int r = 0; r < 10; r++) {
-    correctedValues(r) = correctionFactors(r) * (readings(r) - offsets(r));
+    //NOTE: abs(0 thrown in here to clean up for the fact that some readings
+    // in the <0.01 range were negative. Correct this.)
+    correctedValues(r) = correctionFactors(r) * (abs(readings(r) - offsets(r)));
     maxReading = max(correctedValues(r), maxReading);
     // use it to calculate normalized values:
     normalizedValues(r) = correctedValues(r) / maxReading;
