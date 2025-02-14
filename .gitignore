@@ -1,3 +1,4 @@
+*arduino_secrets.h
 .DS_Store
 .vscode/ipch/ea1480183a023fd0/mmap_address.bin
 TelephoneDimmer/RotaryDialDimmer0003/arduino_secrets.h
@@ -13,6 +14,7 @@ LightSensorProjects/LightSensorChart/credentials.js
 HueSkyLight/arduino_secrets.h
 HueSkyLight/arduino_secrets.h
 HueSkyLight/arduino_secrets.h
+spectrometers/AS7341/AS7341_Spectrometer_MQTT/arduino_secrets.h
 spectrometers/AS7341/AS7341_Spectrometer_MQTT/arduino_secrets.h
 spectrometers/AS7341/AS7341_Spectrometer_MQTT/arduino_secrets.h
 spectrometers/AS7341/AS7341_Spectrometer_MQTT/arduino_secrets.h
