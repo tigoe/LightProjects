@@ -5,23 +5,53 @@
 
   Assumes a set of comma-separated values.
 
-  uses p5.js, Eclipse PAHO MQTT client. and chart.js. 
+  uses the Eclipse PAHO MQTT client. and chart.js. 
   For more on chart.js, see https://www.chartjs.org/
-  For more on the Eclipse Paho MQTT client library: https://www.eclipse.org/paho/clients/js/
+  For more on the Eclipse Paho MQTT client library: https://github.com/eclipse-paho/paho.mqtt.javascript
   The client is set up to send to the shiftr.io test MQTT broker (https://next.shiftr.io/try),
   but has also been tested on https://test.mosquitto.org
 
   created 9 July 2021
-  modified 2 Oct 2021
+  modified 18 Feb 2025
   by Tom Igoe
 */
 
+// All these brokers work with this code. 
+// Uncomment the one you want to use. 
 
-// MQTT client details:
+////// emqx. Works in both basic WS and SSL WS:
+// for SSL see options variable below:
+// let broker = {
+//   hostname: 'broker.emqx.io',
+//   port: 8083 // no SSL
+// };
+// let broker = {
+//   hostname: 'broker.emqx.io',
+//   port: 8084 // SSL
+// };
+
+//////// shiftr.io desktop client. 
+// Fill in your desktop URL for localhost:
+// let broker = {
+//   hostname: 'localhost',
+//   port: 1884  //  no SSL
+// };
+
+//////// shiftr.io, requires username and password 
+// for those, see creds variable below.
+// for SSL see options variable below:
 let broker = {
-  hostname: 'tigoe.net',
-  port: 1883
+  hostname: 'public.cloud.shiftr.io',
+  port: 443  //  SSL
 };
+
+
+//////// test.mosquitto.org, uses no username and password:
+// let broker = {
+//   hostname: 'test.mosquitto.org',
+//   port: 8081  
+// };
+
 // MQTT client:
 let client;
 // client credentials:
@@ -29,18 +59,20 @@ let client;
 // unless you have an account on the site. 
 let creds = {
   clientID: 'spectro-client',
-  userName: 'conndev',
-  password: 'b4s1l!'
+  userName: 'public',
+  password: 'public'
 }
+
 // topic to subscribe to when you connect
 // For shiftr.io, use whatever word you want for the subtopic
 // unless you have an account on the site. 
 
 let topic = 'spectrometer';
-
 // HTML divs for messages
 let localDiv;
 let timestampDiv;
+// canvas for the chart and its context:
+let canvas, ctx;
 
 // fill in wavelengths of your spectrometer here:
 let wavelengths = [415, 445, 480, 515, 555, 590, 630, 680, 910, 'clear'];
@@ -83,13 +115,10 @@ const config = {
 };
 
 function setup() {
-  // set up the canvas:
-  createCanvas(800, 600);
-
   // Create an MQTT client:
   client = new Paho.MQTT.Client(broker.hostname, broker.port, creds.clientID);
   // set callback handlers for the client:
-  client.onConnectionLost = onConnectionLost;
+  client.onConnectionLost = onDisconnect;
   client.onMessageArrived = onMessageArrived;
   // connect to the MQTT broker:
   client.connect(
@@ -97,16 +126,20 @@ function setup() {
           onSuccess: onConnect,       // callback function for when you connect
           userName: creds.userName,   // username
           password: creds.password,   // password
-          useSSL: false                // use SSL
+          useSSL: true                // use SSL
       }
   );
   // create a div for local messages:
-  localDiv = createDiv('Waiting for client connection');
-  localDiv.position(20, 10);
+  localDiv = document.getElementById("localDiv");
+  localDiv.innerHTML = 'Waiting for client connection';
+  localDiv.style.position = { "top": 20, "left": 10 };
+  // set up a canvas for the chart:
+  canvas = document.getElementById("canvas");
+  ctx = canvas.getContext("2d");
 
   // instantiate the chart:
   chart = new Chart(
-    this,   // context: this sketch
+    ctx,   // context: this sketch
     config  // config from the global variables
   );
   // push each wavelength onto the chart's
@@ -125,37 +158,47 @@ function setup() {
     }
   }
   // make a text div for the timestamp of each reading:
-  timestampDiv = createDiv('last reading at: ');
-  timestampDiv.position(windowWidth-300, 10);
+  timestampDiv = document.getElementById("timestampDiv");
+  timestampDiv.innerHTML = 'last reading at: ';
+  timestampDiv.style.position = { "top": window.innerWidth - 300, "left": 10 };
 }
 
-function draw() {
+function loop() {
   // update the chart:
   chart.update();
 }
 
-// called when the client connects
+// handler for mqtt connect event:
 function onConnect() {
-  localDiv.html('client is connected');
-  client.subscribe(topic);
+  // update localDiv text:
+  localDiv.innerHTML = 'connected to broker. Subscribing...'
+  // subscribe to the topic:
+  client.subscribe(topic, {onSuccess: onSubscribe});
 }
 
-// called when the client loses its connection
-function onConnectionLost(response) {
+// handler for mqtt disconnect event:
+function onDisconnect(response) {
+  // update localDiv text:
   if (response.errorCode !== 0) {
-      localDiv.html('onConnectionLost:' + response.errorMessage);
+    localDiv.innerHTML = 'disconnected from broker: ' + response.errorMessage;
   }
+}
+
+// handler for mqtt subscribe event:
+function onSubscribe() {
+  // update localDiv text:
+  localDiv.innerHTML = '<br>Subscribed to ' + topic;
 }
 
 // called when a message arrives
 function onMessageArrived(message) {
   // Split the message into an array:
-  let readings = float(split(message.payloadString, ','));
+  let readings = message.payloadString.split(',');
   // if you have all the readings, put them in the chart:
   if (readings.length >= numBands) {
     chart.data.datasets[0].data = readings;
     // update the timestamp:
-    timestampDiv.html('last reading at: ' + new Date().toLocaleString());
+    timestampDiv. innerHTML = 'last reading at: ' + new Date().toLocaleString();
   }
 }
 
@@ -216,3 +259,8 @@ function wavelengthToColor(wavelength) {
   colorSpace = "rgba(" + (R * 100) + "%," + (G * 100) + "%," + (B * 100) + "%, " + alpha + ")";
   return colorSpace;
 }
+
+// on page load, call the setup function:
+document.addEventListener('DOMContentLoaded', setup);
+// run a loop every 2 seconds:
+setInterval(loop, 2000);
