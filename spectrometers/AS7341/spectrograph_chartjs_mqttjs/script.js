@@ -5,7 +5,7 @@
 
   Assumes a set of comma-separated values.
 
-  uses p5.js, mqtt.js client. and chart.js. 
+  uses the mqtt.js client. and chart.js. 
   For more on chart.js, see https://www.chartjs.org/
   For more on the Eclipse Paho MQTT client library: https://github.com/mqttjs/MQTT.js/
   The client is set up to send to any MQTT broker (https://next.shiftr.io/try),
