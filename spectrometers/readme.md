@@ -93,12 +93,11 @@ Each broker will publish their details for login on their website.
 
 This MQTT example for the Nano 33 IoT publishes to shiftr.io using the topic _spectrometer_. It uses MQTTS, the encrypted version of the protocol, on port 8883. You can modify it to communicate with other brokers by changing the credentials. It uses the same sensor process as the example above: it prints the sensor readings, converts them to basic counts, applies a daylight correction, and sends the values out via MQTT. It prints them serially as well.
 
-This browser-based client uses the [Eclipse PAHO library](https://www.eclipse.org/paho/index.php?page=clients/js/index.php), [p5.js](https://p5js.org), and [chart.js](https://www.chartjs.org/) like the serial client above. 
+This browser-based client uses the [mqtt.js library](https://github.com/mqttjs/MQTT.js/) and [chart.js](https://www.chartjs.org/) like the serial client above. 
 
-* [raw JS app code](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/spectrograph_chartjs_mqtt_eclipsePAHO
-/)
+* [raw JS app code](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/spectrograph_chartjs_mqttjs/)
 * [Arduino MQTT client](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/AS7341_Spectrometer_MQTT)
-* [p5.js application in gitHub pages](https://tigoe.github.io/LightProjects/spectrometers/AS7341/spectrograph_chartjs_mqtt_eclipsePAHO/index.html)
+* [mqtt.js application in gitHub pages](https://tigoe.github.io/LightProjects/spectrometers/AS7341/spectrograph_chartjs_mqttjs/index.html)
 
 ## Bluetooth LE Client using p5ble.js
 

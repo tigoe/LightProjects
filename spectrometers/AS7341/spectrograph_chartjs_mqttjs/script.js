@@ -7,7 +7,7 @@
 
   uses the mqtt.js client. and chart.js. 
   For more on chart.js, see https://www.chartjs.org/
-  For more on the Eclipse Paho MQTT client library: https://github.com/mqttjs/MQTT.js/
+  For more on the mqtt.js client library: https://github.com/mqttjs/MQTT.js/
   The client is set up to send to any MQTT broker (https://next.shiftr.io/try),
  
   created 29 Dec 2022
