@@ -19,8 +19,8 @@
 
 // MQTT client details:
 let broker = {
-  hostname: 'public.cloud.shiftr.io',
-  port: 443
+  hostname: 'tigoe.net',
+  port: 1883
 };
 // MQTT client:
 let client;
@@ -28,9 +28,9 @@ let client;
 // For shiftr.io, use try for both username and password
 // unless you have an account on the site. 
 let creds = {
-  clientID: 'p5Client',
-  userName: 'public',
-  password: 'public'
+  clientID: 'spectro-client',
+  userName: 'conndev',
+  password: 'b4s1l!'
 }
 // topic to subscribe to when you connect
 // For shiftr.io, use whatever word you want for the subtopic
@@ -97,7 +97,7 @@ function setup() {
           onSuccess: onConnect,       // callback function for when you connect
           userName: creds.userName,   // username
           password: creds.password,   // password
-          useSSL: true                // use SSL
+          useSSL: false                // use SSL
       }
   );
   // create a div for local messages:
