@@ -95,9 +95,10 @@ This MQTT example for the Nano 33 IoT publishes to shiftr.io using the topic _sp
 
 This browser-based client uses the [Eclipse PAHO library](https://www.eclipse.org/paho/index.php?page=clients/js/index.php), [p5.js](https://p5js.org), and [chart.js](https://www.chartjs.org/) like the serial client above. 
 
-* [raw JS app code](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/spectrograph_chartjs_mqtt/)
+* [raw JS app code](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/spectrograph_chartjs_mqtt_eclipsePAHO
+/)
 * [Arduino MQTT client](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/AS7341_Spectrometer_MQTT)
-* [p5.js application in gitHub pages](https://tigoe.github.io/LightProjects/spectrometers/AS7341/spectrograph_chartjs_mqtt/index.html)
+* [p5.js application in gitHub pages](https://tigoe.github.io/LightProjects/spectrometers/AS7341/spectrograph_chartjs_mqtt_eclipsePAHO/index.html)
 
 ## Bluetooth LE Client using p5ble.js
 
