@@ -6,10 +6,10 @@ First, make sure your meter is set to measure illuminance in lux, and to give yo
 
 Once you've got your file with just the spectral readings, upload them to the [Luox upload page](https://luox.app/upload). When prompted by Luox, respond that you want to "Use all rows and columns". On the next screen, you'll be asked to describe your data, with several optional pull-down boxes, like so:
 ````
-My data contains \[absolute/relative\]  spectra with wavelength in nm. Label my measurements as 
-\[Observation 1\].
+My data contains [absolute/relative]  spectra with wavelength in nm. Label my measurements as 
+[Observation 1].
 Each measurement column contains 
-\[irradiances/radiances\]
+[irradiances/radiances]
  in W per m².
  ````
 
