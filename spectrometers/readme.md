@@ -74,7 +74,6 @@ The WebSerial to p5.js Client uses the same chart.js display code as the previou
 * [Arduino Serial client](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/AS7341_Spectrometer_serial)
 * [p5.js application in gitHub pages](https://tigoe.github.io/LightProjects/spectrometers/AS7341/spectrograph_chartjs_web-serial/index.html)
 
-
 ## WiFi and MQTT Client
 
 If you've never connected to WiFi using the Nano 33 IoT, you should visit the [WiFiNINA reference](https://www.arduino.cc/en/Reference/WiFiNINA) and [this repository](https://tigoe.github.io/Wifi101_examples/). 
@@ -111,3 +110,5 @@ Unfortunately this sketch does not work on every browser, particularly on mobile
 * [raw JS app code](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/spectrograph_chartjs_ble)
 * [Arduino BLE client](https://github.com/tigoe/LightProjects/tree/main/spectrometers/AS7341/AS7341_Spectrometer_BLE)
 * [p5.js application in gitHub pages](https://tigoe.github.io/LightProjects/spectrometers/AS7341/spectrograph_chartjs_ble/index.html)
+
+[A few notes on melanopic EDI readings](../melanopic-edi-readings.md)

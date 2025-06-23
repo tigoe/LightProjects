@@ -19,5 +19,5 @@ My data contains
 relative spectra with wavelength in nm. Label my measurements as Observation 1. I have separately measured 
 illuminance for Observation 1 at 1400 (lx).
  ````
-
+ 
 Finally, scroll down and Luox will give you all the melanopic readings (in this case, Melanopic EDI (lx) = 1263.0338) and let you download the full data as a file.
