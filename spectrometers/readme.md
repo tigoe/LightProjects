@@ -1,6 +1,6 @@
 # Building Your Own Spectrometer
 
-It's common in any lighting practice to need a spectrometer to measure the properties of light. Good spectrometers are expensive, though. For an example, see this page on the [Sekonic C-800-U](../light-rendering-indices.md). Fortunately, there are some affordable spectral sensors that you can connect to a microcontroller to make your own spectrometer. This tutorial shows you how to connect the AMS [AS7341 11-channel spectral sensor](https://ams.com/as7341#tab/documents) to an [Arduino Nano 33 IoT](https://store-usa.arduino.cc/products/arduino-nano-33-iot). The AS7341 will work with any microcontroller that has an I2C interface, but the Nano 33 IoT has a Bluetooth and WiFi radio, making it easy to connect to via multiple means.
+It's common in any lighting practice to need a spectrometer to measure the properties of light. Good spectrometers are expensive, though. For an example, see this page on the [Sekonic C-800-U](../light-rendering-indices.md) or the [Sekonic C-7000](https://sekonic.com/sekonic-spectrometer-c-7000/). Fortunately, there are some affordable spectral sensors that you can connect to a microcontroller to make your own spectrometer. This tutorial shows you how to connect the AMS [AS7341 11-channel spectral sensor](https://ams.com/as7341#tab/documents) to an [Arduino Nano 33 IoT](https://store-usa.arduino.cc/products/arduino-nano-33-iot). The AS7341 will work with any microcontroller that has an I2C interface, but the Nano 33 IoT has a Bluetooth and WiFi radio, making it easy to connect to via multiple means.
 
 Below, you'll see how to get output from your spectrometer via multiple means: 
 * UART serial to [p5.js](https://p5js.org)
@@ -11,7 +11,7 @@ Below, you'll see how to get output from your spectrometer via multiple means:
 
 The AS7341 is an 11-channel spectral sensor that can detect light levels in multiple frequencies from around 400nm to 900nm. It has 8 that sense light in visible spectrum; one channel in the near infrared spectrum; one clear channel without a filter; and one channel that detects 50Hz-60Hz light flicker. 
 
-Here is the [product page](https://ams.com/as7341) and the [datasheet](https://ams.com/documents/20143/36005/AS7341_DS000504_3-00.pdf/5eca1f59-46e2-6fc5-daf5-d71ad90c9b2b).
+Here is the [product page](https://ams.com/as7341) and the [datasheet and other docs](https://ams-osram.com/support/download-center?search=AS7341).
 
 The frequencies it can detect are as follows:
 * F1: 415nm <span style="color:white; background-color:#7600ed;">(violet)</span>
@@ -27,13 +27,14 @@ The frequencies it can detect are as follows:
 * FD: (Flicker Detection) non filtered
 
 The following companies make breakout boards for it: 
-* [Sparkfun](https://www.sparkfun.com/products/17719)
 * [Adafruit](https://www.adafruit.com/product/4698)
 * [DFRobot](https://www.dfrobot.com/product-2132.html)
 
 The following companies make Arduino libraries for it:
 * [Adafruit](https://github.com/adafruit/Adafruit_AS7341)
 * [Sparkfun](https://github.com/sparkfun/SparkFun_AS7341X_Arduino_Library)
+
+**Update 23 Jun 2025**: AMS lists the AS7341 as "Not for new design". While it's still possible to buy AS7341 breakout boards, it's also worth looking at some of their other models, like the [TCS3448](https://ams-osram.com/products/sensor-solutions/ambient-light-color-spectral-proximity-sensors/ams-tcs3448-spectral-color-sensor). 
 
 ## The Circuit
 
@@ -47,10 +48,12 @@ _Figure 1. Breadboard view of an AMS AS7341 sensor connected to a Nano 33 IoT. T
 
 _Figure 1. Schematic view of an AMS AS7341 sensor connected to a Nano 33 IoT. The connections are as described above: SDA to SDA, SCL to SCL, voltage and ground to voltage and ground, respectively. Image created using [Fritzing](https://fritzing.org)._
 
+The [Sparkfun Qwiic Nano Shield](https://www.sparkfun.com/sparkfun-qwiic-shield-for-arduino-nano.html) is also a convenient way to connect many I2C sensor breakout boards to the Nano. 
+
 ## Serial to p5.js Client
 
 The simplest way to see the readings from the AS7341 is by printing the values out from the Nano's serial port (UART). This example does just that. It prints the sensor readings, converts them to basic counts, applies a daylight correction, and sends the values out to the serial monitor. For an explanation of the process, see the [Spectral Sensor
-Calibration Methods](https://ams.com/documents/20143/36005/AS7341_AN000633_1-00.pdf/fc552673-9800-8d60-372d-fc67cf075740)  application note, section 2.1 - 2.5. 
+Calibration Methods](https://ams-osram.com/support/download-center?search=spectral+calibration)  application note, section 2.1 - 2.5. 
 
 __TO DO:__ The correction math in these examples is crude, and simply applies the numbers in Fig. 10 of the application note with no further math. I haven't yet verified its accuracy. 
 
