@@ -12,12 +12,12 @@ In the [AS7341 examples](AS7341), you'll see how to get output from your spectro
 ## Spectral Sensors to Consider
 
 * AMS [AS7341 11-channel spectral sensor](https://ams.com/as7341#tab/documents). Used in many of the examples here. Unfortunately, no longer sold for current development, but breakout boards are still available. 
-** [Examples](AS7341/readme.md)
+  * [Examples](AS7341/readme.md)
 * AMS [AS7343 14-channel spectral sensor](https://ams-osram.com/products/sensor-solutions/ambient-light-color-spectral-proximity-sensors/ams-as7343-spectral-sensor) Unfortunately, no longer sold for current development, but breakout boards are still available. 
 * [AMS' full line of spectral sensors](https://ams-osram.com/search?productSearch=true&filter_products=ambient-light-color-spectral-proximity-sensors&filter_param_function_String_sortable=spectral+sensing&filter_lifecycle_key_String_sortable=10-full-production%2C93-not-for-new-design%2C95-orders-still-accepted)
 * [OPT4048 High-speed high-precision tristimulus XYZ color sensor]((https://www.ti.com/product/OPT4048)) from Texas Instruments. Gives CIE XYZ values, but only has three spectral bands. 
-** [Sparkfun breakout boards and hookup guide](https://docs.sparkfun.com/SparkFun_Tristimulus_Color_Sensor-OPT4048/introduction/)
-** [Basic example](OPT4048/OPT4048_test/) based on Sparkfun library
+  * [Sparkfun breakout boards and hookup guide](https://docs.sparkfun.com/SparkFun_Tristimulus_Color_Sensor-OPT4048/introduction/)
+  * [Basic example](OPT4048/OPT4048_test/) based on Sparkfun library
 * AMS [TCS3448 14-channel spectral color sensor](https://ams-osram.com/products/sensor-solutions/ambient-light-color-spectral-proximity-sensors/ams-tcs3448-spectral-color-sensor)
 
 ## DIY Sensor Device Consruction
