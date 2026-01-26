@@ -28,7 +28,7 @@ The following companies make Arduino libraries for it:
 
 ## The Housing
 
-Here are some [notes](spectrometer-construction.md) on building your own spectrometer's housing. 
+Here are some [notes](../spectrometer-construction.md) on building your own spectrometer's housing. 
 
 ## The Circuit
 
