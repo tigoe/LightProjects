@@ -26,6 +26,10 @@ The following companies make Arduino libraries for it:
 * [Adafruit](https://github.com/adafruit/Adafruit_AS7341)
 * [Sparkfun](https://github.com/sparkfun/SparkFun_AS7341X_Arduino_Library)
 
+## The Housing
+
+Here are some [notes](spectrometer-construction.md) on building your own spectrometer's housing. 
+
 ## The Circuit
 
 The circuit for all of the applications below is the same. These diagrams show [Adafruit's AS7341 breakout boards](https://www.adafruit.com/product/4698), but any breakout board for the AS7341 will work. The AS7341 connects to the Nano 33 IoT via I2C. For the Arduino Uno or Nano boards, the I2C pins are pins A4 (SDA) and A5 (SCL). The sensor's SDA pin connects to the Arduino's SDA pin and the SCL pin connects to the Arduino's SCL pin. The sensor's voltage and ground pins connect to the microcontroller's power and ground pins as well. This is the same connection for almost any I2C sensor. Figures 1 and 2 below shows the connections. 
