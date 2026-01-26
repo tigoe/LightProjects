@@ -168,7 +168,7 @@ boolean connectToBroker() {
   // if the MQTT client is not connected:
   if (!mqttClient.connect(broker, port)) {
     // print out the error message:
-    Serial.print("MOTT connection failed. Error no: ");
+    Serial.print("MQTT connection failed. Error no: ");
     Serial.println(mqttClient.connectError());
     // return that you're not connected:
     return false;
