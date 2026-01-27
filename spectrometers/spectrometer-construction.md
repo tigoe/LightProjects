@@ -17,7 +17,7 @@ Check the application notes for your particular sensor, as many manufacturers wi
 # The Enclosure
 ## Materials
 
-The material used for the enclosure should be opaque or have little as light transmission as possible. In the models shown in Figure 1, laser-cut balsawood was used. This way you have the most control over the light that is delivered to the sensor. If the construction of your housing has seams that let light in, consider sealing them with tape or caulking. 
+The material used for the enclosure should be opaque or have little as light transmission as possible. In the models shown in Figure 1, laser-cut 3-layer plywood was used. This way you have the most control over the light that is delivered to the sensor. If the construction of your housing has seams that let light in, consider sealing them with tape or caulking. 
 
 ## Cable Access
 
