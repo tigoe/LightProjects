@@ -57,8 +57,6 @@ Illuminance levels are abstract until you measure them in a real space however. 
 
 You can control 12-24V DC sources with power transistors or MOSFETs from a microcontroller. You can also control them from an [LED driver](/led-drivers.md).  The three transistor models and the LED driver below work well for this purpose. 
 
-In addition to controlling transistors or LED drivers from the microcontrollers mentioned here, you can also use simpler microcontrollers like the ATTiny series, or even a 555 timer circuit. See [this page](/dc-control-options.md) for more details.  
-
 The control method here isn't affected by whether your power supply is capable of dimming or not, because you'll be doing the dimming yourself from a microcontroller. That said, some LED sources dim better than others, so you may have to shop around to find the ones you like. 
 
 In the circuits below, a transistor or LED driver is connected to a GPIO pin of the microcontroller. You can turn the light source on by taking the GPIO pin high, and turn it off by taking the pin low. You can dim the source by using pulse width modulation (PWM) to the pin. The [LED fading examples](/fading.md) in this repository can all work with these circuits. 
