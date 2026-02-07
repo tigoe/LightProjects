@@ -10,7 +10,7 @@ As an LED operates, it will heat up, and as it heats up, the amount of voltage i
 
 LED sources are generally operating multiple LEDs in parallel, and when you've got a lot of LEDs together, the heat can go up. But heat isn't the only issue. Voltage drops as it moves through a conductor, so if you've got a long line of wires connecting your LEDs, like in a linear fixture or tape light, the voltage might vary from one end to the other. 
 
-## LED Drivers
+## Types of LED Drivers
 
 In order to compensate for this, LED sources use [LED drivers](https://www.ledsupply.com/blog/understanding-led-drivers/) to manage the balance of current and voltage. A **constant voltage LED driver**, for example, will attempt to keep the voltage constant, while a **constant current driver** will attempt to keep the current constant. You'll see both kinds of drivers used in LED lighting systems, depending on the individual needs of the system. 
 
