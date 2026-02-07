@@ -30,6 +30,8 @@ Some of the more recent higher-end ones are controlled by **digital control sign
 
 LED drivers come in a variety of physical packages, but those for use in a printed circuit board circuit generally come with either pins or wires. Though they can be mounted on a solderless breadboard, it's sometimes useful to mount them on a separate PCB, with screw terminals or other easy-to-connect yet solid connectors. 
 
+## A Few LED Drivers Compared
+
 Here are the stats on four example PWM-controlled drivers, for comparison. The testing notes on each were done with an Arduino microcontroller PWMing the driver at 3.3V:
 
 ### Meanwell NLDD-H Series DC-DC Constant Current LED Driver
