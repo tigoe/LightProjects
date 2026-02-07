@@ -55,11 +55,15 @@ Illuminance levels are abstract until you measure them in a real space however. 
 
 ## Control Circuits
 
-You can control 12-24V DC sources with power transistors or MOSFETs from a microcontroller. The three transistor models below work well for this purpose. 
+You can control 12-24V DC sources with power transistors or MOSFETs from a microcontroller. You can also control them from an [LED driver](/led-drivers.md).  The three transistor models and the LED driver below work well for this purpose. 
 
-The control method here isn't affected by whether your power supply is capable of [dimming](https://www.superbrightleds.com/cat/dimmable-led-power-supplies/) or not, because you'll be doing the dimming yourself from a microcontroller. That said, some LED sources dim better than others, so you may have to shop around to find the ones you like. 
+In addition to controlling transistors or LED drivers from the microcontrollers mentioned here, you can also use simpler microcontrollers like the ATTiny series, or even a 555 timer circuit. See [this page](/dc-control-options.md) for more details.  
 
-In the circuits below, a transistor is connected to a GPIO pin of the microcontroller. You can turn the light source on by taking the GPIO pin high, and turn it off by taking the pin low. You can dim the source by using pulse width modulation (PWM) to the pin. 
+The control method here isn't affected by whether your power supply is capable of dimming or not, because you'll be doing the dimming yourself from a microcontroller. That said, some LED sources dim better than others, so you may have to shop around to find the ones you like. 
+
+In the circuits below, a transistor or LED driver is connected to a GPIO pin of the microcontroller. You can turn the light source on by taking the GPIO pin high, and turn it off by taking the pin low. You can dim the source by using pulse width modulation (PWM) to the pin. The [LED fading examples](/fading.md) in this repository can all work with these circuits. 
+
+The LED driver circuit is the most effective of these circuits for controlling an LED light source long term, as it will help regulate the current to keep the LED at a constant brightness while preserving lamp life. However, the transistor and MOSFET circuits will work for most simple applications. 
 
 ### TIP120 Darlington Transistor
 
@@ -79,7 +83,7 @@ _Figure 2. TIP120 transistor controlling an LED lamp from a Nano 33 IoT._
 
 
 #### Circuit Description (Figure 1 and 2)
-In Figure 1 and Figure 2, the  microcontroller is straddling the center of a breadboard with its top pins plugged into row 1 of the board. Figure 1 shows a MKR Zero and Figure 2 shows a Nano 33 IoT. The Vcc pin (physical pin 26 on the MKR Zero, pin 2 on the Nano 33 IoT) is connected to the breadboard's voltage bus, and the ground pin (physical pin 25 on the MKR Zero, pin 14 on the Nano 33 IoT) is connected to the ground bus. The voltage and ground buses on either side of the board are connected to each other. A TIP120 transistor is mounted in the right center section of the board below the microcontroller. The microcontroller's pin D5 (physical pin 14 on the MKR Zero, pin 23 on the Nano 33 IoT) is connected to the base of the transistor through a 1-kilohm resistor in series with the base. The transistor's emitter pin is connected to ground. The transistor's collector pin is connected to the LED source. The other connector of the source is connected to the positive terminal of a +12V DC power jack. The power jack's negative terminal is connected to the breadboard's ground bus. The jack should be connected to a +12V DC power supply. 
+In Figure 1 and Figure 2, the  microcontroller is straddling the center of a breadboard with its top pins plugged into row 1 of the board. Figure 1 shows a MKR Zero and Figure 2 shows a Nano 33 IoT. The Vcc pin (physical pin 26 on the MKR Zero, pin 2 on the Nano 33 IoT) is connected to the breadboard's voltage bus, and the ground pin (physical pin 25 on the MKR Zero, pin 14 on the Nano 33 IoT) is connected to the ground bus. The voltage and ground buses on either side of the board are connected to each other. A TIP120 transistor is mounted in the right center section of the board below the microcontroller. The microcontroller's pin D5 (physical pin 14 on the MKR Zero, pin 23 on the Nano 33 IoT) is connected to the base of the transistor through a 1-kilohm resistor in series with the base. The transistor's emitter pin is connected to ground. The transistor's collector pin is connected to the LED lamp. The other connector of the lamp is connected to the positive terminal of a +12V DC power jack. The power jack's negative terminal is connected to the breadboard's ground bus. The jack should be connected to a +12V DC power supply. 
 
 ### FQP30N06L N-Channel MOSFET
 A MOSFET (Metal Oxide Semiconductor Field-Effect Transistor) is a slightly more modern transistor, designed specifically for switching applications. Bipolar transistors require a certain amount of current at the base to switch, while MOSFETs draw almost no control current. They're ideal for switching LED sources. They are more sensitive to electrostatic discharge than bipolar transistors, though, so you have to be more careful not to accidentally expose them to a static shock. Make sure you've grounded yourself well before working with MOSFETs. 
@@ -100,8 +104,42 @@ _Figure 4. Arduino Nano 33 IoT connected to a FQP30N06L MOSFET for controlling a
 
 #### Circuit Description (Figure 3 and 4)
 
-In Figure 3 and Figure 3, the  microcontroller is straddling the center of a breadboard with its top pins plugged into row 1 of the board. Figure 1 shows a MKR Zero and Figure 2 shows a Nano 33 IoT. The Vcc pin (physical pin 26 on the MKR Zero, pin 2 on the Nano 33 IoT) is connected to the breadboard's voltage bus, and the ground pin (physical pin 25 on the MKR Zero, pin 14 on the Nano 33 IoT) is connected to the ground bus. The voltage and ground buses on either side of the board are connected to each other. A MOSFET transistor is mounted in the right center section of the board below the microcontroller. The microcontroller's pin D5 (physical pin 14 on the MKR Zero, pin 23 on the Nano 33 IoT) is connected to the gate of the MOSFET. The MOSFET's source pin is connected to ground. The MOSFET's drain pin is connected to cathode of the LED source. The anode of the source is connected to the positive terminal of a +12V DC power jack. The power jack's negative terminal is connected to the breadboard's ground bus. The jack should be connected to a +12V DC power supply. 
+In Figure 3 and Figure 4, the  microcontroller is straddling the center of a breadboard with its top pins plugged into row 1 of the board. Figure 1 shows a MKR Zero and Figure 2 shows a Nano 33 IoT. The Vcc pin (physical pin 26 on the MKR Zero, pin 2 on the Nano 33 IoT) is connected to the breadboard's voltage bus, and the ground pin (physical pin 25 on the MKR Zero, pin 14 on the Nano 33 IoT) is connected to the ground bus. The voltage and ground buses on either side of the board are connected to each other. A MOSFET transistor is mounted in the right center section of the board below the microcontroller. The microcontroller's pin D5 (physical pin 14 on the MKR Zero, pin 23 on the Nano 33 IoT) is connected to the gate of the MOSFET. The MOSFET's source pin is connected to ground. The MOSFET's drain pin is connected to cathode of the LED source. The anode of the source is connected to the positive terminal of a +12V DC power jack. The power jack's negative terminal is connected to the breadboard's ground bus. The jack should be connected to a +12V DC power supply. 
 
 ### IRLB8721 N-Channel MOSFET
 
-The [IRLB8721](https://octopart.com/search?q=IRLB8721) MOSFET [(datasheet)](https://www.infineon.com/dgdl/irlb8721pbf.pdf?fileId=5546d462533600a40153566056732591) is similar in specs to the FQP30N06L. It too can control up to a 60V, 30A load and can be switched from 3.3V or 5V. The pin configuration for this MOSFET is identical to the FQP30N06L, so Figure 2 above will work with this part in place of the previous MOSFET with no other change. 
+The [IRLB8721](https://octopart.com/search?q=IRLB8721) MOSFET [(datasheet)](https://www.infineon.com/dgdl/irlb8721pbf.pdf?fileId=5546d462533600a40153566056732591) is similar in specs to the FQP30N06L. It too can control up to a 60V, 30A load and can be switched from 3.3V or 5V. The pin configuration for this MOSFET is identical to the FQP30N06L, so Figures 3 and 4 above will work with this part in place of the previous MOSFET with no other change. 
+
+### NLDD1400H LED Driver
+
+The circuit in Figure 5 shows how to control an LED lamp using a Meanwell NLDD1400H LED driver. The circuit in Figure 5 is powered by a +12V DC source plugged into the power jack on the left side of the circuit image in Figure 5. 
+
+The circuit is similar to the transistor circuits, in that there is one control pin coming from the Arduino, pin D5. Like the transistor examples above, this example can be controlled using the [LED fading examples](/fading.md) in this repository.
+
+<img src="img/ledDrivers/Nano_MeanwellNLDD1400H_bb.jpg" alt="LED lamp controlled by a Meanwell NLDD1400H LED driver, which is driven by an Arduino Nano 33 IoT">
+
+_Figure 5. LED lamp controlled by a Meanwell NLDD1400H LED driver, which is driven by an Arduino Nano 33 IoT._
+
+The input voltage range, i.e. the voltage difference between the V<sub>in+</sub> and V<sub>in-</sub> pins is 10 - 56VDC (see the [data sheet](https://www.meanwellusa.com/upload/pdf/NLDD-H/NLDD-H-spec.pdf) for more details.)
+
+#### Circuit Description (Figure 5)
+
+In Figure 5, the  microcontroller is straddling the center of a breadboard with its top pins plugged into row 1 of the board. The Vcc pin (physical pin 2 on the Nano 33 IoT) is connected to the breadboard's voltage bus, and the ground pin (physical pin 14 on the Nano 33 IoT) is connected to the ground bus. The voltage and ground buses on either side of the board are connected to each other. 
+
+The microcontroller's ground pin (physical pin 14) is connected to the negative terminal of a 12V power supply jack. The microcontroller's V<sub>in</sub> pin (physical pin 15) is connected to the power supply jack's positive connector. This powers both the microcontroller and the LED driver. The microcontroller's pin D5 (physical pin 23 on the Nano 33 IoT) is connected to the DIM pin of the LED driver (pin 7 of the driver).
+
+A Meanwell NLDD1400H LED Driver is mounted below the microcontroller, also straddling the center. The driver has 9 pins: 4 on the left and 5 on the right. They are, counting in the usual U pattern from upper left: 
+
+1. V<sub>in-</sub>(connected internally to pin 2)
+2. V<sub>in-</sub> 
+3. V<sub>out-</sub> (connected internally to pin 4)
+4. V<sub>out-</sub>
+5. V<sub>out+</sub> (connected internally to pin 6)
+6. V<sub>out+</sub>
+7. DIM
+8. V<sub>in+</sub> (connected internally to pin 9)
+9. V<sub>in+</sub>
+
+The microcontroller's pin D5 (physical pin 23 on the Nano 33 IoT) is connected to the DIM pin of the driver. The driver's V<sub>in-</sub> pins (pins 1 and 2) are connected to ground. The V<sub>in+</sub> pins (pins 8 and 9) are connected to the microcontroller's V<sub>in</sub> pin (physical pin 15) and to the positive terminal of the power supply.
+
+The driver's V<sub>out-</sub> pins (pins 3 and 4) and V<sub>out+</sub> pins (pins 5 and 6) are connected to the two pins of a 12V LED lamp. These pins are not connected to the microcontroller's voltage or ground at all. This is important, because they must be independent of the microcontroller's supply in order to dim the lamp. 
