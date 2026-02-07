@@ -143,3 +143,23 @@ A Meanwell NLDD1400H LED Driver is mounted below the microcontroller, also strad
 The microcontroller's pin D5 (physical pin 23 on the Nano 33 IoT) is connected to the DIM pin of the driver. The driver's V<sub>in-</sub> pins (pins 1 and 2) are connected to ground. The V<sub>in+</sub> pins (pins 8 and 9) are connected to the microcontroller's V<sub>in</sub> pin (physical pin 15) and to the positive terminal of the power supply.
 
 The driver's V<sub>out-</sub> pins (pins 3 and 4) and V<sub>out+</sub> pins (pins 5 and 6) are connected to the two pins of a 12V LED lamp. These pins are not connected to the microcontroller's voltage or ground at all. This is important, because they must be independent of the microcontroller's supply in order to dim the lamp. 
+
+It can be useful to mount a driver like this on a PCB with screw terminals and connect it to your test circuit with wires. This allows for some flexibility when you're mounting the driver in the base of a lamp, for example, and it can also make testing drivers easier and safer. To that end, figures 6 and 7 show a NLDD1400H LED Driver mounted to a printed circuit board, from the front and back. Figures 8 and 9 show an alternate PCB layout. The circuit connections are the same as in Figure 5, but the wires are soldered in place. 
+
+
+<img src="img/ledDrivers/meanwell_NLDD_1400.JPG" alt="Photo of a  Meanwell NLDD1400H LED driver soldered to a printed circuit board, with screw terminals for connections, front view">
+
+_Figure 6. A Meanwell NLDD1400H LED driver soldered to a printed circuit board, with screw terminals for connections, front view._
+
+<img src="img/ledDrivers/meanwell_NLDD_1400_back.JPG" alt="Photo of a  Meanwell NLDD1400H LED driver soldered to a printed circuit board, with screw terminals for connections, front view">
+
+_Figure 7. A Meanwell NLDD1400H LED driver soldered to a printed circuit board, with screw terminals for connections, back view._
+
+
+<img src="img/ledDrivers/meanwell_NLDD_1400_alt.JPG" alt="Photo of a  Meanwell NLDD1400H LED driver soldered to a printed circuit board, with screw terminals for connections, front view">
+
+_Figure 8. Alternate PCB layout. A Meanwell NLDD1400H LED driver soldered to a printed circuit board, with screw terminals for connections, front view._
+
+<img src="img/ledDrivers/meanwell_NLDD_1400_alt_back.JPG" alt="Photo of a  Meanwell NLDD1400H LED driver soldered to a printed circuit board, with screw terminals for connections, front view">
+
+_Figure 9. Alternate PCB layout. A Meanwell NLDD1400H LED driver soldered to a printed circuit board, with screw terminals for connections, back view._
