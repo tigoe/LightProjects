@@ -6,7 +6,7 @@ Light emitting diodes (LEDs) light up when you put a high enough voltage through
 
 An LED's data sheet will list the forward voltage and current, both the minimum amounts needed, the maximum (often listed as the **peak voltage** or **peak current**) and the recommended amounts for running the LED for a long time.  Within the limits of an LED's recomended current levels, more current will cause the LED to shine brighter. So many LED illumination systems will run LEDs at the highest current possible, to get the maximum illumination out of them.
 
-As an LED operates, it will heat up, and as it heats up, the amount of voltage it uses will decrease, causing it to draw more current. Over time, as the LED gets more current, it will slowly burn out. Even if it doesn't burn out immediately, it will change color in the process. This is how you'll see some LED sources, particularly cheaper ones, die over time. This is known as [thermal runaway](). 
+As an LED operates, it will heat up, and as it heats up, the amount of voltage it uses will decrease, causing it to draw more current. Over time, as the LED gets more current, it will slowly burn out. Even if it doesn't burn out immediately, it will change color in the process. This is how you'll see some LED sources, particularly cheaper ones, die over time. This is known as [thermal runaway](https://www.ledsupply.com/blog/thermal-runaway-explained/). 
 
 LED sources are generally operating multiple LEDs in parallel, and when you've got a lot of LEDs together, the heat can go up. But heat isn't the only issue. Voltage drops as it moves through a conductor, so if you've got a long line of wires connecting your LEDs, like in a linear fixture or tape light, the voltage might vary from one end to the other. 
 
