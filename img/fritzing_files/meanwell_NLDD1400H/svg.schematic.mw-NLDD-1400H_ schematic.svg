@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 62 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <g id="Artboard2" transform="matrix(1,0,0,1,0.184834,-3.73579)">
+        <rect x="-0.185" y="3.736" width="61.479" height="70.352" style="fill:none;"/>
+        <g id="schematic" transform="matrix(0.072,0,0,0.072,0.815167,14.7358)">
+            <g id="symbol" transform="matrix(1,0,0,2.94846,-3.31637e-16,-125.109)">
+                <rect x="104.344" y="4.344" width="601.311" height="301.311" style="fill:none;stroke:black;stroke-width:8.69px;"/>
+            </g>
+            <g id="label" transform="matrix(1.00002,0,0,0.999979,405.006,324.403)">
+                <g>
+                    <g>
+                        <g>
+                            <g>
+                                <g>
+                                    <g>
+                                        <g id="label1" serif:id="label">
+                                            <text x="-129.715px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:60.001px;">Meanwell</text>
+                                            <g transform="matrix(60.0013,0,0,60.0013,189.101,60.0013)">
+                                            </g>
+                                            <text x="-189.101px" y="60.001px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:60.001px;">NLDD 14000H</text>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g id="pin0num" transform="matrix(1,0,0,1,75,-53.8889)">
+                <text x="-19.277px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:35px;fill:rgb(85,85,85);">1</text>
+            </g>
+            <g id="pin0num1" serif:id="pin0num" transform="matrix(1,0,0,1,75,589.925)">
+                <g transform="matrix(35,0,0,35,0,0)">
+                </g>
+                <text x="-38.555px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:35px;fill:rgb(85,85,85);">11</text>
+            </g>
+            <g id="pin0label" transform="matrix(1,0,0,1,125,-21.8889)">
+                <text x="0px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:49px;fill:rgb(85,85,85);">V</text>
+                <g transform="matrix(34.7222,0,0,34.7222,68.431,0)">
+                </g>
+                <text x="27.826px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:34.722px;fill:rgb(85,85,85);">in-</text>
+            </g>
+            <g id="pin0label1" serif:id="pin0label" transform="matrix(1,0,0,1,125,627.977)">
+                <text x="0px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:49px;fill:rgb(85,85,85);">V</text>
+                <g transform="matrix(34.7222,0,0,34.7222,91.2514,0)">
+                </g>
+                <text x="27.826px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:34.722px;fill:rgb(85,85,85);">out-</text>
+            </g>
+            <g id="pin1num" transform="matrix(1,0,0,1,75,46.1111)">
+                <text x="-19.277px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:35px;fill:rgb(85,85,85);">2</text>
+            </g>
+            <g id="pin1num1" serif:id="pin1num" transform="matrix(1,0,0,1,75,689.925)">
+                <g transform="matrix(35,0,0,35,0,0)">
+                </g>
+                <text x="-38.555px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:35px;fill:rgb(85,85,85);">12</text>
+            </g>
+            <g id="pin1label" transform="matrix(1,0,0,1,125,78.1111)">
+                <text x="0px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:49px;fill:rgb(85,85,85);">V</text>
+                <g transform="matrix(34.7222,0,0,34.7222,68.431,0)">
+                </g>
+                <text x="27.826px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:34.722px;fill:rgb(85,85,85);">in-</text>
+            </g>
+            <g id="pin1label1" serif:id="pin1label" transform="matrix(1,0,0,1,125,727.977)">
+                <text x="0px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:49px;fill:rgb(85,85,85);">V</text>
+                <g transform="matrix(34.7222,0,0,34.7222,91.2514,0)">
+                </g>
+                <text x="27.826px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:34.722px;fill:rgb(85,85,85);">out-</text>
+            </g>
+            <g id="pin3num" transform="matrix(1,0,0,1,735,46.4554)">
+                <g transform="matrix(35,0,0,35,38.5547,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:35px;fill:rgb(85,85,85);">23</text>
+            </g>
+            <g id="pin3num1" serif:id="pin3num" transform="matrix(1,0,0,1,735,215.435)">
+                <g transform="matrix(35,0,0,35,38.5547,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:35px;fill:rgb(85,85,85);">21</text>
+            </g>
+            <g id="pin3num2" serif:id="pin3num" transform="matrix(1,0,0,1,735,689.814)">
+                <g transform="matrix(35,0,0,35,38.5547,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:35px;fill:rgb(85,85,85);">13</text>
+            </g>
+            <g id="pin3label" transform="matrix(1,0,0,1,685,78.4554)">
+                <text x="-76.383px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:49px;fill:rgb(85,85,85);">V</text>
+                <g transform="matrix(34.7222,0,0,34.7222,3.55271e-15,0)">
+                </g>
+                <text x="-48.557px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:34.722px;fill:rgb(85,85,85);">in+</text>
+            </g>
+            <g id="pin3label1" serif:id="pin3label" transform="matrix(1,0,0,1,685,247.435)">
+                <g transform="matrix(49,0,0,49,0,0)">
+                </g>
+                <text x="-92.282px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:49px;fill:rgb(85,85,85);">D<tspan x="-59.24px " y="0px ">I</tspan>M</text>
+            </g>
+            <g id="pin3label2" serif:id="pin3label" transform="matrix(1,0,0,1,685,727.977)">
+                <text x="-99.203px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:49px;fill:rgb(85,85,85);">V</text>
+                <g transform="matrix(34.7222,0,0,34.7222,-7.10543e-15,0)">
+                </g>
+                <text x="-71.377px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:34.722px;fill:rgb(85,85,85);">out+</text>
+            </g>
+            <g id="pin2num" transform="matrix(1,0,0,1,735,-53.5446)">
+                <g transform="matrix(35,0,0,35,38.5547,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:35px;fill:rgb(85,85,85);">24</text>
+            </g>
+            <g id="pin2num1" serif:id="pin2num" transform="matrix(1,0,0,1,735,589.934)">
+                <g transform="matrix(35,0,0,35,38.5547,0)">
+                </g>
+                <text x="0px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:35px;fill:rgb(85,85,85);">14</text>
+            </g>
+            <g id="pin2label" transform="matrix(1,0,0,1,685,-21.5446)">
+                <text x="-76.383px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:49px;fill:rgb(85,85,85);">V</text>
+                <g transform="matrix(34.7222,0,0,34.7222,3.55271e-15,0)">
+                </g>
+                <text x="-48.557px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:34.722px;fill:rgb(85,85,85);">in+</text>
+            </g>
+            <g id="pin2label1" serif:id="pin2label" transform="matrix(1,0,0,1,685,627.977)">
+                <text x="-99.203px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:49px;fill:rgb(85,85,85);">V</text>
+                <g transform="matrix(34.7222,0,0,34.7222,-7.10543e-15,0)">
+                </g>
+                <text x="-71.377px" y="0px" style="font-family:'DroidSans', 'Droid Sans', sans-serif;font-size:34.722px;fill:rgb(85,85,85);">out+</text>
+            </g>
+            <g id="connector0pin" transform="matrix(1,0,0,1,0,-138.889)">
+                <path d="M105,105L5,105" style="fill:none;stroke:rgb(85,85,85);stroke-width:10px;"/>
+            </g>
+            <g id="connector0pin1" serif:id="connector0pin" transform="matrix(1,0,0,1,0,504.925)">
+                <path d="M105,105L5,105" style="fill:none;stroke:rgb(85,85,85);stroke-width:10px;"/>
+            </g>
+            <rect id="connector0terminal" x="0" y="100" width="10" height="10" style="fill:none;"/>
+            <g id="connector0terminal1" serif:id="connector0terminal" transform="matrix(1,0,0,1,0,366.036)">
+                <rect x="0" y="100" width="10" height="10" style="fill:none;"/>
+            </g>
+            <g id="connector1pin" transform="matrix(1,0,0,1,0,-138.889)">
+                <path d="M105,205L5,205" style="fill:none;stroke:rgb(85,85,85);stroke-width:10px;"/>
+            </g>
+            <g id="connector1pin1" serif:id="connector1pin" transform="matrix(1,0,0,1,0,504.925)">
+                <path d="M105,205L5,205" style="fill:none;stroke:rgb(85,85,85);stroke-width:10px;"/>
+            </g>
+            <rect id="connector1terminal" x="0" y="200" width="10" height="10" style="fill:none;"/>
+            <g id="connector3pin" transform="matrix(1,0,0,1,0,-138.889)">
+                <path d="M705,205.344L805,205.344" style="fill:none;stroke:rgb(85,85,85);stroke-width:10px;"/>
+            </g>
+            <g id="connector3pin1" serif:id="connector3pin" transform="matrix(1,0,0,1,0,30.0911)">
+                <path d="M705,205.344L805,205.344" style="fill:none;stroke:rgb(85,85,85);stroke-width:10px;"/>
+            </g>
+            <g id="connector3pin2" serif:id="connector3pin" transform="matrix(1,0,0,1,0,504.581)">
+                <path d="M705,205.344L805,205.344" style="fill:none;stroke:rgb(85,85,85);stroke-width:10px;"/>
+            </g>
+            <g id="connector3terminal" transform="matrix(1,0,0,1,0,-138.889)">
+                <rect x="800" y="200.344" width="10" height="10" style="fill:none;"/>
+            </g>
+            <g id="connector3terminal1" serif:id="connector3terminal" transform="matrix(1,0,0,1,0,518.656)">
+                <rect x="800" y="200.344" width="10" height="10" style="fill:none;"/>
+            </g>
+            <g id="connector2pin" transform="matrix(1,0,0,1,0,-138.889)">
+                <path d="M705,105.344L805,105.344" style="fill:none;stroke:rgb(85,85,85);stroke-width:10px;"/>
+            </g>
+            <g id="connector2pin1" serif:id="connector2pin" transform="matrix(1,0,0,1,0,504.581)">
+                <path d="M705,105.344L805,105.344" style="fill:none;stroke:rgb(85,85,85);stroke-width:10px;"/>
+            </g>
+            <g id="connector2terminal" transform="matrix(1,0,0,1,0,-138.889)">
+                <rect x="800" y="100.344" width="10" height="10" style="fill:none;"/>
+            </g>
+            <g id="connector2terminal1" serif:id="connector2terminal" transform="matrix(1,0,0,1,0,518.656)">
+                <rect x="800" y="100.344" width="10" height="10" style="fill:none;"/>
+            </g>
+        </g>
+    </g>
+</svg>

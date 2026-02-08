@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 63 97" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="Artboard1" transform="matrix(0.934339,0,0,0.947818,-11.6416,19.9287)">
+        <rect x="14.645" y="-18.383" width="62.183" height="96.01" style="fill:none;"/>
+        <g transform="matrix(0.0713482,0,0,0.0713482,0.644663,0.742373)">
+            <g id="rect4" transform="matrix(5.3487e-17,-0.87351,0.866446,5.30545e-17,230.438,1043.14)">
+                <rect x="0.005" y="-0" width="1460" height="940" style="fill:rgb(15,11,11);"/>
+            </g>
+            <g id="rect41" serif:id="rect4" transform="matrix(5.16542e-17,-0.843576,0.819954,5.02077e-17,252.289,1021.29)">
+                <rect x="0.005" y="-0" width="1460" height="940" style="fill:rgb(52,52,52);"/>
+            </g>
+            <g transform="matrix(14.0158,0,0,14.0158,194.285,-268.056)">
+                <path d="M10.035,8.479L10.035,15.661" style="fill:none;stroke:black;stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(14.0158,0,0,14.0158,194.285,725.611)">
+                <path d="M10.035,8.479L10.035,15.661" style="fill:none;stroke:black;stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(14.0158,0,0,14.0158,799.766,725.611)">
+                <path d="M10.035,8.479L10.035,15.661" style="fill:none;stroke:black;stroke-width:1px;"/>
+            </g>
+            <g transform="matrix(14.0158,0,0,14.0158,799.766,-268.056)">
+                <path d="M10.035,8.479L10.035,15.661" style="fill:none;stroke:black;stroke-width:1px;"/>
+            </g>
+            <g id="connector9pin" transform="matrix(6.12323e-17,-1,1,6.12323e-17,120.408,1179.66)">
+                <circle cx="1330" cy="820" r="17.9" style="stroke:black;stroke-width:9.51px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;"/>
+            </g>
+            <g id="connector8pin" transform="matrix(6.12323e-17,-1,1,6.12323e-17,820.408,1082.16)">
+                <circle cx="1130" cy="120" r="17.9" style="stroke:black;stroke-width:9.51px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;"/>
+            </g>
+            <g id="connector7pin" transform="matrix(6.12323e-17,-1,1,6.12323e-17,820.408,1287.38)">
+                <circle cx="1130" cy="120" r="17.9" style="stroke:black;stroke-width:9.51px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;"/>
+            </g>
+            <g id="connector6pin" transform="matrix(6.12323e-17,-1,1,6.12323e-17,120.408,1171.31)">
+                <circle cx="330" cy="820" r="17.9" style="stroke:black;stroke-width:9.51px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;"/>
+            </g>
+            <g id="connector5pin" transform="matrix(6.12323e-17,-1,1,6.12323e-17,120.408,1072.23)">
+                <circle cx="130" cy="820" r="17.9" style="stroke:black;stroke-width:9.51px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;"/>
+            </g>
+            <g id="connector4pin" transform="matrix(6.12323e-17,-1,1,6.12323e-17,-485.073,1072.23)">
+                <circle cx="130" cy="820" r="17.9" style="stroke:black;stroke-width:9.51px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;"/>
+            </g>
+            <g id="connector3pin" transform="matrix(6.12323e-17,-1,1,6.12323e-17,-485.073,1171.31)">
+                <circle cx="330" cy="820" r="17.9" style="stroke:black;stroke-width:9.51px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;"/>
+            </g>
+            <g id="connector2pin" transform="matrix(6.12323e-17,-1,1,6.12323e-17,214.927,1082.16)">
+                <circle cx="1130" cy="120" r="17.9" style="stroke:black;stroke-width:9.51px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;"/>
+            </g>
+            <g id="connector1pin" transform="matrix(6.12323e-17,-1,1,6.12323e-17,214.927,1179.66)">
+                <circle cx="1330" cy="120" r="17.9" style="stroke:black;stroke-width:9.51px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;"/>
+            </g>
+            <g transform="matrix(14.0158,0,0,14.0158,378.789,-133.525)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:4px;fill:white;">Vin-</text>
+            </g>
+            <g transform="matrix(14.0158,0,0,14.0158,168.454,708.146)">
+                <g>
+                    <g transform="matrix(1,0,0,1,15.007,10.701)">
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:4px;fill:white;">V</text>
+                    </g>
+                    <g transform="matrix(1,0,0,1,17.455,10.701)">
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:4px;fill:white;">out-</text>
+                    </g>
+                </g>
+            </g>
+            <g transform="matrix(14.0158,0,0,14.0158,527.088,708.146)">
+                <g>
+                    <g transform="matrix(1,0,0,1,15.007,10.701)">
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:4px;fill:white;">V</text>
+                    </g>
+                    <g transform="matrix(1,0,0,1,17.455,10.701)">
+                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:4px;fill:white;">out+</text>
+                    </g>
+                </g>
+            </g>
+            <g transform="matrix(14.0158,0,0,14.0158,776.443,-133.525)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:4px;fill:white;">Vin+</text>
+            </g>
+            <g transform="matrix(14.0158,0,0,14.0158,776.443,174.189)">
+                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:4px;fill:white;">DIM</text>
+            </g>
+            <g transform="matrix(14.0158,0,0,14.0158,150.182,121.477)">
+                <g transform="matrix(1,0,0,1,22.109,17.134)">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:6px;fill:white;">Meanwell</text>
+                </g>
+                <g transform="matrix(1,0,0,1,16.774,24.134)">
+                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:6px;fill:white;">NLDD-1400H</text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
