@@ -38,6 +38,12 @@ Here are the stats on four example PWM-controlled drivers, for comparison. The t
 <img src="img/ledDrivers/meanwell_NLDD_1400.JPG" alt="Photo of a Meanwell NLDD-1400H driver mounted to a PCB board" width="250">
 
 _Figure 1. Meanwell NLDD-1400H driver mounted to a PCB board_
+
+#### Vendors
+* [LEDSupply](https://www.ledsupply.com/led-drivers/mean-well-nldd)
+* [Digikey](https://www.digikey.com/en/products/detail/mean-well-usa-inc/NLDD-1400H/13913604)
+
+#### Characteristics
 * Input Voltage Range (V): 10-56
 * Max Output Voltage (V): 46 (min 6)
 * PWM Control Voltage (V): 2.5-5
@@ -54,6 +60,11 @@ _Figure 1. Meanwell NLDD-1400H driver mounted to a PCB board_
 
 _Figure 2. BuckTitan  LED Driver mounted to a PCB board_
 
+#### Vendors
+* [LEDSupply](https://www.ledsupply.com/led-drivers/bucktitan-constant-current-led-driver)
+* [Digikey](https://www.digikey.com/en/products/detail/leddynamics-inc/0N009-2000-W-D/22578406)
+
+#### Characteristics
 * Input Voltage Range (V): 6-30
 * Max Output Voltage (V): 28
 * PWM Control Voltage (V): 5
@@ -68,6 +79,12 @@ _Figure 2. BuckTitan  LED Driver mounted to a PCB board_
 <img src="img/ledDrivers/luxDrive_miniPuck.JPG" alt="Photo of a MiniPuck LED Driver mounted to a PCB board" width="300">
 
 _Figure 3. MiniPuck LED Driver mounted to a PCB board_
+
+#### Vendors
+* [LEDSupply](https://www.ledsupply.com/led-drivers/minipuck-constant-current-led-driver)
+* [Digikey](https://www.digikey.com/en/products/detail/leddynamics-inc/0F004-D-P-700/22578601?s=N4IgjCBcpmBMAGKoDGUBmBDANgZwKYA0IA9lANohwDscAnAKwQC6xADgC5QgDKHATgEsAdgHMQAXwnE4FEAFsRggAoBXFAGsQzCUA)
+
+#### Characteristics
 * Input Voltage Range (V): 6.5-30
 * Max Output Voltage (V): 30 - 2.5
 * PWM Control Voltage (V): 1-30
@@ -83,7 +100,13 @@ _Figure 3. MiniPuck LED Driver mounted to a PCB board_
 ### Recom RCD Series LED Drivers RCD-24 Series 1.20
 <img src="img/ledDrivers/recom_RCD-120.JPG" alt="Photo of a Recom RCD series 1.20 LED Driver mounted to a PCB board" width="300">
 
-_Figure 3. Recom RCD series 1.20 LED Driver mounted to a PCB board_
+_Figure 4. Recom RCD series 1.20 LED Driver mounted to a PCB board_
+
+#### Vendors
+* [Mouser](https://www.mouser.com/ProductDetail/RECOM-Power/RCD-24-1.20?qs=YWgezujkI1IP80WRoY%252BDJA%3D%3D)
+* [Digikey](https://www.digikey.com/en/products/detail/recom-power/RCD-24-1-20/2256312)
+
+#### Characteristics
 * Input Voltage Range (V): 6-36
 * Max Output Voltage (V): 31
 * PWM Control Voltage (V): 2.2-15
@@ -96,7 +119,35 @@ _Figure 3. Recom RCD series 1.20 LED Driver mounted to a PCB board_
 * Notes: Not all of the pin/wire versions have PWM; double check. 
 * Testing Notes (3.3V control): tends to 'pop' at the very top end of dimming. Compared to other models, buzzes audibly
 
-There are many other drivers on the market, of course. The companies represnted here, [Meanwell](https://www.meanwellusa.com/), [LED Dynamics](https://leddynamics.com/)' LuxDrive line, and [Recom](https://recom-power.com/), are just three of a wide market. Most electronics companies will carry drivers. These were sourced from [LEDSupply](https://www.ledsupply.com/), which has excellent [driver notes](https://www.ledsupply.com/blog/category/drivers/) and [Lighting 101 notes](https://www.ledsupply.com/blog/category/led-lighting-101/) as well; Digikey, which has a [wide inventory of LED drivers](https://www.digikey.com/en/products/filter/led-drivers/924). Many other lighting supply companies, such as [Bulbs.com](https://www.bulbs.com/), [1000Bulbs.com](https://www.1000bulbs.com/), and others have drivers as well. 
+
+
+### Sparkfun Femtobuck Constant Current LED Driver
+<img src="https://cdn.sparkfun.com/r/600-600/assets/parts/1/1/2/1/0/13716-01.jpg" alt="Photo of a femtobuck driver from Sparkfun" width="300">
+
+_Figure 5. Femtobuck driver from Sparkfun. Image from Sparkfun.com_
+
+This driver is a breakout board based on Diodes Inc.'s 40V 1.5A Buck LED Driver ([datasheet](https://cdn.sparkfun.com/assets/5/9/8/e/4/AL8860.pdf))
+
+#### Vendors
+* [Sparkfun](https://www.sparkfun.com/femtobuck-led-driver.html)
+* [Digikey](https://www.digikey.com/en/products/detail/sparkfun-electronics/13716/5995005)
+
+#### Characteristics
+
+* Input Voltage Range (V): 6-40
+* Max Output Voltage (V): 36
+* Analog control voltage (V): 0-2.5 
+* PWM Control Voltage (V): 2.5-5
+* PWM Freq (Hz): 100-1000, but recommended 500Hz or greater. Can also take analog voltage
+* Output Current (mA): up to 350 (level set jumper open), up to 660 (level set jumper closed), or up to 1A (change current sense resistors to 0.1 ohm)
+* Max Watts @ 24VDC (W): 40
+* Boost / Buck: Buck
+* Connection Type: Pins
+* Size: 0.5" x 2.5"
+* Testing Notes (3.3V control), max. default output current is low: 350mA, though if the level set jumper is closed, it can do 660mA. 
+
+## Conclusion
+There are many other drivers on the market, of course. The companies represented here, [Meanwell](https://www.meanwellusa.com/), [LED Dynamics](https://leddynamics.com/)' LuxDrive line, and [Recom](https://recom-power.com/), and [Diodes, Inc.](https://www.diodes.com/) are just four of a wide market. Most electronics companies will carry drivers. These were sourced from [LEDSupply](https://www.ledsupply.com/), which has excellent [driver notes](https://www.ledsupply.com/blog/category/drivers/) and [Lighting 101 notes](https://www.ledsupply.com/blog/category/led-lighting-101/) as well; Digikey, which has a [wide inventory of LED drivers](https://www.digikey.com/en/products/filter/led-drivers/924). Many other lighting supply companies, such as [Bulbs.com](https://www.bulbs.com/), [1000Bulbs.com](https://www.1000bulbs.com/), and others have drivers as well. 
 
 For more on simple low-voltage DC control, see [this page](/led-lamps.md) on controlling DC lamps. The first three examples show how to use a transistor to control a DC lamp (a [TIP120 Darlington transistor](/led-lamps.md#tip120-darlington-transistor), [FQP30N06L MOSFET](/led-lamps.md#fqp30n06l-n-channel-mosfet), and [ILRB8721 MOSFET](/led-lamps.md#irlb8721-n-channel-mosfet), respectively), and the [fourth example](/led-lamps.md#nldd1400h-led-driver) shows how to use the Meanwell driver mentioned above. 
 
