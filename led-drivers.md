@@ -143,7 +143,7 @@ This driver is a breakout board based on Diodes Inc.'s 40V 1.5A Buck LED Driver 
 * Max Watts @ 24VDC (W): 40
 * Boost / Buck: Buck
 * Connection Type: Pins
-* Size: 0.5" x 2.5"
+* Size: 0.5" x 1.5"
 * Testing Notes (3.3V control), max. default output current is low: 350mA, though if the level set jumper is closed, it can do 660mA. 
 
 ## Conclusion
