@@ -15,6 +15,10 @@ In the [AS7341 examples](AS7341), you'll see how to get output from your spectro
   * [Examples](AS7341/readme.md)
 * AMS [AS7343 14-channel spectral sensor](https://ams-osram.com/products/sensor-solutions/ambient-light-color-spectral-proximity-sensors/ams-as7343-spectral-sensor) Unfortunately, no longer sold for current development, but breakout boards are still available. 
 
+* AMS [AS7343 14-channel spectral sensor](https://ams-osram.com/products/sensor-solutions/ambient-light-color-spectral-proximity-sensors/ams-as7343-spectral-sensor) Unfortunately, no longer sold for current development, but breakout boards are still available. 
+
+* AMS [TCS3448 14-channel spectral sensor](https://ams-osram.com/products/sensor-solutions/ambient-light-color-spectral-proximity-sensors/ams-tcs3448-spectral-color-sensor). The TCS3448 is firmware-compatible with the AS7343 sensor. This means you can use the same microcontroller libraries to drive the TCS3448 as you use to drive the AS7343 sensor.
+
 * [AMS' full line of spectral sensors](https://ams-osram.com/search?productSearch=true&filter_products=ambient-light-color-spectral-proximity-sensors&filter_param_function_String_sortable=spectral+sensing&filter_lifecycle_key_String_sortable=10-full-production%2C93-not-for-new-design%2C95-orders-still-accepted)
 
 * [OPT4048 High-speed high-precision tristimulus XYZ color sensor]((https://www.ti.com/product/OPT4048)) from Texas Instruments. Gives CIE XYZ values, but only has three spectral bands. 

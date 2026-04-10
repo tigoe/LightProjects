@@ -3,7 +3,7 @@ The AS7341 is an 11-channel spectral sensor that can detect light levels in mult
 
 Here is the [product page](https://ams.com/as7341) and the [datasheet and other docs](https://ams-osram.com/support/download-center?search=AS7341).
 
-**Update 23 Jun 2025**: AMS lists the AS7341 as "Not for new design". While it's still possible to buy AS7341 breakout boards, it's also worth looking at some of their other models, like the [TCS3448](https://ams-osram.com/products/sensor-solutions/ambient-light-color-spectral-proximity-sensors/ams-tcs3448-spectral-color-sensor). 
+**Update 23 Jun 2025**: AMS lists the AS7341 as "Not for new design". While it's still possible to buy AS7341 breakout boards, it's also worth looking at some of their other models, like the [TCS3448](https://ams-osram.com/products/sensor-solutions/ambient-light-color-spectral-proximity-sensors/ams-tcs3448-spectral-color-sensor). The TCS3448 is firmware-compatible with the AS7343 sensor, another AMS sensor which is an upgrade from the AS7341. This means you can use the same microcontroller libraries to drive the TCS3448 as you use to drive the AS7343 sensor.
 
 The frequencies it can detect are as follows:
 * F1: 415nm <span style="color:white; background-color:#7600ed;">(violet)</span>
